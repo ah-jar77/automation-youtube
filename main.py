@@ -38,7 +38,7 @@ BOT_TOKEN        = os.getenv("TELEGRAM_BOT_TOKEN")
 ALLOWED_USER_ID  = int(os.getenv("ALLOWED_USER_ID", "0"))
 BOT_PASSWORD      = os.getenv("BOT_PASSWORD", "159951")
 ENABLE_YOUTUBE   = os.getenv("ENABLE_YOUTUBE", "true").lower() == "true"
-ENABLE_INSTAGRAM = os.getenv("ENABLE_INSTAGRAM", "false").lower() == "true"
+ENABLE_INSTAGRAM = False # os.getenv("ENABLE_INSTAGRAM", "false").lower() == "true"
 
 # إعدادات البروكسي (إذا كنت تستخدم واحداً)
 HTTP_PROXY = os.getenv("HTTP_PROXY") or os.getenv("http_proxy")
@@ -143,14 +143,7 @@ async def status(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
             lines.append("❌ يوتيوب")
 
     if ENABLE_INSTAGRAM:
-        try:
-            from instagram_uploader import InstagramUploader
-
-            ig_ok = InstagramUploader().test_connection()
-            lines.append(f"{'✅' if ig_ok else '❌'} انستاغرام")
-        except Exception as e:
-            logger.error(f"Instagram status check failed: {e}")
-            lines.append("❌ انستاغرام")
+        lines.append("⏸️ انستاغرام (معطل)")
 
     if not lines:
         lines.append("⚠️ لا توجد منصات مفعلة")
@@ -253,19 +246,7 @@ async def handle_video(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
     ig_url = None
     ig_err = None
     if ENABLE_INSTAGRAM:
-        try:
-            from instagram_uploader import InstagramUploader
-
-            ig_client = InstagramUploader()
-            ig_caption = f"{title}\n\n{desc}\n\n{' '.join(hashtags)}"
-            ig_url = ig_client.upload_reel(
-                video_path = str(file_path),
-                caption    = ig_caption,
-            )
-            logger.info(f"انستاغرام ✅: {ig_url}")
-        except Exception as e:
-            ig_err = str(e)
-            logger.error(f"انستاغرام ❌: {e}")
+        ig_err = "انستاغرام معطل حالياً"
 
     # ── حذف الملف بعد نجاح الرفع ──
     video_deleted = False
