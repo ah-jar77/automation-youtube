@@ -348,6 +348,14 @@ def main() -> None:
     app.add_handler(CallbackQueryHandler(noop_callback, pattern="^noop$"))
 
     logger.info("🤖 البوت يعمل الآن...")
+    
+    # Python 3.12+ fix: Ensure an event loop exists before calling run_polling
+    try:
+        asyncio.get_event_loop()
+    except RuntimeError:
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+
     app.run_polling(allowed_updates=Update.ALL_TYPES)
 
 
