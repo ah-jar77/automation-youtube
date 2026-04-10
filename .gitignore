@@ -1,13 +1,13 @@
-# # Python
-# __pycache__/
-# *.py[cod]
-# .python-version
-# .venv/
-# venv/
+# Python
+__pycache__/
+*.py[cod]
+.python-version
+.venv/
+venv/
 
-# # Runtime files
-# downloads/
-# bot.log
+# Runtime files
+downloads/
+bot.log
 
 # # Secrets
 # .env

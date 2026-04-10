@@ -306,14 +306,7 @@ async def handle_video(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
         f"   • الحجم: {file_size_mb:.2f} MB\n"
         f"   • الحذف: {'✅ تم' if video_deleted else '❌ لم يُحذف' if not uploaded_any else f'❌ {delete_error}'}"
     )
-    
-    # حذف رسالة الحالات المؤقتة وإرسال الرد النهائي على الفيديو نفسه
-    try:
-        await status_msg.delete()
-    except:
-        pass
-        
-    await message.reply_text(final, parse_mode="Markdown")
+    await status_msg.edit_text(final, parse_mode="Markdown")
 
 
 # ── دوال مساعدة ───────────────────────────────────────────────
