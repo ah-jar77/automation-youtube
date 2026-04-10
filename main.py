@@ -77,7 +77,7 @@ async def login(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         await update.message.reply_text(f"✅ أنت مسجل بالفعل.\nالقناة النشطة: *{get_active_channel_name()}*", parse_mode="Markdown")
         return
     
-    await update.message.reply_text(f"🔐 القناة الحالية: *{get_active_channel_name()}*\nالرجاء إدخال كلمة المرور:", parse_mode="Markdown")
+    await update.message.reply_text(f"\nالرجاء إدخال كلمة المرور:", parse_mode="Markdown")
 
 
 async def handle_password(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -103,7 +103,7 @@ async def handle_password(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
         auth_sessions[user_id] = time.time()
         await update.message.reply_text(f"✅ تم تسجيل الدخول بنجاح!\nالقناة النشطة: *{get_active_channel_name()}*", parse_mode="Markdown")
     else:
-        await update.message.reply_text(f"❌ كلمة المرور خاطئة.\n(القناة النشطة: {get_active_channel_name()})")
+        await update.message.reply_text(f"❌ كلمة المرور خاطئة.")
 
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -431,7 +431,7 @@ def main() -> None:
         app.bot._request = request
 
     app.add_handler(CommandHandler("login", login))
-    app.add_handler(CommandHandler("start",  start))
+    app.add_handler(CommandHandler("ahmed",  start))
     app.add_handler(CommandHandler("status", status))
     app.add_handler(CommandHandler("change", change_channel))
     app.add_handler(CommandHandler("help",   help_command))
