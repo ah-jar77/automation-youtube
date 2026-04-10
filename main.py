@@ -49,6 +49,12 @@ AUTH_TIMEOUT_HOURS = 24
 CURRENT_YOUTUBE_TOKEN = "youtube_token.pickle"
 pending_change_auth: set[int] = set() # users waiting to auth for /change
 
+def get_active_channel_name() -> str:
+    """إرجاع الاسم المستعار للقناة النشطة"""
+    if CURRENT_YOUTUBE_TOKEN == "youtube_token.pickle":
+        return "1 رو"
+    return "2 مار"
+
 def _is_authenticated(user_id: int) -> bool:
     """يتحقق إذا كان المستخدم مصادقاً خلال آخر 24 ساعة"""
     if user_id in auth_sessions:
@@ -68,10 +74,10 @@ async def login(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     user_id = update.effective_user.id
     
     if _is_authenticated(user_id):
-        await update.message.reply_text("✅ أنت مسجل بالفعل. الصلاحية صالحة لـ 24 ساعة.")
+        await update.message.reply_text(f"✅ أنت مسجل بالفعل.\nالقناة النشطة: *{get_active_channel_name()}*", parse_mode="Markdown")
         return
     
-    await update.message.reply_text("🔐 الرجاء إدخال كلمة المرور:")
+    await update.message.reply_text(f"🔐 القناة الحالية: *{get_active_channel_name()}*\nالرجاء إدخال كلمة المرور:", parse_mode="Markdown")
 
 
 async def handle_password(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -95,9 +101,9 @@ async def handle_password(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
             return
 
         auth_sessions[user_id] = time.time()
-        await update.message.reply_text("✅ تم تسجيل الدخول بنجاح! الصلاحية صالحة لـ 24 ساعة.")
+        await update.message.reply_text(f"✅ تم تسجيل الدخول بنجاح!\nالقناة النشطة: *{get_active_channel_name()}*", parse_mode="Markdown")
     else:
-        await update.message.reply_text("❌ كلمة المرور incorrectة. حاول مجدداً.")
+        await update.message.reply_text(f"❌ كلمة المرور خاطئة.\n(القناة النشطة: {get_active_channel_name()})")
 
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -121,6 +127,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     
     text = (
         "👋 *مرحباً!*\n\n"
+        f"القناة النشطة حالياً: *{get_active_channel_name()}*\n\n"
         f"أرسل لي فيديو وسأنشره تلقائياً على:\n{platforms_text}\n\n"
         "📌 *أوامر متاحة:*\n"
         "/start — عرض هذه الرسالة\n"
@@ -261,7 +268,7 @@ async def handle_video(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
     status_msg = await _send_status_reply(
         message,
         "\n".join([
-            "⏳ هذا الفيديو قيد المعالجة",
+            f"⏳ معالجة الفيديو ({get_active_channel_name()})",
             f"العنوان: {title}",
             "المرحلة: جاري التحميل من تيليجرام",
         ]),
@@ -279,7 +286,7 @@ async def handle_video(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
             message,
             status_msg,
             "\n".join([
-                "❌ فشل هذا الفيديو",
+                f"❌ فشل الفيديو ({get_active_channel_name()})",
                 f"العنوان: {title}",
                 "المرحلة: تحميل الملف من تيليجرام",
                 f"السبب: {_format_error_text(e)}",
@@ -353,7 +360,7 @@ async def handle_video(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
     result_text = "\n".join(result_lines) if result_lines else "⚠️ لم يتم تفعيل أي منصة"
 
     final = (
-        f"{'✅ نجح هذا الفيديو' if uploaded_any else '❌ فشل هذا الفيديو'}\n"
+        f"{'✅ نجح الفيديو' if uploaded_any else '❌ فشل الفيديو'} ({get_active_channel_name()})\n"
         f"العنوان: {title}\n"
         f"{result_text}\n"
         f"الحجم: {file_size_mb:.2f} MB\n"
@@ -388,14 +395,13 @@ async def handle_change_choice(update: Update, context: ContextTypes.DEFAULT_TYP
     
     if data == "set_yt_1":
         CURRENT_YOUTUBE_TOKEN = "youtube_token.pickle"
-        channel_name = "القناة الأولى (1)"
     elif data == "set_yt_2":
         CURRENT_YOUTUBE_TOKEN = "youtube_token2.pickle"
-        channel_name = "القناة الثانية (2)"
     else:
         return
 
-    await query.edit_message_text(f"✅ تم تغيير القناة النشطة إلى: *{channel_name}*\nسيتم استخدام ملف: `{CURRENT_YOUTUBE_TOKEN}`", parse_mode="Markdown")
+    channel_name = get_active_channel_name()
+    await query.edit_message_text(f"✅ تم تغيير القناة النشطة إلى: *{channel_name}*\nملف التوكن: `{CURRENT_YOUTUBE_TOKEN}`", parse_mode="Markdown")
 
 # ── تشغيل البوت ───────────────────────────────────────────────
 
