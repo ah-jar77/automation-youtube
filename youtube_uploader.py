@@ -18,11 +18,9 @@ logger = logging.getLogger(__name__)
 
 SCOPES          = ["https://www.googleapis.com/auth/youtube.upload"]
 CLIENT_SECRETS  = os.getenv("YOUTUBE_CLIENT_SECRETS", "client_secrets.json")
-TOKEN_PICKLE    = "youtube_token.pickle"
-
-
 class YouTubeUploader:
-    def __init__(self):
+    def __init__(self, token_file: str = "youtube_token.pickle"):
+        self.token_file = token_file
         self.service = self._get_service()
 
     # ── المصادقة ────────────────────────────────────────────────
@@ -31,8 +29,8 @@ class YouTubeUploader:
         """يُنشئ خدمة YouTube مع OAuth 2.0"""
         creds = None
 
-        if Path(TOKEN_PICKLE).exists():
-            with open(TOKEN_PICKLE, "rb") as f:
+        if Path(self.token_file).exists():
+            with open(self.token_file, "rb") as f:
                 creds = pickle.load(f)
 
         if not creds or not creds.valid:
@@ -42,7 +40,7 @@ class YouTubeUploader:
                 flow  = InstalledAppFlow.from_client_secrets_file(CLIENT_SECRETS, SCOPES)
                 creds = flow.run_local_server(port=8088)
 
-            with open(TOKEN_PICKLE, "wb") as f:
+            with open(self.token_file, "wb") as f:
                 pickle.dump(creds, f)
 
         return build("youtube", "v3", credentials=creds)
@@ -61,10 +59,17 @@ class YouTubeUploader:
         """
         يرفع الفيديو على يوتيوب ويُعيد رابطه.
         """
+        # منطق العناوين المخصصة لكل قناة
+        if self.token_file == "youtube_token2.pickle":
+            final_title = "كود خصم نون mar110k"
+        else:
+            # القناة الأولى (الافتراضية)
+            final_title = "#اكسبلور #fypシ #ترند #مالي_خلق_احط_هاشتاقات #رياكشن #ضحك #shortvideo #تيك_توك #لايك"
+
         body = {
             "snippet": {
-                "title":       "#اكسبلور #fypシ #ترند #مالي_خلق_احط_هاشتاقات #رياكشن #ضحك #shortvideo #تيك_توك #لايك",
-                "description": " ",
+                "title":       final_title,
+                "description": " ", # الوصف دائماً فارغ
                 "tags":        tags or [],
                 "categoryId":  category_id,
             },

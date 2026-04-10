@@ -7,8 +7,7 @@ import os
 import logging
 import asyncio
 from pathlib import Path
-from typing import List, Optional
-from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
+from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, ReplyParameters
 from telegram.ext import (
     Application,
     CommandHandler,
@@ -47,6 +46,8 @@ HTTPS_PROXY = os.getenv("HTTPS_PROXY") or os.getenv("https_proxy")
 # ── مصادقة كلمة المرور ────────────────────────────────────────
 auth_sessions: dict[int, float] = {}  # user_id -> last auth timestamp
 AUTH_TIMEOUT_HOURS = 24
+CURRENT_YOUTUBE_TOKEN = "youtube_token.pickle"
+pending_change_auth: set[int] = set() # users waiting to auth for /change
 
 def _is_authenticated(user_id: int) -> bool:
     """يتحقق إذا كان المستخدم مصادقاً خلال آخر 24 ساعة"""
@@ -78,11 +79,21 @@ async def handle_password(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
     user_id = update.effective_user.id
     password = update.message.text.strip()
     
-    if _is_authenticated(user_id):
+    # إذا لم يكن المستخدم يحاول تغيير القناة، وكان مسجلاً بالفعل، نتجاهل الرسالة
+    if _is_authenticated(user_id) and user_id not in pending_change_auth:
         return
     
     import time
     if password == BOT_PASSWORD:
+        if user_id in pending_change_auth:
+            pending_change_auth.remove(user_id)
+            keyboard = InlineKeyboardMarkup([
+                [InlineKeyboardButton("📺 القناة الأولى (1)", callback_data="set_yt_1")],
+                [InlineKeyboardButton("📺 القناة الثانية (2)", callback_data="set_yt_2")]
+            ])
+            await update.message.reply_text("✅ تم التحقق. اختر القناة المراد تفعيلها:", reply_markup=keyboard)
+            return
+
         auth_sessions[user_id] = time.time()
         await update.message.reply_text("✅ تم تسجيل الدخول بنجاح! الصلاحية صالحة لـ 24 ساعة.")
     else:
@@ -114,10 +125,22 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         "📌 *أوامر متاحة:*\n"
         "/start — عرض هذه الرسالة\n"
         "/status — حالة الاتصال بالمنصات\n"
+        # "/change — تغيير قناة يوتيوب\n"
         "/help — المساعدة\n\n"
         "⚡ أرسل الفيديو مباشرة للبدء!"
     )
     await update.message.reply_text(text, parse_mode="Markdown")
+
+
+async def change_channel(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    """بدء عملية تغيير القناة"""
+    user_id = update.effective_user.id
+    if not _is_authenticated(user_id):
+        await update.message.reply_text("🔒 يرجى تسجيل الدخول أولاً بـ /login")
+        return
+
+    pending_change_auth.add(user_id)
+    await update.message.reply_text("🔐 لتغيير القناة، يرجى إدخال كلمة مرور البوت للتأكيد:")
 
 
 async def status(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -136,8 +159,11 @@ async def status(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
     if ENABLE_YOUTUBE:
         try:
-            yt_ok = YouTubeUploader().test_connection()
-            lines.append(f"{'✅' if yt_ok else '❌'} يوتيوب")
+            uploader = YouTubeUploader(token_file=CURRENT_YOUTUBE_TOKEN)
+            yt_ok = uploader.test_connection()
+            status_text = "متصل" if yt_ok else "غير متصل"
+            token_name = "القناة 1" if CURRENT_YOUTUBE_TOKEN == "youtube_token.pickle" else "القناة 2"
+            lines.append(f"{'✅' if yt_ok else '❌'} يوتيوب ({token_name}: {status_text})")
         except Exception as e:
             logger.error(f"YouTube status check failed: {e}")
             lines.append("❌ يوتيوب")
@@ -172,6 +198,39 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
     await update.message.reply_text(text, parse_mode="Markdown")
 
 
+async def _send_status_reply(message, text: str):
+    """يرسل رسالة حالة كرد مباشر على رسالة الفيديو الأصلية."""
+    return await message.reply_text(
+        text,
+        reply_parameters=ReplyParameters(
+            message_id=message.message_id,
+            chat_id=message.chat_id,
+            allow_sending_without_reply=True,
+        ),
+        disable_web_page_preview=True,
+    )
+
+
+async def _update_status_reply(message, status_message, text: str):
+    """يحدّث رسالة الحالة، ويرسل رسالة بديلة إن تعذر التعديل."""
+    try:
+        await status_message.edit_text(text, disable_web_page_preview=True)
+        return status_message
+    except Exception as e:
+        logger.warning(f"تعذر تعديل رسالة الحالة الحالية: {e}")
+        return await _send_status_reply(message, text)
+
+
+def _format_error_text(error: object, fallback: str = "خطأ غير معروف") -> str:
+    """يحوّل الاستثناء إلى سطر قصير مناسب لرسائل تلجرام."""
+    text = " ".join(str(error).split()).strip()
+    if not text:
+        return fallback
+    if len(text) > 280:
+        return f"{text[:277]}..."
+    return text
+
+
 # ── معالج الفيديو الرئيسي ─────────────────────────────────────
 
 async def handle_video(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -199,14 +258,13 @@ async def handle_video(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
     desc     = "\n".join(lines[1:]).strip() if len(lines) > 1 else ""
     hashtags = _extract_hashtags(desc)
 
-    # ── إشعار البداية ──
-    keyboard = InlineKeyboardMarkup([
-        [InlineKeyboardButton("⏳ جاري التحميل...", callback_data="noop")]
-    ])
-    status_msg = await message.reply_text(
-        f"📥 *تحميل الفيديو...*\nالعنوان: `{title}`",
-        parse_mode="Markdown",
-        reply_markup=keyboard,
+    status_msg = await _send_status_reply(
+        message,
+        "\n".join([
+            "⏳ هذا الفيديو قيد المعالجة",
+            f"العنوان: {title}",
+            "المرحلة: جاري التحميل من تيليجرام",
+        ]),
     )
 
     # ── تحميل الفيديو من تلجرام ──
@@ -217,12 +275,27 @@ async def handle_video(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
         logger.info(f"تم تحميل الفيديو: {file_path}")
     except Exception as e:
         logger.error(f"فشل تحميل الفيديو: {e}")
-        await status_msg.edit_text("❌ فشل في تحميل الفيديو من تلجرام.")
+        status_msg = await _update_status_reply(
+            message,
+            status_msg,
+            "\n".join([
+                "❌ فشل هذا الفيديو",
+                f"العنوان: {title}",
+                "المرحلة: تحميل الملف من تيليجرام",
+                f"السبب: {_format_error_text(e)}",
+            ]),
+        )
         return
 
-    await status_msg.edit_text(
-        f"✅ تم التحميل\n⬆️ *جاري الرفع...*",
-        parse_mode="Markdown"
+    status_msg = await _update_status_reply(
+        message,
+        status_msg,
+        "\n".join([
+            "⏳ هذا الفيديو قيد المعالجة",
+            f"العنوان: {title}",
+            "المرحلة: تم التحميل من تيليجرام",
+            "الخطوة التالية: جاري الرفع إلى المنصات",
+        ]),
     )
 
     # ── رفع على يوتيوب ──
@@ -230,7 +303,7 @@ async def handle_video(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
     yt_err  = None
     if ENABLE_YOUTUBE:
         try:
-            uploader = YouTubeUploader()
+            uploader = YouTubeUploader(token_file=CURRENT_YOUTUBE_TOKEN)
             yt_url   = uploader.upload(
                 video_path  = str(file_path),
                 title       = title,
@@ -239,7 +312,7 @@ async def handle_video(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
             )
             logger.info(f"يوتيوب ✅: {yt_url}")
         except Exception as e:
-            yt_err = str(e)
+            yt_err = _format_error_text(e)
             logger.error(f"يوتيوب ❌: {e}")
 
     # ── رفع على انستاغرام ──
@@ -280,14 +353,13 @@ async def handle_video(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
     result_text = "\n".join(result_lines) if result_lines else "⚠️ لم يتم تفعيل أي منصة"
 
     final = (
-        f"📊 *تقرير النشر*\n\n"
-        f"{'✅' if uploaded_any else '⚠️'} *الحالة:* {'نجاح' if uploaded_any else 'فشل'}\n\n"
-        f"{result_text}\n\n"
-        f"📁 الملف:\n"
-        f"   • الحجم: {file_size_mb:.2f} MB\n"
-        f"   • الحذف: {'✅ تم' if video_deleted else '❌ لم يُحذف' if not uploaded_any else f'❌ {delete_error}'}"
+        f"{'✅ نجح هذا الفيديو' if uploaded_any else '❌ فشل هذا الفيديو'}\n"
+        f"العنوان: {title}\n"
+        f"{result_text}\n"
+        f"الحجم: {file_size_mb:.2f} MB\n"
+        f"الحذف المحلي: {'✅ تم' if video_deleted else '❌ لم يُحذف' if not uploaded_any else f'❌ {_format_error_text(delete_error)}'}"
     )
-    await status_msg.edit_text(final, parse_mode="Markdown")
+    await _update_status_reply(message, status_msg, final)
 
 
 # ── دوال مساعدة ───────────────────────────────────────────────
@@ -306,9 +378,24 @@ def _extract_hashtags(text: str) -> list[str]:
     return [w.lstrip("#") for w in text.split() if w.startswith("#")]
 
 
-async def noop_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    await update.callback_query.answer()
+async def handle_change_choice(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    """معالجة اختيار القناة من الأزرار"""
+    query = update.callback_query
+    await query.answer()
+    
+    global CURRENT_YOUTUBE_TOKEN
+    data = query.data
+    
+    if data == "set_yt_1":
+        CURRENT_YOUTUBE_TOKEN = "youtube_token.pickle"
+        channel_name = "القناة الأولى (1)"
+    elif data == "set_yt_2":
+        CURRENT_YOUTUBE_TOKEN = "youtube_token2.pickle"
+        channel_name = "القناة الثانية (2)"
+    else:
+        return
 
+    await query.edit_message_text(f"✅ تم تغيير القناة النشطة إلى: *{channel_name}*\nسيتم استخدام ملف: `{CURRENT_YOUTUBE_TOKEN}`", parse_mode="Markdown")
 
 # ── تشغيل البوت ───────────────────────────────────────────────
 
@@ -340,12 +427,13 @@ def main() -> None:
     app.add_handler(CommandHandler("login", login))
     app.add_handler(CommandHandler("start",  start))
     app.add_handler(CommandHandler("status", status))
+    app.add_handler(CommandHandler("change", change_channel))
     app.add_handler(CommandHandler("help",   help_command))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_password))
     app.add_handler(
         MessageHandler(filters.VIDEO | filters.Document.VIDEO, handle_video)
     )
-    app.add_handler(CallbackQueryHandler(noop_callback, pattern="^noop$"))
+    app.add_handler(CallbackQueryHandler(handle_change_choice, pattern="^set_yt_"))
 
     logger.info("🤖 البوت يعمل الآن...")
     
