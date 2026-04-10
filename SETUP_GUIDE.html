@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دليل إعداد البوت</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=IBM+Plex+Mono&display=swap');
+
+  :root {
+    --bg: #0d0f14;
+    --surface: #161920;
+    --border: #1e2330;
+    --accent: #5b6af0;
+    --accent2: #e94560;
+    --green: #2ec4a9;
+    --yellow: #f4c542;
+    --text: #c8cde8;
+    --text-dim: #6b7194;
+    --radius: 12px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Cairo', sans-serif;
+    line-height: 1.8;
+    font-size: 15px;
+  }
+
+  /* ── Header ── */
+  header {
+    background: linear-gradient(135deg, #1a1d2e 0%, #0d0f14 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 40px 24px;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 2rem;
+    font-weight: 900;
+    background: linear-gradient(90deg, var(--accent), var(--green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+  }
+
+  header p { color: var(--text-dim); font-size: 0.95rem; }
+
+  .badges {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+
+  .badge {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-size: 0.8rem;
+    color: var(--text-dim);
+  }
+
+  /* ── Layout ── */
+  .container { max-width: 860px; margin: 0 auto; padding: 32px 20px 80px; }
+
+  /* ── Steps ── */
+  .step {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .step-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+
+  .step-num {
+    background: var(--accent);
+    color: #fff;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+
+  .step h2 { font-size: 1.1rem; font-weight: 700; }
+
+  /* ── Substeps ── */
+  .substep {
+    background: #0d0f14;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 10px 0;
+  }
+
+  .substep-label {
+    font-size: 0.78rem;
+    color: var(--accent);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+  }
+
+  /* ── Code blocks ── */
+  pre, code {
+    font-family: 'IBM Plex Mono', monospace;
+    direction: ltr;
+    text-align: left;
+  }
+
+  pre {
+    background: #090b10;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 18px;
+    overflow-x: auto;
+    font-size: 0.85rem;
+    color: #a8d8c8;
+    margin: 10px 0;
+    position: relative;
+  }
+
+  .copy-btn {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text-dim);
+    font-size: 0.72rem;
+    padding: 3px 10px;
+    cursor: pointer;
+    font-family: 'Cairo', sans-serif;
+    transition: all 0.2s;
+  }
+
+  .copy-btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+  /* ── Alert boxes ── */
+  .alert {
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 12px 0;
+    font-size: 0.9rem;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .alert.warning { background: #2a1f0a; border: 1px solid #6b4c00; color: #f4c542; }
+  .alert.info    { background: #0a1a2a; border: 1px solid #00416b; color: #5bc8f4; }
+  .alert.success { background: #0a2a1a; border: 1px solid #006b2a; color: #42f4a0; }
+
+  .alert .icon { font-size: 1.1rem; flex-shrink: 0; }
+
+  /* ── File tree ── */
+  .file-tree {
+    background: #090b10;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 20px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.85rem;
+    direction: ltr;
+    text-align: left;
+    line-height: 1.9;
+  }
+
+  .file-tree .dir  { color: var(--accent); }
+  .file-tree .file { color: var(--text); }
+  .file-tree .note { color: var(--text-dim); font-size: 0.78rem; }
+
+  /* ── Tags ── */
+  .tag {
+    display: inline-block;
+    background: rgba(91,106,240,0.15);
+    border: 1px solid rgba(91,106,240,0.3);
+    color: var(--accent);
+    border-radius: 6px;
+    padding: 1px 8px;
+    font-size: 0.78rem;
+    margin: 2px;
+  }
+
+  /* ── Section title ── */
+  .section-title {
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: #fff;
+    margin: 36px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* ── Flow diagram ── */
+  .flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    flex-wrap: wrap;
+    margin: 20px 0;
+  }
+
+  .flow-node {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 18px;
+    font-size: 0.85rem;
+    text-align: center;
+    min-width: 100px;
+  }
+
+  .flow-node .icon { font-size: 1.4rem; display: block; margin-bottom: 4px; }
+
+  .flow-arrow {
+    color: var(--accent);
+    font-size: 1.4rem;
+    padding: 0 6px;
+  }
+
+  /* ── Env table ── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 0.88rem;
+  }
+
+  th {
+    background: #090b10;
+    color: var(--accent);
+    font-weight: 700;
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    text-align: right;
+  }
+
+  td {
+    padding: 9px 14px;
+    border: 1px solid var(--border);
+    color: var(--text);
+    vertical-align: top;
+  }
+
+  td:first-child {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.82rem;
+    color: var(--green);
+    direction: ltr;
+    text-align: left;
+  }
+
+  tr:nth-child(even) td { background: #0d0f14; }
+
+  /* ── Scrollbar ── */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🤖 بوت تلجرام → يوتيوب + انستاغرام</h1>
+  <p>دليل الإعداد الكامل خطوة بخطوة</p>
+  <div class="badges">
+    <span class="badge">Python 3.11+</span>
+    <span class="badge">python-telegram-bot</span>
+    <span class="badge">YouTube Data API v3</span>
+    <span class="badge">instagrapi</span>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- ── Flow ── -->
+  <div class="section-title">كيف يعمل البوت</div>
+  <div class="flow">
+    <div class="flow-node"><span class="icon">📱</span>تلجرام</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node"><span class="icon">🤖</span>البوت</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node"><span class="icon">▶️</span>يوتيوب</div>
+    <div class="flow-arrow">+</div>
+    <div class="flow-node"><span class="icon">📸</span>انستاغرام</div>
+  </div>
+  <p style="text-align:center;color:var(--text-dim);font-size:0.85rem;margin-top:-8px;">ترسل الفيديو للبوت → يرفعه تلقائياً على المنصتين</p>
+
+  <!-- ── هيكل المشروع ── -->
+  <div class="section-title">هيكل الملفات</div>
+  <div class="file-tree">
+<span class="dir">telegram_video_bot/</span>
+├── <span class="file">main.py</span>              <span class="note">← البوت الرئيسي</span>
+├── <span class="file">youtube_uploader.py</span>  <span class="note">← رفع يوتيوب</span>
+├── <span class="file">instagram_uploader.py</span> <span class="note">← نشر انستاغرام</span>
+├── <span class="file">requirements.txt</span>
+├── <span class="file">.env</span>                 <span class="note">← بياناتك السرية</span>
+└── <span class="file">client_secrets.json</span>  <span class="note">← من Google Cloud</span>
+  </div>
+
+  <!-- ── الخطوة 1: تلجرام ── -->
+  <div class="section-title">خطوات الإعداد</div>
+
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">1</div>
+      <h2>📱 إنشاء بوت تلجرام</h2>
+    </div>
+
+    <div class="substep">
+      <div class="substep-label">أ — إنشاء البوت</div>
+      افتح تلجرام وابحث عن <strong>@BotFather</strong> ثم أرسل:
+      <pre><code>/newbot</code><button class="copy-btn" onclick="copyCode(this)">نسخ</button></pre>
+      اتبع التعليمات وستحصل على <strong>توكن</strong> مثل:
+      <pre><code>1234567890:AAFxxxxxxxxxxxxxxx</code></pre>
+    </div>
+
+    <div class="substep">
+      <div class="substep-label">ب — معرفة User ID الخاص بك</div>
+      ابحث عن <strong>@userinfobot</strong> وأرسل له <code>/start</code>
+      سيُرجع لك رقمك مثل: <code>123456789</code>
+    </div>
+  </div>
+
+  <!-- ── الخطوة 2: يوتيوب ── -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">2</div>
+      <h2>▶️ إعداد YouTube API</h2>
+    </div>
+
+    <div class="substep">
+      <div class="substep-label">أ — إنشاء مشروع Google Cloud</div>
+      <ol style="padding-right:18px;margin-top:8px;line-height:2.2">
+        <li>اذهب إلى <strong>console.cloud.google.com</strong></li>
+        <li>أنشئ مشروعاً جديداً (New Project)</li>
+        <li>فعّل <strong>YouTube Data API v3</strong> من APIs & Services → Library</li>
+      </ol>
+    </div>
+
+    <div class="substep">
+      <div class="substep-label">ب — إنشاء بيانات OAuth 2.0</div>
+      <ol style="padding-right:18px;margin-top:8px;line-height:2.2">
+        <li>APIs & Services → Credentials → Create Credentials</li>
+        <li>اختر <strong>OAuth 2.0 Client IDs</strong></li>
+        <li>Application type: <strong>Desktop app</strong></li>
+        <li>حمّل ملف <strong>client_secrets.json</strong> وضعه في مجلد البوت</li>
+      </ol>
+    </div>
+
+    <div class="substep">
+      <div class="substep-label">ج — أضف حسابك كـ Test User</div>
+      OAuth consent screen → Test users → أضف بريد Google الخاص بقناتك
+    </div>
+
+    <div class="alert warning">
+      <span class="icon">⚠️</span>
+      <span>في أول تشغيل سيفتح المتصفح تلقائياً لتسجيل الدخول. بعدها تُحفظ الجلسة في <code>youtube_token.pickle</code></span>
+    </div>
+  </div>
+
+  <!-- ── الخطوة 3: انستاغرام ── -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">3</div>
+      <h2>📸 إعداد انستاغرام</h2>
+    </div>
+
+    <div class="alert info">
+      <span class="icon">ℹ️</span>
+      <span>البوت يستخدم مكتبة <strong>instagrapi</strong> (غير رسمية). تأكد من تفعيل التحقق بخطوتين إن طلبه انستاغرام.</span>
+    </div>
+
+    <div class="substep">
+      <div class="substep-label">المتطلبات</div>
+      <ul style="padding-right:18px;line-height:2.2">
+        <li>حساب انستاغرام عادي أو Creator/Business</li>
+        <li>يُفضّل استخدام حساب لا يحتوي على 2FA لأول مرة</li>
+        <li>اسم المستخدم وكلمة المرور فقط</li>
+      </ul>
+    </div>
+
+    <div class="alert warning">
+      <span class="icon">⚠️</span>
+      <span>لا تُفرط في الرفع (أكثر من 10 فيديوهات يومياً) لتجنب الحظر المؤقت.</span>
+    </div>
+  </div>
+
+  <!-- ── الخطوة 4: ملف .env ── -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">4</div>
+      <h2>⚙️ إعداد ملف .env</h2>
+    </div>
+
+    انسخ الملف وعدّل القيم:
+    <pre><code>cp .env.example .env</code><button class="copy-btn" onclick="copyCode(this)">نسخ</button></pre>
+
+    <table>
+      <tr><th>المتغير</th><th>القيمة</th><th>من أين؟</th></tr>
+      <tr>
+        <td>TELEGRAM_BOT_TOKEN</td>
+        <td>توكن البوت</td>
+        <td>@BotFather</td>
+      </tr>
+      <tr>
+        <td>ALLOWED_USER_ID</td>
+        <td>معرّفك الرقمي</td>
+        <td>@userinfobot</td>
+      </tr>
+      <tr>
+        <td>INSTAGRAM_USERNAME</td>
+        <td>اسم المستخدم</td>
+        <td>حسابك</td>
+      </tr>
+      <tr>
+        <td>INSTAGRAM_PASSWORD</td>
+        <td>كلمة المرور</td>
+        <td>حسابك</td>
+      </tr>
+      <tr>
+        <td>YOUTUBE_CLIENT_SECRETS</td>
+        <td>client_secrets.json</td>
+        <td>Google Cloud</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- ── الخطوة 5: تثبيت وتشغيل ── -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">5</div>
+      <h2>🚀 تثبيت وتشغيل البوت</h2>
+    </div>
+
+    <div class="substep">
+      <div class="substep-label">تثبيت المكتبات</div>
+      <pre><code>cd telegram_video_bot
+pip install -r requirements.txt</code><button class="copy-btn" onclick="copyCode(this)">نسخ</button></pre>
+    </div>
+
+    <div class="substep">
+      <div class="substep-label">تشغيل البوت</div>
+      <pre><code>python main.py</code><button class="copy-btn" onclick="copyCode(this)">نسخ</button></pre>
+    </div>
+
+    <div class="alert success">
+      <span class="icon">✅</span>
+      <span>في أول تشغيل سيفتح المتصفح لتسجيل الدخول على يوتيوب. بعدها يعمل البوت بشكل تلقائي.</span>
+    </div>
+  </div>
+
+  <!-- ── التشغيل الدائم ── -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">6</div>
+      <h2>🔄 تشغيل دائم (اختياري)</h2>
+    </div>
+
+    <p style="margin-bottom:12px;">لتشغيل البوت على سيرفر Linux بشكل دائم:</p>
+
+    <div class="substep">
+      <div class="substep-label">باستخدام systemd</div>
+      <pre><code>[Unit]
+Description=Telegram Video Bot
+After=network.target
+
+[Service]
+WorkingDirectory=/path/to/telegram_video_bot
+ExecStart=/usr/bin/python3 main.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target</code><button class="copy-btn" onclick="copyCode(this)">نسخ</button></pre>
+    </div>
+
+    <div class="substep">
+      <div class="substep-label">أو باستخدام screen</div>
+      <pre><code>screen -S bot
+python main.py
+# Ctrl+A ثم D للخروج مع إبقاء البوت يعمل</code><button class="copy-btn" onclick="copyCode(this)">نسخ</button></pre>
+    </div>
+  </div>
+
+  <!-- ── استخدام البوت ── -->
+  <div class="section-title">كيفية استخدام البوت</div>
+
+  <div class="step" style="border-color:var(--green)">
+    <p style="margin-bottom:14px;">بعد تشغيل البوت، افتح محادثته على تلجرام:</p>
+    <ol style="padding-right:20px;line-height:2.4">
+      <li>أرسل الفيديو كـ <strong>File</strong> (وليس كفيديو مضغوط)</li>
+      <li>أضف <strong>كابشن</strong> (اختياري):
+        <pre><code>عنوان الفيديو هنا
+وصف الفيديو
+#هاشتاق1 #هاشتاق2</code></pre>
+      </li>
+      <li>سيرسل البوت تقرير النشر عند الانتهاء ✅</li>
+    </ol>
+
+    <div style="margin-top:16px">
+      <div class="substep-label">الأوامر المتاحة</div>
+      <table>
+        <tr><th>الأمر</th><th>الوظيفة</th></tr>
+        <tr><td>/start</td><td>عرض رسالة الترحيب</td></tr>
+        <tr><td>/status</td><td>فحص اتصال يوتيوب وانستاغرام</td></tr>
+        <tr><td>/help</td><td>عرض التعليمات</td></tr>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function copyCode(btn) {
+  const pre  = btn.parentElement;
+  const code = pre.querySelector('code');
+  navigator.clipboard.writeText(code.innerText).then(() => {
+    const orig = btn.textContent;
+    btn.textContent = '✓ تم';
+    setTimeout(() => btn.textContent = orig, 1500);
+  });
+}
+</script>
+</body>
+</html>

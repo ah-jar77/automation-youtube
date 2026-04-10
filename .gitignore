@@ -1,0 +1,23 @@
+# # Python
+# __pycache__/
+# *.py[cod]
+# .python-version
+# .venv/
+# venv/
+
+# # Runtime files
+# downloads/
+# bot.log
+
+# # Secrets
+# .env
+# client_secrets.json
+# youtube_token.pickle
+# youtube_token.json
+# instagram_session.json
+# C:\Users\MC
+# # Tooling
+# .git/
+# .pytest_cache/
+# .mypy_cache/
+
