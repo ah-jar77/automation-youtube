@@ -46,12 +46,12 @@ HTTPS_PROXY = os.getenv("HTTPS_PROXY") or os.getenv("https_proxy")
 # ── مصادقة كلمة المرور ────────────────────────────────────────
 auth_sessions: dict[int, float] = {}  # user_id -> last auth timestamp
 AUTH_TIMEOUT_HOURS = 24
-CURRENT_YOUTUBE_TOKEN = "youtube_token.pickle"
+CURRENT_YOUTUBE_TOKEN = "secret1/youtube_token.pickle"
 pending_change_auth: set[int] = set() # users waiting to auth for /change
 
 def get_active_channel_name() -> str:
     """إرجاع الاسم المستعار للقناة النشطة"""
-    if CURRENT_YOUTUBE_TOKEN == "youtube_token.pickle":
+    if CURRENT_YOUTUBE_TOKEN == "secret1/youtube_token.pickle":
         return "1 رو"
     return "2 مار"
 
@@ -169,7 +169,7 @@ async def status(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
             uploader = YouTubeUploader(token_file=CURRENT_YOUTUBE_TOKEN)
             yt_ok = uploader.test_connection()
             status_text = "متصل" if yt_ok else "غير متصل"
-            token_name = "القناة 1" if CURRENT_YOUTUBE_TOKEN == "youtube_token.pickle" else "القناة 2"
+            token_name = "القناة 1" if CURRENT_YOUTUBE_TOKEN == "secret1/youtube_token.pickle" else "القناة 2"
             lines.append(f"{'✅' if yt_ok else '❌'} يوتيوب ({token_name}: {status_text})")
         except Exception as e:
             logger.error(f"YouTube status check failed: {e}")
@@ -394,9 +394,9 @@ async def handle_change_choice(update: Update, context: ContextTypes.DEFAULT_TYP
     data = query.data
     
     if data == "set_yt_1":
-        CURRENT_YOUTUBE_TOKEN = "youtube_token.pickle"
+        CURRENT_YOUTUBE_TOKEN = "secret1/youtube_token.pickle"
     elif data == "set_yt_2":
-        CURRENT_YOUTUBE_TOKEN = "youtube_token2.pickle"
+        CURRENT_YOUTUBE_TOKEN = "secret1/youtube_token2.pickle"
     else:
         return
 
