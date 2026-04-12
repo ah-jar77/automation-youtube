@@ -19,7 +19,7 @@ logger = logging.getLogger(__name__)
 SCOPES          = ["https://www.googleapis.com/auth/youtube.upload"]
 CLIENT_SECRETS  = os.getenv("YOUTUBE_CLIENT_SECRETS", "client_secrets.json")
 class YouTubeUploader:
-    def __init__(self, token_file: str = "secret1/youtube_token.pickle"):
+    def __init__(self, token_file: str = "youtube_token.pickle"):
         self.token_file = token_file
         self.service = self._get_service()
 
@@ -60,7 +60,7 @@ class YouTubeUploader:
         يرفع الفيديو على يوتيوب ويُعيد رابطه.
         """
         # منطق العناوين المخصصة لكل قناة
-        if self.token_file == "secret1/youtube_token2.pickle":
+        if self.token_file == "youtube_token2.pickle":
             final_title = "كود خصم نون mar110k"
         else:
             # القناة الأولى (الافتراضية)

@@ -12,7 +12,7 @@ bot.log
 # # Secrets
 # .env
 # client_secrets.json
-# secret1/youtube_token.pickle
+# youtube_token.pickle
 # youtube_token.json
 # instagram_session.json
 # C:\Users\MC
