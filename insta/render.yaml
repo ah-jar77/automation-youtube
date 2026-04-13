@@ -1,0 +1,24 @@
+services:
+  - type: worker
+    name: instagram-reel-bot
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: IG_USER_ID
+        sync: false
+      - key: IG_ACCESS_TOKEN
+        sync: false
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        sync: false
+      - key: CLOUDINARY_API_SECRET
+        sync: false
+      - key: INSTAGRAM_CAPTION
+        value: "🔥 #reels #explore"
+      - key: ALLOWED_USER_IDS
+        sync: false   # اتركه فارغاً لو تبي كل الناس يستخدمونه

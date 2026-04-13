@@ -7,6 +7,7 @@ import os
 import logging
 import asyncio
 from pathlib import Path
+from typing import Optional, List, Dict, Set, Union
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, ReplyParameters
 from telegram.ext import (
     Application,
@@ -18,8 +19,12 @@ from telegram.ext import (
 )
 from dotenv import load_dotenv
 from youtube_uploader import YouTubeUploader
+import cloudinary
+import cloudinary.uploader
 
 load_dotenv()
+
+from insta.instagram import post_reel
 
 # ── إعداد اللوق ──────────────────────────────────────────────
 logging.basicConfig(
@@ -36,8 +41,17 @@ logger = logging.getLogger(__name__)
 BOT_TOKEN        = os.getenv("TELEGRAM_BOT_TOKEN")
 ALLOWED_USER_ID  = int(os.getenv("ALLOWED_USER_ID", "0"))
 BOT_PASSWORD      = os.getenv("BOT_PASSWORD", "159951")
+INSTAGRAM_CAPTION = os.getenv("INSTAGRAM_CAPTION", "💛كود خصم نون الجديد : 🎀 Rimy 🎀")
+# جعل المنصات متغيرة ديناميكياً
 ENABLE_YOUTUBE   = os.getenv("ENABLE_YOUTUBE", "true").lower() == "true"
-ENABLE_INSTAGRAM = False # os.getenv("ENABLE_INSTAGRAM", "false").lower() == "true"
+ENABLE_INSTAGRAM = os.getenv("ENABLE_INSTAGRAM", "true").lower() == "true"
+
+# إعداد Cloudinary
+cloudinary.config(
+    cloud_name = os.getenv("CLOUDINARY_CLOUD_NAME"),
+    api_key    = os.getenv("CLOUDINARY_API_KEY"),
+    api_secret = os.getenv("CLOUDINARY_API_SECRET"),
+)
 
 # إعدادات البروكسي (إذا كنت تستخدم واحداً)
 HTTP_PROXY = os.getenv("HTTP_PROXY") or os.getenv("http_proxy")
@@ -51,9 +65,20 @@ pending_change_auth: set[int] = set() # users waiting to auth for /change
 
 def get_active_channel_name() -> str:
     """إرجاع الاسم المستعار للقناة النشطة"""
-    if CURRENT_YOUTUBE_TOKEN == "youtube_token.pickle":
-        return "1 رو"
-    return "2 مار"
+    base = "2 مار" if "youtube_token2.pickle" in CURRENT_YOUTUBE_TOKEN else "1 رو"
+    if "secret1/" in CURRENT_YOUTUBE_TOKEN:
+        return f"{base} (S1)"
+    return base
+
+def toggle_token_path():
+    """تبديل مسار التوكن بين المجلد الرئيسي ومجلد secret1"""
+    global CURRENT_YOUTUBE_TOKEN
+    old_token = CURRENT_YOUTUBE_TOKEN
+    if CURRENT_YOUTUBE_TOKEN.startswith("secret1/"):
+        CURRENT_YOUTUBE_TOKEN = CURRENT_YOUTUBE_TOKEN.replace("secret1/", "")
+    else:
+        CURRENT_YOUTUBE_TOKEN = f"secret1/{CURRENT_YOUTUBE_TOKEN}"
+    logger.info(f"🔄 تم تبديل مسار التوكن: {old_token} -> {CURRENT_YOUTUBE_TOKEN}")
 
 def _is_authenticated(user_id: int) -> bool:
     """يتحقق إذا كان المستخدم مصادقاً خلال آخر 24 ساعة"""
@@ -169,14 +194,14 @@ async def status(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
             uploader = YouTubeUploader(token_file=CURRENT_YOUTUBE_TOKEN)
             yt_ok = uploader.test_connection()
             status_text = "متصل" if yt_ok else "غير متصل"
-            token_name = "القناة 1" if CURRENT_YOUTUBE_TOKEN == "youtube_token.pickle" else "القناة 2"
+            token_name = get_active_channel_name()
             lines.append(f"{'✅' if yt_ok else '❌'} يوتيوب ({token_name}: {status_text})")
         except Exception as e:
             logger.error(f"YouTube status check failed: {e}")
             lines.append("❌ يوتيوب")
 
     if ENABLE_INSTAGRAM:
-        lines.append("⏸️ انستاغرام (معطل)")
+        lines.append("✅ انستاغرام (مفعل)")
 
     if not lines:
         lines.append("⚠️ لا توجد منصات مفعلة")
@@ -226,6 +251,21 @@ async def _update_status_reply(message, status_message, text: str):
     except Exception as e:
         logger.warning(f"تعذر تعديل رسالة الحالة الحالية: {e}")
         return await _send_status_reply(message, text)
+
+
+async def _upload_to_cloudinary(file_path: Path) -> Optional[str]:
+    """يرفع الفيديو إلى Cloudinary ويُعيد الرابط العام."""
+    try:
+        result = cloudinary.uploader.upload(
+            str(file_path),
+            resource_type="video",
+            folder="instagram_reels",
+            overwrite=True,
+        )
+        return result.get("secure_url")
+    except Exception as e:
+        logger.error(f"Fails to upload to Cloudinary: {e}")
+        return None
 
 
 def _format_error_text(error: object, fallback: str = "خطأ غير معروف") -> str:
@@ -319,14 +359,56 @@ async def handle_video(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
             )
             logger.info(f"يوتيوب ✅: {yt_url}")
         except Exception as e:
-            yt_err = _format_error_text(e)
-            logger.error(f"يوتيوب ❌: {e}")
+            # التحقق من انتهاء الكوتا (Quota Exceeded)
+            error_str = str(e).lower()
+            if "quota" in error_str or "limit" in error_str or "exceeded" in error_str:
+                logger.warning(f"⚠️ انتهاء الكوتا ({CURRENT_YOUTUBE_TOKEN}). جاري تبديل ملف التوكن والمحاولة مجدداً...")
+                toggle_token_path()
+                try:
+                    uploader = YouTubeUploader(token_file=CURRENT_YOUTUBE_TOKEN)
+                    yt_url   = uploader.upload(
+                        video_path  = str(file_path),
+                        title       = title,
+                        description = desc or f"{title}\n\n{' '.join(hashtags)}",
+                        tags        = hashtags,
+                    )
+                    logger.info(f"يوتيوب ✅ (بعد تبديل التوكن): {yt_url}")
+                except Exception as e2:
+                    yt_err = _format_error_text(e2)
+                    logger.error(f"يوتيوب ❌ بعد تبديل التوكن: {e2}")
+            else:
+                yt_err = _format_error_text(e)
+                logger.error(f"يوتيوب ❌: {e}")
 
     # ── رفع على انستاغرام ──
     ig_url = None
     ig_err = None
     if ENABLE_INSTAGRAM:
-        ig_err = "انستاغرام معطل حالياً"
+        try:
+            status_msg = await _update_status_reply(
+                message, status_msg,
+                "\n".join([
+                    "⏳ هذا الفيديو قيد المعالجة",
+                    f"العنوان: {title}",
+                    "المرحلة: جاري الرفع إلى انستاغرام",
+                    "(يتم الرفع إلى Cloudinary أولاً...)"
+                ])
+            )
+            
+            # 1. الرفع إلى Cloudinary للحصول على رابط عمومي
+            video_url = await _upload_to_cloudinary(file_path)
+            if not video_url:
+                ig_err = "فشل الرفع إلى Cloudinary"
+            else:
+                # 2. النشر عبر API الرسمية
+                success = post_reel(video_url, INSTAGRAM_CAPTION)
+                if success:
+                    ig_url = "تم النشر بنجاح ✅"
+                else:
+                    ig_err = "فشل النشر عبر Instagram API"
+        except Exception as e:
+            ig_err = _format_error_text(e)
+            logger.error(f"انستاغرام ❌: {e}")
 
     # ── حذف الملف بعد نجاح الرفع ──
     video_deleted = False
@@ -393,6 +475,7 @@ async def handle_change_choice(update: Update, context: ContextTypes.DEFAULT_TYP
     global CURRENT_YOUTUBE_TOKEN
     data = query.data
     
+    is_secret = "secret1/" in CURRENT_YOUTUBE_TOKEN
     if data == "set_yt_1":
         CURRENT_YOUTUBE_TOKEN = "youtube_token.pickle"
     elif data == "set_yt_2":
@@ -400,8 +483,46 @@ async def handle_change_choice(update: Update, context: ContextTypes.DEFAULT_TYP
     else:
         return
 
+    if is_secret:
+        CURRENT_YOUTUBE_TOKEN = f"secret1/{CURRENT_YOUTUBE_TOKEN}"
+
     channel_name = get_active_channel_name()
     await query.edit_message_text(f"✅ تم تغيير القناة النشطة إلى: *{channel_name}*\nملف التوكن: `{CURRENT_YOUTUBE_TOKEN}`", parse_mode="Markdown")
+
+async def platform_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    """تغيير المنصات النشطة"""
+    user_id = update.effective_user.id
+    if not _is_authenticated(user_id):
+        await update.message.reply_text("🔒 يرجى تسجيل الدخول بـ /login")
+        return
+
+    keyboard = [
+        [InlineKeyboardButton(f"YouTube: {'✅' if ENABLE_YOUTUBE else '❌'}", callback_data="toggle_yt")],
+        [InlineKeyboardButton(f"Instagram: {'✅' if ENABLE_INSTAGRAM else '❌'}", callback_data="toggle_ig")]
+    ]
+    await update.message.reply_text("⚙️ اختر المنصات النشطة لنشر الفيديوهات:", reply_markup=InlineKeyboardMarkup(keyboard))
+
+async def handle_toggle_platform(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    """معالجة أزرار تبديل المنصات"""
+    query = update.callback_query
+    await query.answer()
+    
+    global ENABLE_YOUTUBE, ENABLE_INSTAGRAM
+    data = query.data
+    
+    if data == "toggle_yt":
+        ENABLE_YOUTUBE = not ENABLE_YOUTUBE
+    elif data == "toggle_ig":
+        ENABLE_INSTAGRAM = not ENABLE_INSTAGRAM
+
+    keyboard = [
+        [InlineKeyboardButton(f"YouTube: {'✅' if ENABLE_YOUTUBE else '❌'}", callback_data="toggle_yt")],
+        [InlineKeyboardButton(f"Instagram: {'✅' if ENABLE_INSTAGRAM else '❌'}", callback_data="toggle_ig")]
+    ]
+    try:
+        await query.edit_message_reply_markup(reply_markup=InlineKeyboardMarkup(keyboard))
+    except Exception:
+        pass
 
 # ── تشغيل البوت ───────────────────────────────────────────────
 
@@ -434,12 +555,13 @@ def main() -> None:
     app.add_handler(CommandHandler("ahmed",  start))
     app.add_handler(CommandHandler("status", status))
     app.add_handler(CommandHandler("change", change_channel))
-    app.add_handler(CommandHandler("help",   help_command))
+    app.add_handler(CommandHandler("platform", platform_command))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_password))
     app.add_handler(
         MessageHandler(filters.VIDEO | filters.Document.VIDEO, handle_video)
     )
     app.add_handler(CallbackQueryHandler(handle_change_choice, pattern="^set_yt_"))
+    app.add_handler(CallbackQueryHandler(handle_toggle_platform, pattern="^toggle_"))
 
     logger.info("🤖 البوت يعمل الآن...")
     

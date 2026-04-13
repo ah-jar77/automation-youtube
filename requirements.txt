@@ -4,3 +4,5 @@ google-api-python-client==2.136.0
 google-auth-httplib2==0.2.0
 google-auth-oauthlib==1.2.1
 Pillow>=10.0.0
+cloudinary==1.40.0
+requests==2.31.0
