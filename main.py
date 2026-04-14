@@ -305,6 +305,11 @@ async def handle_video(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
     desc     = "\n".join(lines[1:]).strip() if len(lines) > 1 else ""
     hashtags = _extract_hashtags(desc)
 
+    # إذا كانت القناة رقم 2، نثبت العنوان ليطابق الرفع
+    if "youtube_token2.pickle" in CURRENT_YOUTUBE_TOKEN:
+        title = "كود خصم نون mar110k"
+
+
     status_msg = await _send_status_reply(
         message,
         "\n".join([

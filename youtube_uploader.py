@@ -60,16 +60,20 @@ class YouTubeUploader:
         يرفع الفيديو على يوتيوب ويُعيد رابطه.
         """
         # منطق العناوين المخصصة لكل قناة
-        if self.token_file == "youtube_token2.pickle":
+        if "youtube_token2.pickle" in self.token_file:
             final_title = "كود خصم نون mar110k"
         else:
-            # القناة الأولى (الافتراضية)
-            final_title = "#اكسبلور #fypシ #ترند #مالي_خلق_احط_هاشتاقات #رياكشن #ضحك #shortvideo #تيك_توك #لايك"
+            # القناة الأولى (أو أي قناة أخرى) تستخدم العنوان القادم من تليجرام
+            # إذا كان العنوان هو الافتراضي "فيديو جديد"، نستخدم الهاشتاقات القديمة كعنوان
+            if title == "فيديو جديد":
+                final_title = "#اكسبلور #fypシ #ترند #مالي_خلق_احط_هاشتاقات #رياكشن #ضحك #shortvideo #تيك_توك #لايك"
+            else:
+                final_title = title
 
         body = {
             "snippet": {
                 "title":       final_title,
-                "description": " ", # الوصف دائماً فارغ
+                "description":  " ",
                 "tags":        tags or [],
                 "categoryId":  category_id,
             },
