@@ -60,25 +60,33 @@ HTTPS_PROXY = os.getenv("HTTPS_PROXY") or os.getenv("https_proxy")
 # ── مصادقة كلمة المرور ────────────────────────────────────────
 auth_sessions: dict[int, float] = {}  # user_id -> last auth timestamp
 AUTH_TIMEOUT_HOURS = 24
-CURRENT_YOUTUBE_TOKEN = "youtube_token.pickle"
+ACTIVE_YOUTUBE_TOKENS = ["youtube_token.pickle"]
 pending_change_auth: set[int] = set() # users waiting to auth for /change
 
 def get_active_channel_name() -> str:
-    """إرجاع الاسم المستعار للقناة النشطة"""
-    base = "2 مار" if "youtube_token2.pickle" in CURRENT_YOUTUBE_TOKEN else "1 رو"
-    if "secret1/" in CURRENT_YOUTUBE_TOKEN:
-        return f"{base} (S1)"
-    return base
+    """إرجاع الاسم المستعار للقناة/القنوات النشطة"""
+    names = []
+    for token in ACTIVE_YOUTUBE_TOKENS:
+        base = "2 مار" if "youtube_token2.pickle" in token else "1 رو"
+        if "secret1/" in token:
+            names.append(f"{base} (S1)")
+        else:
+            names.append(base)
+    return " + ".join(names)
 
 def toggle_token_path():
-    """تبديل مسار التوكن بين المجلد الرئيسي ومجلد secret1"""
-    global CURRENT_YOUTUBE_TOKEN
-    old_token = CURRENT_YOUTUBE_TOKEN
-    if CURRENT_YOUTUBE_TOKEN.startswith("secret1/"):
-        CURRENT_YOUTUBE_TOKEN = CURRENT_YOUTUBE_TOKEN.replace("secret1/", "")
-    else:
-        CURRENT_YOUTUBE_TOKEN = f"secret1/{CURRENT_YOUTUBE_TOKEN}"
-    logger.info(f"🔄 تم تبديل مسار التوكن: {old_token} -> {CURRENT_YOUTUBE_TOKEN}")
+    """تبديل مسار التوكنات بين المجلد الرئيسي ومجلد secret1"""
+    global ACTIVE_YOUTUBE_TOKENS
+    new_tokens = []
+    for token in ACTIVE_YOUTUBE_TOKENS:
+        if token.startswith("secret1/"):
+            new_tokens.append(token.replace("secret1/", ""))
+        else:
+            new_tokens.append(f"secret1/{token}")
+    
+    old_names = ", ".join(ACTIVE_YOUTUBE_TOKENS)
+    ACTIVE_YOUTUBE_TOKENS = new_tokens
+    logger.info(f"🔄 تم تبديل مسار التوكنات: {old_names} -> {', '.join(ACTIVE_YOUTUBE_TOKENS)}")
 
 def _is_authenticated(user_id: int) -> bool:
     """يتحقق إذا كان المستخدم مصادقاً خلال آخر 24 ساعة"""
@@ -120,7 +128,8 @@ async def handle_password(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
             pending_change_auth.remove(user_id)
             keyboard = InlineKeyboardMarkup([
                 [InlineKeyboardButton("📺 القناة الأولى (1)", callback_data="set_yt_1")],
-                [InlineKeyboardButton("📺 القناة الثانية (2)", callback_data="set_yt_2")]
+                [InlineKeyboardButton("📺 القناة الثانية (2)", callback_data="set_yt_2")],
+                [InlineKeyboardButton("📺 القناتين (1 + 2)", callback_data="set_yt_both")]
             ])
             await update.message.reply_text("✅ تم التحقق. اختر القناة المراد تفعيلها:", reply_markup=keyboard)
             return
@@ -190,15 +199,17 @@ async def status(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     lines = []
 
     if ENABLE_YOUTUBE:
-        try:
-            uploader = YouTubeUploader(token_file=CURRENT_YOUTUBE_TOKEN)
-            yt_ok = uploader.test_connection()
-            status_text = "متصل" if yt_ok else "غير متصل"
-            token_name = get_active_channel_name()
-            lines.append(f"{'✅' if yt_ok else '❌'} يوتيوب ({token_name}: {status_text})")
-        except Exception as e:
-            logger.error(f"YouTube status check failed: {e}")
-            lines.append("❌ يوتيوب")
+        for token in ACTIVE_YOUTUBE_TOKENS:
+            try:
+                uploader = YouTubeUploader(token_file=token)
+                yt_ok = uploader.test_connection()
+                status_text = "متصل" if yt_ok else "غير متصل"
+                ch_name = "2 مار" if "youtube_token2.pickle" in token else "1 رو"
+                if "secret1/" in token: ch_name += " (S1)"
+                lines.append(f"{'✅' if yt_ok else '❌'} يوتيوب ({ch_name}: {status_text})")
+            except Exception as e:
+                logger.error(f"YouTube status check failed for {token}: {e}")
+                lines.append(f"❌ يوتيوب ({token})")
 
     if ENABLE_INSTAGRAM:
         lines.append("✅ انستاغرام (مفعل)")
@@ -305,11 +316,6 @@ async def handle_video(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
     desc     = "\n".join(lines[1:]).strip() if len(lines) > 1 else ""
     hashtags = _extract_hashtags(desc)
 
-    # إذا كانت القناة رقم 2، نثبت العنوان ليطابق الرفع
-    if "youtube_token2.pickle" in CURRENT_YOUTUBE_TOKEN:
-        title = "كود خصم نون mar110k"
-
-
     status_msg = await _send_status_reply(
         message,
         "\n".join([
@@ -351,39 +357,48 @@ async def handle_video(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
     )
 
     # ── رفع على يوتيوب ──
-    yt_url  = None
-    yt_err  = None
+    yt_results = [] # list of (url, err)
     if ENABLE_YOUTUBE:
-        try:
-            uploader = YouTubeUploader(token_file=CURRENT_YOUTUBE_TOKEN)
-            yt_url   = uploader.upload(
-                video_path  = str(file_path),
-                title       = title,
-                description = desc or f"{title}\n\n{' '.join(hashtags)}",
-                tags        = hashtags,
-            )
-            logger.info(f"يوتيوب ✅: {yt_url}")
-        except Exception as e:
-            # التحقق من انتهاء الكوتا (Quota Exceeded)
-            error_str = str(e).lower()
-            if "quota" in error_str or "limit" in error_str or "exceeded" in error_str:
-                logger.warning(f"⚠️ انتهاء الكوتا ({CURRENT_YOUTUBE_TOKEN}). جاري تبديل ملف التوكن والمحاولة مجدداً...")
-                toggle_token_path()
-                try:
-                    uploader = YouTubeUploader(token_file=CURRENT_YOUTUBE_TOKEN)
-                    yt_url   = uploader.upload(
-                        video_path  = str(file_path),
-                        title       = title,
-                        description = desc or f"{title}\n\n{' '.join(hashtags)}",
-                        tags        = hashtags,
-                    )
-                    logger.info(f"يوتيوب ✅ (بعد تبديل التوكن): {yt_url}")
-                except Exception as e2:
-                    yt_err = _format_error_text(e2)
-                    logger.error(f"يوتيوب ❌ بعد تبديل التوكن: {e2}")
-            else:
-                yt_err = _format_error_text(e)
-                logger.error(f"يوتيوب ❌: {e}")
+        for token in ACTIVE_YOUTUBE_TOKENS:
+            current_token = token
+            # منطق العنوان المخصص للقناة الثانية
+            current_title = title
+            if "youtube_token2.pickle" in current_token:
+                current_title = "كود خصم نون mar110k"
+
+            try:
+                uploader = YouTubeUploader(token_file=current_token)
+                url = uploader.upload(
+                    video_path  = str(file_path),
+                    title       = current_title,
+                    description = desc or f"{current_title}\n\n{' '.join(hashtags)}",
+                    tags        = hashtags,
+                )
+                yt_results.append((url, None))
+                logger.info(f"يوتيوب ✅ ({current_token}): {url}")
+            except Exception as e:
+                error_str = str(e).lower()
+                if "quota" in error_str or "limit" in error_str or "exceeded" in error_str:
+                    logger.warning(f"⚠️ انتهاء الكوتا ({current_token}). جاري تبديل ملفات التوكن والمحاولة مجدداً...")
+                    toggle_token_path()
+                    # بعد التبديل، نحتاج للحصول على المسار الجديد لهذا التوكن تحديداً
+                    new_token = f"secret1/{current_token}" if not current_token.startswith("secret1/") else current_token.replace("secret1/", "")
+                    try:
+                        uploader = YouTubeUploader(token_file=new_token)
+                        url = uploader.upload(
+                            video_path  = str(file_path),
+                            title       = current_title,
+                            description = desc or f"{current_title}\n\n{' '.join(hashtags)}",
+                            tags        = hashtags,
+                        )
+                        yt_results.append((url, None))
+                        logger.info(f"يوتيوب ✅ (بعد تبديل التوكن): {url}")
+                    except Exception as e2:
+                        yt_results.append((None, _format_error_text(e2)))
+                        logger.error(f"يوتيوب ❌ بعد تبديل التوكن ({new_token}): {e2}")
+                else:
+                    yt_results.append((None, _format_error_text(e)))
+                    logger.error(f"يوتيوب ❌ ({current_token}): {e}")
 
     # ── رفع على انستاغرام ──
     ig_url = None
@@ -420,7 +435,7 @@ async def handle_video(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
     delete_error = None
     file_size_mb = file_path.stat().st_size / (1024*1024)
     
-    uploaded_any = (yt_url is not None) or (ig_url is not None)
+    uploaded_any = any(res[0] for res in yt_results) or (ig_url is not None)
     if uploaded_any:
         try:
             file_path.unlink()
@@ -433,10 +448,17 @@ async def handle_video(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
     # ── التقرير النهائي ──
     result_lines = []
     if ENABLE_YOUTUBE:
-        if yt_url:
-            result_lines.append(f"▶️ يوتيوب: {yt_url}")
-        else:
-            result_lines.append(f"▶️ يوتيوب: ❌ {yt_err or 'فشل'}")
+        for i, (url, err) in enumerate(yt_results):
+            # نستخدم التوكنات الحالية للحصول على الاسم الصحيح في التقرير
+            if i < len(ACTIVE_YOUTUBE_TOKENS):
+                token = ACTIVE_YOUTUBE_TOKENS[i]
+                ch_name = "2 مار" if "youtube_token2.pickle" in token else "1 رو"
+                if "secret1/" in token: ch_name += " (S1)"
+                
+                if url:
+                    result_lines.append(f"▶️ يوتيوب ({ch_name}): {url}")
+                else:
+                    result_lines.append(f"▶️ يوتيوب ({ch_name}): ❌ {err or 'فشل'}")
     
     if ENABLE_INSTAGRAM:
         if ig_url:
@@ -477,22 +499,23 @@ async def handle_change_choice(update: Update, context: ContextTypes.DEFAULT_TYP
     query = update.callback_query
     await query.answer()
     
-    global CURRENT_YOUTUBE_TOKEN
+    global ACTIVE_YOUTUBE_TOKENS
     data = query.data
     
-    is_secret = "secret1/" in CURRENT_YOUTUBE_TOKEN
+    is_secret = any("secret1/" in t for t in ACTIVE_YOUTUBE_TOKENS)
+    prefix = "secret1/" if is_secret else ""
+
     if data == "set_yt_1":
-        CURRENT_YOUTUBE_TOKEN = "youtube_token.pickle"
+        ACTIVE_YOUTUBE_TOKENS = [f"{prefix}youtube_token.pickle"]
     elif data == "set_yt_2":
-        CURRENT_YOUTUBE_TOKEN = "youtube_token2.pickle"
+        ACTIVE_YOUTUBE_TOKENS = [f"{prefix}youtube_token2.pickle"]
+    elif data == "set_yt_both":
+        ACTIVE_YOUTUBE_TOKENS = [f"{prefix}youtube_token.pickle", f"{prefix}youtube_token2.pickle"]
     else:
         return
 
-    if is_secret:
-        CURRENT_YOUTUBE_TOKEN = f"secret1/{CURRENT_YOUTUBE_TOKEN}"
-
     channel_name = get_active_channel_name()
-    await query.edit_message_text(f"✅ تم تغيير القناة النشطة إلى: *{channel_name}*\nملف التوكن: `{CURRENT_YOUTUBE_TOKEN}`", parse_mode="Markdown")
+    await query.edit_message_text(f"✅ تم تغيير القناة النشطة إلى: *{channel_name}*")
 
 async def platform_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """تغيير المنصات النشطة"""
