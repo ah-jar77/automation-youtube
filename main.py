@@ -21,6 +21,7 @@ from dotenv import load_dotenv
 from youtube_uploader import YouTubeUploader
 import cloudinary
 import cloudinary.uploader
+import yt_dlp
 
 load_dotenv()
 
@@ -45,6 +46,7 @@ INSTAGRAM_CAPTION = os.getenv("INSTAGRAM_CAPTION", "💛كود خصم نون ا�
 # جعل المنصات متغيرة ديناميكياً
 ENABLE_YOUTUBE   = os.getenv("ENABLE_YOUTUBE", "true").lower() == "true"
 ENABLE_INSTAGRAM = os.getenv("ENABLE_INSTAGRAM", "true").lower() == "true"
+ENABLE_TIKTOK_DOWNLOAD = os.getenv("ENABLE_TIKTOK_DOWNLOAD", "false").lower() == "true"
 
 # إعداد Cloudinary
 cloudinary.config(
@@ -118,8 +120,11 @@ async def handle_password(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
     user_id = update.effective_user.id
     password = update.message.text.strip()
     
-    # إذا لم يكن المستخدم يحاول تغيير القناة، وكان مسجلاً بالفعل، نتجاهل الرسالة
+    # إذا لم يكن المستخدم يحاول تغيير القناة، وكان مسجلاً بالفعل، نتجاهل الرسالة أو نفحص إذا كان رابط تيك توك
     if _is_authenticated(user_id) and user_id not in pending_change_auth:
+        text = update.message.text.strip()
+        if ENABLE_TIKTOK_DOWNLOAD and ("tiktok.com" in text):
+            asyncio.create_task(handle_tiktok_link(update, context))
         return
     
     import time
@@ -356,6 +361,69 @@ async def handle_video(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
         ]),
     )
 
+    await process_and_upload_video(message, file_path, title, desc, hashtags, status_msg)
+
+async def handle_tiktok_link(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    message = update.message
+    text = message.text.strip()
+    
+    lines = text.splitlines()
+    url = lines[0].strip()
+    title = lines[1].strip() if len(lines) > 1 else "فيديو تيك توك"
+    desc = "\n".join(lines[2:]).strip() if len(lines) > 2 else ""
+    hashtags = _extract_hashtags(desc)
+    
+    status_msg = await _send_status_reply(
+        message,
+        "\n".join([
+            f"⏳ معالجة رابط تيك توك ({get_active_channel_name()})",
+            f"العنوان: {title}",
+            "المرحلة: جاري التحميل من تيك توك",
+        ]),
+    )
+    
+    import time
+    file_id = f"tiktok_{int(time.time())}"
+    file_path = DOWNLOADS_DIR / f"{file_id}.mp4"
+    
+    ydl_opts = {
+        'outtmpl': str(file_path),
+        'format': 'best', # Get the best available single-file format (often highest quality for TikTok)
+        'quiet': True,
+        'no_warnings': True,
+    }
+    
+    def download_video():
+        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+            ydl.download([url])
+            
+    try:
+        await asyncio.to_thread(download_video)
+        logger.info(f"تم تحميل فيديو تيك توك: {file_path}")
+    except Exception as e:
+        logger.error(f"فشل تحميل تيك توك: {e}")
+        await _update_status_reply(
+            message,
+            status_msg,
+            f"❌ فشل تحميل الفيديو من تيك توك\nالسبب: {_format_error_text(e)}"
+        )
+        return
+        
+    status_msg = await _update_status_reply(
+        message,
+        status_msg,
+        "\n".join([
+            "⏳ هذا الفيديو قيد المعالجة",
+            f"العنوان: {title}",
+            "المرحلة: تم التحميل من تيك توك",
+            "الخطوة التالية: جاري الرفع إلى المنصات",
+        ]),
+    )
+
+    await process_and_upload_video(message, file_path, title, desc, hashtags, status_msg)
+
+async def process_and_upload_video(message, file_path: Path, title: str, desc: str, hashtags: list[str], status_msg) -> None:
+
     # ── رفع على يوتيوب ──
     yt_results = [] # list of (url, err)
     if ENABLE_YOUTUBE:
@@ -526,7 +594,8 @@ async def platform_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -
 
     keyboard = [
         [InlineKeyboardButton(f"YouTube: {'✅' if ENABLE_YOUTUBE else '❌'}", callback_data="toggle_yt")],
-        [InlineKeyboardButton(f"Instagram: {'✅' if ENABLE_INSTAGRAM else '❌'}", callback_data="toggle_ig")]
+        [InlineKeyboardButton(f"Instagram: {'✅' if ENABLE_INSTAGRAM else '❌'}", callback_data="toggle_ig")],
+        [InlineKeyboardButton(f"TikTok Download: {'✅' if ENABLE_TIKTOK_DOWNLOAD else '❌'}", callback_data="toggle_tk")]
     ]
     await update.message.reply_text("⚙️ اختر المنصات النشطة لنشر الفيديوهات:", reply_markup=InlineKeyboardMarkup(keyboard))
 
@@ -535,17 +604,20 @@ async def handle_toggle_platform(update: Update, context: ContextTypes.DEFAULT_T
     query = update.callback_query
     await query.answer()
     
-    global ENABLE_YOUTUBE, ENABLE_INSTAGRAM
+    global ENABLE_YOUTUBE, ENABLE_INSTAGRAM, ENABLE_TIKTOK_DOWNLOAD
     data = query.data
     
     if data == "toggle_yt":
         ENABLE_YOUTUBE = not ENABLE_YOUTUBE
     elif data == "toggle_ig":
         ENABLE_INSTAGRAM = not ENABLE_INSTAGRAM
+    elif data == "toggle_tk":
+        ENABLE_TIKTOK_DOWNLOAD = not ENABLE_TIKTOK_DOWNLOAD
 
     keyboard = [
         [InlineKeyboardButton(f"YouTube: {'✅' if ENABLE_YOUTUBE else '❌'}", callback_data="toggle_yt")],
-        [InlineKeyboardButton(f"Instagram: {'✅' if ENABLE_INSTAGRAM else '❌'}", callback_data="toggle_ig")]
+        [InlineKeyboardButton(f"Instagram: {'✅' if ENABLE_INSTAGRAM else '❌'}", callback_data="toggle_ig")],
+        [InlineKeyboardButton(f"TikTok Download: {'✅' if ENABLE_TIKTOK_DOWNLOAD else '❌'}", callback_data="toggle_tk")]
     ]
     try:
         await query.edit_message_reply_markup(reply_markup=InlineKeyboardMarkup(keyboard))

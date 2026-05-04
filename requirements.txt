@@ -6,3 +6,4 @@ google-auth-oauthlib==1.2.1
 Pillow>=10.0.0
 cloudinary==1.40.0
 requests==2.31.0
+yt-dlp
