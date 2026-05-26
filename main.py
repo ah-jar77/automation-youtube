@@ -6,6 +6,7 @@ Telegram Bot → YouTube Auto Publisher
 import os
 import logging
 import asyncio
+import time
 from pathlib import Path
 from typing import Optional, List, Dict, Set, Union
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, ReplyParameters
@@ -47,6 +48,11 @@ INSTAGRAM_CAPTION = os.getenv("INSTAGRAM_CAPTION", "💛كود خصم نون ا�
 ENABLE_YOUTUBE   = os.getenv("ENABLE_YOUTUBE", "true").lower() == "true"
 ENABLE_INSTAGRAM = os.getenv("ENABLE_INSTAGRAM", "true").lower() == "true"
 ENABLE_TIKTOK_DOWNLOAD = os.getenv("ENABLE_TIKTOK_DOWNLOAD", "false").lower() == "true"
+YOUTUBE_UPLOAD_DELAY   = int(os.getenv("YOUTUBE_UPLOAD_DELAY", "180"))
+
+# ── أقفال المزامنة والتحكم في التدفق ليوتيوب ──────────────────
+youtube_upload_lock = asyncio.Lock()
+last_youtube_upload_time = 0.0
 
 # إعداد Cloudinary
 cloudinary.config(
@@ -434,39 +440,69 @@ async def process_and_upload_video(message, file_path: Path, title: str, desc: s
             if "youtube_token2.pickle" in current_token:
                 current_title = "كود خصم نون mar110k"
 
-            try:
-                uploader = YouTubeUploader(token_file=current_token)
-                url = uploader.upload(
-                    video_path  = str(file_path),
-                    title       = current_title,
-                    description = desc or f"{current_title}\n\n{' '.join(hashtags)}",
-                    tags        = hashtags,
+            async with youtube_upload_lock:
+                global last_youtube_upload_time
+                now = time.time()
+                elapsed = now - last_youtube_upload_time
+                if elapsed < YOUTUBE_UPLOAD_DELAY:
+                    wait_time = YOUTUBE_UPLOAD_DELAY - elapsed
+                    logger.info(f"⏳ Waiting for {wait_time:.1f} seconds before uploading to YouTube for token {current_token}...")
+                    status_msg = await _update_status_reply(
+                        message,
+                        status_msg,
+                        "\n".join([
+                            "⏳ هذا الفيديو قيد المعالجة",
+                            f"العنوان: {title}",
+                            f"المرحلة: الانتظار {int(wait_time)} ثانية لتفادي حظر يوتيوب...",
+                        ])
+                    )
+                    await asyncio.sleep(wait_time)
+
+                status_msg = await _update_status_reply(
+                    message,
+                    status_msg,
+                    "\n".join([
+                        "⏳ هذا الفيديو قيد المعالجة",
+                        f"العنوان: {title}",
+                        f"المرحلة: جاري الرفع إلى يوتيوب ({current_token})...",
+                    ])
                 )
-                yt_results.append((url, None))
-                logger.info(f"يوتيوب ✅ ({current_token}): {url}")
-            except Exception as e:
-                error_str = str(e).lower()
-                if "quota" in error_str or "limit" in error_str or "exceeded" in error_str:
-                    logger.warning(f"⚠️ انتهاء الكوتا ({current_token}). جاري تبديل ملفات التوكن والمحاولة مجدداً...")
-                    toggle_token_path()
-                    # بعد التبديل، نحتاج للحصول على المسار الجديد لهذا التوكن تحديداً
-                    new_token = f"secret1/{current_token}" if not current_token.startswith("secret1/") else current_token.replace("secret1/", "")
-                    try:
-                        uploader = YouTubeUploader(token_file=new_token)
-                        url = uploader.upload(
-                            video_path  = str(file_path),
-                            title       = current_title,
-                            description = desc or f"{current_title}\n\n{' '.join(hashtags)}",
-                            tags        = hashtags,
-                        )
-                        yt_results.append((url, None))
-                        logger.info(f"يوتيوب ✅ (بعد تبديل التوكن): {url}")
-                    except Exception as e2:
-                        yt_results.append((None, _format_error_text(e2)))
-                        logger.error(f"يوتيوب ❌ بعد تبديل التوكن ({new_token}): {e2}")
-                else:
-                    yt_results.append((None, _format_error_text(e)))
-                    logger.error(f"يوتيوب ❌ ({current_token}): {e}")
+
+                try:
+                    uploader = YouTubeUploader(token_file=current_token)
+                    url = uploader.upload(
+                        video_path  = str(file_path),
+                        title       = current_title,
+                        description = desc or f"{current_title}\n\n{' '.join(hashtags)}",
+                        tags        = hashtags,
+                    )
+                    yt_results.append((url, None))
+                    logger.info(f"يوتيوب ✅ ({current_token}): {url}")
+                except Exception as e:
+                    error_str = str(e).lower()
+                    if "quota" in error_str or "limit" in error_str or "exceeded" in error_str:
+                        logger.warning(f"⚠️ انتهاء الكوتا ({current_token}). جاري تبديل ملفات التوكن والمحاولة مجدداً...")
+                        toggle_token_path()
+                        # بعد التبديل، نحتاج للحصول على المسار الجديد لهذا التوكن تحديداً
+                        new_token = f"secret1/{current_token}" if not current_token.startswith("secret1/") else current_token.replace("secret1/", "")
+                        try:
+                            uploader = YouTubeUploader(token_file=new_token)
+                            url = uploader.upload(
+                                video_path  = str(file_path),
+                                title       = current_title,
+                                description = desc or f"{current_title}\n\n{' '.join(hashtags)}",
+                                tags        = hashtags,
+                            )
+                            yt_results.append((url, None))
+                            logger.info(f"يوتيوب ✅ (بعد تبديل التوكن): {url}")
+                        except Exception as e2:
+                            yt_results.append((None, _format_error_text(e2)))
+                            logger.error(f"يوتيوب ❌ بعد تبديل التوكن ({new_token}): {e2}")
+                    else:
+                        yt_results.append((None, _format_error_text(e)))
+                        logger.error(f"يوتيوب ❌ ({current_token}): {e}")
+                finally:
+                    last_youtube_upload_time = time.time()
 
     # ── رفع على انستاغرام ──
     ig_url = None
