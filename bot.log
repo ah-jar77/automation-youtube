@@ -5692,3 +5692,154 @@ telegram.error.Conflict: Conflict: terminated by other getUpdates request; make 
 2026-05-26 01:10:24,091 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
 2026-05-26 01:10:25,001 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
 2026-05-26 01:10:34,316 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:12:51,238 | INFO | 🤖 البوت يعمل الآن...
+2026-05-26 18:12:51,917 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getMe "HTTP/1.1 200 OK"
+2026-05-26 18:12:52,127 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/deleteWebhook "HTTP/1.1 200 OK"
+2026-05-26 18:12:52,137 | INFO | Application started
+2026-05-26 18:13:02,739 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:13:12,953 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:13:23,244 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:13:33,485 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:13:43,678 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:13:53,908 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:14:04,205 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:14:14,419 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:14:24,640 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:14:34,851 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:14:45,060 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:14:55,559 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:15:05,754 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:15:15,969 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:15:26,228 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:15:36,450 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:15:46,639 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:15:56,950 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:15:59,817 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:16:00,458 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-05-26 18:16:01,515 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:16:01,751 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-05-26 18:16:04,528 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:16:04,785 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-05-26 18:16:08,144 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:16:08,422 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-05-26 18:16:13,990 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:16:14,667 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-05-26 18:16:15,899 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:16:16,221 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/answerCallbackQuery "HTTP/1.1 200 OK"
+2026-05-26 18:16:16,476 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-05-26 18:16:22,964 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:16:23,729 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-05-26 18:16:23,922 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-05-26 18:16:24,150 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_2949.mp4 "HTTP/1.1 200 OK"
+2026-05-26 18:16:26,548 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAImgmoVrldbhWxGIkZYwlv4Kj4lomBQAAKjHQACK0uxUBoOOT5AEyaGOwQ.mp4
+2026-05-26 18:16:26,818 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-05-26 18:16:41,588 | INFO | "GET /?state=eJpngcODrW6p8yc0LD6cX8SbHUP0dD&iss=https://accounts.google.com&code=4/0AeoWuM-uMIMn4IhD5iWdVWGxGpvO4BLbsUki0W7RSY7eypSIJOXgsHBhaQ9FYvkUhlIpJw&scope=https://www.googleapis.com/auth/youtube.upload HTTP/1.1" 200 65
+2026-05-26 18:16:42,324 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-26 18:16:42,380 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-26 18:16:47,410 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=sUSXiltYpyA
+2026-05-26 18:16:47,412 | INFO | يوتيوب ✅ (youtube_token2.pickle): https://www.youtube.com/watch?v=sUSXiltYpyA
+2026-05-26 18:16:47,423 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:16:48,068 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-05-26 18:16:52,598 | INFO | Starting Instagram Reel post | URL: https://res.cloudinary.com/dejrsi3fd/video/upload/v1779808611/instagram_reels/msj5fmrjyeqlepllfmwi.mp4
+2026-05-26 18:16:53,553 | INFO | Create container response: {'id': '17890434393537382'}
+2026-05-26 18:16:53,554 | INFO | Container created: 17890434393537382
+2026-05-26 18:17:02,274 | INFO | Container status: {'id': '17890434393537382', 'status': 'In Progress: Media is still being processed.', 'status_code': 'IN_PROGRESS'}
+2026-05-26 18:17:02,281 | INFO | Still processing... attempt 1/15
+2026-05-26 18:17:11,160 | INFO | Container status: {'id': '17890434393537382', 'status': 'In Progress: Media is still being processed.', 'status_code': 'IN_PROGRESS'}
+2026-05-26 18:17:11,165 | INFO | Still processing... attempt 2/15
+2026-05-26 18:17:19,897 | INFO | Container status: {'id': '17890434393537382', 'status': 'Finished: Media has been uploaded and it is ready to be published.', 'status_code': 'FINISHED'}
+2026-05-26 18:17:19,901 | INFO | Video processing complete ✅
+2026-05-26 18:17:28,500 | INFO | Publish response: {'id': '18095637364933621'}
+2026-05-26 18:17:28,501 | INFO | Reel published! Media ID: 18095637364933621 ✅
+2026-05-26 18:17:28,510 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAImgmoVrldbhWxGIkZYwlv4Kj4lomBQAAKjHQACK0uxUBoOOT5AEyaGOwQ.mp4
+2026-05-26 18:17:28,517 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:17:29,139 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-05-26 18:17:38,329 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:17:38,967 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-05-26 18:17:40,175 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:17:40,481 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/answerCallbackQuery "HTTP/1.1 200 OK"
+2026-05-26 18:17:40,789 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageReplyMarkup "HTTP/1.1 200 OK"
+2026-05-26 18:17:50,413 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:18:00,652 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:18:00,867 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:18:08,647 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:18:09,383 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-05-26 18:18:09,664 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-05-26 18:18:10,016 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_2948.mp4 "HTTP/1.1 200 OK"
+2026-05-26 18:18:11,233 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAImgGoVrlJqIc8JYraF4qju70e6MJD-AAKhHQACK0uxUAQR2vuAdxHhOwQ.mp4
+2026-05-26 18:18:11,511 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-05-26 18:18:11,521 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-26 18:18:11,582 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-26 18:18:15,302 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=LC62JIlSNCs
+2026-05-26 18:18:15,302 | INFO | يوتيوب ✅ (youtube_token2.pickle): https://www.youtube.com/watch?v=LC62JIlSNCs
+2026-05-26 18:18:15,304 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAImgGoVrlJqIc8JYraF4qju70e6MJD-AAKhHQACK0uxUAQR2vuAdxHhOwQ.mp4
+2026-05-26 18:18:15,607 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-05-26 18:18:18,867 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:18:23,761 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:18:24,379 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-05-26 18:18:24,614 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-05-26 18:18:25,130 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_2942.mp4 "HTTP/1.1 200 OK"
+2026-05-26 18:18:26,163 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAImdmoVrkZACTKYSkDHIvVjZWhsS_05AAJMCwAC-tylUI7_SZGXwolXOwQ.mp4
+2026-05-26 18:18:26,459 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-05-26 18:18:26,464 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-26 18:18:26,489 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-26 18:18:27,074 | WARNING | ⚠️ انتهاء الكوتا (youtube_token2.pickle). جاري تبديل ملفات التوكن والمحاولة مجدداً...
+2026-05-26 18:18:27,075 | INFO | 🔄 تم تبديل مسار التوكنات: youtube_token2.pickle -> secret1/youtube_token2.pickle
+2026-05-26 18:18:40,329 | INFO | "GET /?state=xtTFR75tPg73E0SEJQZryH4kqbrVcd&iss=https://accounts.google.com&code=4/0AeoWuM_qmdi4NUGPrw40tw2qCQRMytX2hcPtl_mrS2hEjqRgabrHCYozHInDKQmldMXUPQ&scope=https://www.googleapis.com/auth/youtube.upload HTTP/1.1" 200 65
+2026-05-26 18:18:40,988 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-26 18:18:41,055 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-26 18:18:41,615 | ERROR | يوتيوب ❌ بعد تبديل التوكن (secret1/youtube_token2.pickle): <HttpError 429 when requesting None returned "Quota exceeded for quota metric 'Video Uploads' and limit 'Video Uploads per day' of service 'youtube.googleapis.com' for consumer 'project_number:173609149791'.". Details: "[{'message': "Quota exceeded for quota metric 'Video Uploads' and limit 'Video Uploads per day' of service 'youtube.googleapis.com' for consumer 'project_number:173609149791'.", 'domain': 'global', 'reason': 'rateLimitExceeded'}]">
+2026-05-26 18:18:41,626 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:18:42,437 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-05-26 18:18:42,698 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-05-26 18:18:42,898 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-05-26 18:18:43,336 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_2943.mp4 "HTTP/1.1 200 OK"
+2026-05-26 18:18:44,596 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAImd2oVrkah6dJYYHhGAXkfLgXHDSRpAALdCgACE6OsUIiZ2Zn0m6kjOwQ.mp4
+2026-05-26 18:18:44,856 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-05-26 18:18:44,876 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-26 18:18:44,937 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-26 18:18:45,563 | WARNING | ⚠️ انتهاء الكوتا (secret1/youtube_token2.pickle). جاري تبديل ملفات التوكن والمحاولة مجدداً...
+2026-05-26 18:18:45,565 | INFO | 🔄 تم تبديل مسار التوكنات: secret1/youtube_token2.pickle -> youtube_token2.pickle
+2026-05-26 18:18:45,572 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-26 18:18:45,628 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-26 18:18:46,325 | ERROR | يوتيوب ❌ بعد تبديل التوكن (youtube_token2.pickle): <HttpError 429 when requesting None returned "Quota exceeded for quota metric 'Video Uploads' and limit 'Video Uploads per day' of service 'youtube.googleapis.com' for consumer 'project_number:173609149791'.". Details: "[{'message': "Quota exceeded for quota metric 'Video Uploads' and limit 'Video Uploads per day' of service 'youtube.googleapis.com' for consumer 'project_number:173609149791'.", 'domain': 'global', 'reason': 'rateLimitExceeded'}]">
+2026-05-26 18:18:46,634 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-05-26 18:18:51,842 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:18:54,418 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:18:55,101 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-05-26 18:18:55,338 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-05-26 18:18:55,622 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_2942.mp4 "HTTP/1.1 200 OK"
+2026-05-26 18:18:56,618 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAImdmoVrkZACTKYSkDHIvVjZWhsS_05AAJMCwAC-tylUI7_SZGXwolXOwQ.mp4
+2026-05-26 18:18:56,874 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-05-26 18:18:56,886 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-26 18:18:56,957 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-26 18:18:57,587 | WARNING | ⚠️ انتهاء الكوتا (youtube_token2.pickle). جاري تبديل ملفات التوكن والمحاولة مجدداً...
+2026-05-26 18:18:57,587 | INFO | 🔄 تم تبديل مسار التوكنات: youtube_token2.pickle -> secret1/youtube_token2.pickle
+2026-05-26 18:18:57,590 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-26 18:18:57,604 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-26 18:18:58,103 | ERROR | يوتيوب ❌ بعد تبديل التوكن (secret1/youtube_token2.pickle): <HttpError 429 when requesting None returned "Quota exceeded for quota metric 'Video Uploads' and limit 'Video Uploads per day' of service 'youtube.googleapis.com' for consumer 'project_number:173609149791'.". Details: "[{'message': "Quota exceeded for quota metric 'Video Uploads' and limit 'Video Uploads per day' of service 'youtube.googleapis.com' for consumer 'project_number:173609149791'.", 'domain': 'global', 'reason': 'rateLimitExceeded'}]">
+2026-05-26 18:18:58,411 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-05-26 18:19:03,124 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:19:03,387 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-05-26 18:19:04,866 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:19:05,098 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/answerCallbackQuery "HTTP/1.1 200 OK"
+2026-05-26 18:19:05,375 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageReplyMarkup "HTTP/1.1 200 OK"
+2026-05-26 18:19:15,103 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:19:25,314 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:19:26,266 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:19:27,099 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-05-26 18:19:35,393 | INFO | تم تحميل فيديو تيك توك: downloads\tiktok_1779808767.mp4
+2026-05-26 18:19:36,023 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-05-26 18:19:36,031 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-26 18:19:36,074 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-26 18:19:36,582 | WARNING | ⚠️ انتهاء الكوتا (secret1/youtube_token2.pickle). جاري تبديل ملفات التوكن والمحاولة مجدداً...
+2026-05-26 18:19:36,584 | INFO | 🔄 تم تبديل مسار التوكنات: secret1/youtube_token2.pickle -> youtube_token2.pickle
+2026-05-26 18:19:36,590 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-26 18:19:36,615 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-26 18:19:37,069 | ERROR | يوتيوب ❌ بعد تبديل التوكن (youtube_token2.pickle): <HttpError 429 when requesting None returned "Quota exceeded for quota metric 'Video Uploads' and limit 'Video Uploads per day' of service 'youtube.googleapis.com' for consumer 'project_number:173609149791'.". Details: "[{'message': "Quota exceeded for quota metric 'Video Uploads' and limit 'Video Uploads per day' of service 'youtube.googleapis.com' for consumer 'project_number:173609149791'.", 'domain': 'global', 'reason': 'rateLimitExceeded'}]">
+2026-05-26 18:19:37,077 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:19:37,306 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-05-26 18:19:47,358 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:19:57,596 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:20:07,804 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-26 18:20:18,008 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
