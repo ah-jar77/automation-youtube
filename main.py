@@ -50,6 +50,21 @@ ENABLE_INSTAGRAM = os.getenv("ENABLE_INSTAGRAM", "true").lower() == "true"
 ENABLE_TIKTOK_DOWNLOAD = os.getenv("ENABLE_TIKTOK_DOWNLOAD", "false").lower() == "true"
 YOUTUBE_UPLOAD_DELAY   = int(os.getenv("YOUTUBE_UPLOAD_DELAY", "180"))
 
+# قائمة بجميع ملفات العميل (client_secrets) المتاحة لـ YouTube
+CLIENT_SECRETS_LIST = ["client_secrets.json", "client_secrets2.json", "client_secrets3.json", "client_secrets4.json"]
+CURRENT_CLIENT_SECRETS = CLIENT_SECRETS_LIST[0]
+
+def rotate_client_secrets():
+    """تبديل ملف client_secrets إلى الملف التالي في القائمة"""
+    global CURRENT_CLIENT_SECRETS
+    try:
+        idx = CLIENT_SECRETS_LIST.index(CURRENT_CLIENT_SECRETS)
+        new_idx = (idx + 1) % len(CLIENT_SECRETS_LIST)
+    except ValueError:
+        new_idx = 0
+    CURRENT_CLIENT_SECRETS = CLIENT_SECRETS_LIST[new_idx]
+    logger.info(f"🔄 تم تبديل ملف العميل (client_secrets) إلى: {CURRENT_CLIENT_SECRETS}")
+
 # ── أقفال المزامنة والتحكم في التدفق ليوتيوب ──────────────────
 youtube_upload_lock = asyncio.Lock()
 last_youtube_upload_time = 0.0
@@ -212,7 +227,7 @@ async def status(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     if ENABLE_YOUTUBE:
         for token in ACTIVE_YOUTUBE_TOKENS:
             try:
-                uploader = YouTubeUploader(token_file=token)
+                uploader = YouTubeUploader(token_file=token, client_secrets_file=CURRENT_CLIENT_SECRETS)
                 yt_ok = uploader.test_connection()
                 status_text = "متصل" if yt_ok else "غير متصل"
                 ch_name = "2 مار" if "youtube_token2.pickle" in token else "1 رو"
@@ -441,22 +456,6 @@ async def process_and_upload_video(message, file_path: Path, title: str, desc: s
                 current_title = "كود خصم نون mar110k"
 
             async with youtube_upload_lock:
-                global last_youtube_upload_time
-                now = time.time()
-                elapsed = now - last_youtube_upload_time
-                if elapsed < YOUTUBE_UPLOAD_DELAY:
-                    wait_time = YOUTUBE_UPLOAD_DELAY - elapsed
-                    logger.info(f"⏳ Waiting for {wait_time:.1f} seconds before uploading to YouTube for token {current_token}...")
-                    status_msg = await _update_status_reply(
-                        message,
-                        status_msg,
-                        "\n".join([
-                            "⏳ هذا الفيديو قيد المعالجة",
-                            f"العنوان: {title}",
-                            f"المرحلة: الانتظار {int(wait_time)} ثانية لتفادي حظر يوتيوب...",
-                        ])
-                    )
-                    await asyncio.sleep(wait_time)
 
                 status_msg = await _update_status_reply(
                     message,
@@ -468,41 +467,43 @@ async def process_and_upload_video(message, file_path: Path, title: str, desc: s
                     ])
                 )
 
-                try:
-                    uploader = YouTubeUploader(token_file=current_token)
-                    url = uploader.upload(
-                        video_path  = str(file_path),
-                        title       = current_title,
-                        description = desc or f"{current_title}\n\n{' '.join(hashtags)}",
-                        tags        = hashtags,
-                    )
-                    yt_results.append((url, None))
-                    logger.info(f"يوتيوب ✅ ({current_token}): {url}")
-                except Exception as e:
-                    error_str = str(e).lower()
-                    if "quota" in error_str or "limit" in error_str or "exceeded" in error_str:
-                        logger.warning(f"⚠️ انتهاء الكوتا ({current_token}). جاري تبديل ملفات التوكن والمحاولة مجدداً...")
-                        toggle_token_path()
-                        # بعد التبديل، نحتاج للحصول على المسار الجديد لهذا التوكن تحديداً
-                        new_token = f"secret1/{current_token}" if not current_token.startswith("secret1/") else current_token.replace("secret1/", "")
-                        try:
-                            uploader = YouTubeUploader(token_file=new_token)
-                            url = uploader.upload(
-                                video_path  = str(file_path),
-                                title       = current_title,
-                                description = desc or f"{current_title}\n\n{' '.join(hashtags)}",
-                                tags        = hashtags,
-                            )
-                            yt_results.append((url, None))
-                            logger.info(f"يوتيوب ✅ (بعد تبديل التوكن): {url}")
-                        except Exception as e2:
-                            yt_results.append((None, _format_error_text(e2)))
-                            logger.error(f"يوتيوب ❌ بعد تبديل التوكن ({new_token}): {e2}")
-                    else:
-                        yt_results.append((None, _format_error_text(e)))
-                        logger.error(f"يوتيوب ❌ ({current_token}): {e}")
-                finally:
-                    last_youtube_upload_time = time.time()
+                try_token = current_token
+                uploaded_url = None
+                last_error = None
+                
+                max_attempts = len(CLIENT_SECRETS_LIST) * 2
+                for combo_attempt in range(max_attempts):
+                    secrets_file = CURRENT_CLIENT_SECRETS
+                    try:
+                        uploader = YouTubeUploader(token_file=try_token, client_secrets_file=secrets_file)
+                        url = uploader.upload(
+                            video_path  = str(file_path),
+                            title       = current_title,
+                            description = desc or f"{current_title}\n\n{' '.join(hashtags)}",
+                            tags        = hashtags,
+                        )
+                        uploaded_url = url
+                        logger.info(f"يوتيوب ✅ (ملف: {secrets_file} | توكن: {try_token}): {url}")
+                        break
+                    except Exception as e:
+                        last_error = e
+                        error_str = str(e).lower()
+                        if "quota" in error_str or "limit" in error_str or "exceeded" in error_str:
+                            if combo_attempt % 2 == 0:
+                                logger.warning(f"⚠️ انتهاء الكوتا للتوكن ({try_token}) لـ {secrets_file}. جاري تبديل المجلد والمحاولة مجدداً...")
+                                toggle_token_path()
+                                try_token = f"secret1/{current_token}" if not current_token.startswith("secret1/") else current_token.replace("secret1/", "")
+                            else:
+                                logger.warning(f"⚠️ انتهاء الكوتا لكلا مجلدي التوكن لـ {secrets_file}. جاري تبديل client_secrets...")
+                                rotate_client_secrets()
+                        else:
+                            break
+                            
+                if uploaded_url:
+                    yt_results.append((uploaded_url, None))
+                else:
+                    yt_results.append((None, _format_error_text(last_error)))
+                    logger.error(f"يوتيوب ❌ فشل نهائي للتوكن {current_token}: {last_error}")
 
     # ── رفع على انستاغرام ──
     ig_url = None
@@ -534,20 +535,21 @@ async def process_and_upload_video(message, file_path: Path, title: str, desc: s
             ig_err = _format_error_text(e)
             logger.error(f"انستاغرام ❌: {e}")
 
-    # ── حذف الملف بعد نجاح الرفع ──
+    # ── حذف الملف محلياً (سواءً نجح الرفع أو فشل) ──
     video_deleted = False
     delete_error = None
-    file_size_mb = file_path.stat().st_size / (1024*1024)
-    
-    uploaded_any = any(res[0] for res in yt_results) or (ig_url is not None)
-    if uploaded_any:
-        try:
+    file_size_mb = 0.0
+    try:
+        if file_path.exists():
+            file_size_mb = file_path.stat().st_size / (1024*1024)
             file_path.unlink()
             video_deleted = True
             logger.info(f"تم حذف الفيديو: {file_path}")
-        except Exception as e:
-            delete_error = str(e)
-            logger.error(f"فشل حذف الفيديو: {e}")
+        else:
+            logger.warning(f"الملف غير موجود لحذفه: {file_path}")
+    except Exception as e:
+        delete_error = str(e)
+        logger.error(f"فشل حذف الفيديو: {e}")
 
     # ── التقرير النهائي ──
     result_lines = []
@@ -572,12 +574,13 @@ async def process_and_upload_video(message, file_path: Path, title: str, desc: s
 
     result_text = "\n".join(result_lines) if result_lines else "⚠️ لم يتم تفعيل أي منصة"
 
+    uploaded_any = any(res[0] for res in yt_results) or (ig_url is not None)
     final = (
         f"{'✅ نجح الفيديو' if uploaded_any else '❌ فشل الفيديو'} ({get_active_channel_name()})\n"
         f"العنوان: {title}\n"
         f"{result_text}\n"
         f"الحجم: {file_size_mb:.2f} MB\n"
-        f"الحذف المحلي: {'✅ تم' if video_deleted else '❌ لم يُحذف' if not uploaded_any else f'❌ {_format_error_text(delete_error)}'}"
+        f"الحذف المحلي: {'✅ تم' if video_deleted else f'❌ لم يُحذف: {_format_error_text(delete_error)}' if delete_error else '❌ لم يُحذف'}"
     )
     await _update_status_reply(message, status_msg, final)
 

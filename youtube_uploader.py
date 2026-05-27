@@ -3,6 +3,7 @@
 """
 
 import os
+import time
 import pickle
 import logging
 from pathlib import Path
@@ -19,8 +20,23 @@ logger = logging.getLogger(__name__)
 SCOPES          = ["https://www.googleapis.com/auth/youtube.upload"]
 CLIENT_SECRETS  = os.getenv("YOUTUBE_CLIENT_SECRETS", "client_secrets.json")
 class YouTubeUploader:
-    def __init__(self, token_file: str = "youtube_token.pickle"):
-        self.token_file = token_file
+    def __init__(self, token_file: str = "youtube_token.pickle", client_secrets_file: Optional[str] = None):
+        self.client_secrets_file = client_secrets_file or CLIENT_SECRETS
+        
+        # استخراج لاحقة فريدة لكل ملف secrets لمنع تداخل التوكنات بين المشاريع
+        suffix = ""
+        for char in Path(self.client_secrets_file).name:
+            if char.isdigit():
+                suffix = f"_cs{char}"
+                break
+        
+        if suffix:
+            path = Path(token_file)
+            name_without_ext = path.stem
+            self.token_file = str(path.with_name(f"{name_without_ext}{suffix}.pickle"))
+        else:
+            self.token_file = token_file
+            
         self.service = self._get_service()
 
     # ── المصادقة ────────────────────────────────────────────────
@@ -35,9 +51,14 @@ class YouTubeUploader:
 
         if not creds or not creds.valid:
             if creds and creds.expired and creds.refresh_token:
-                creds.refresh(Request())
+                try:
+                    creds.refresh(Request())
+                except Exception as e:
+                    logger.warning(f"⚠️ فشل تجديد التوكن، جاري إعادة المصادقة باستخدام {self.client_secrets_file}: {e}")
+                    flow  = InstalledAppFlow.from_client_secrets_file(self.client_secrets_file, SCOPES)
+                    creds = flow.run_local_server(port=8088)
             else:
-                flow  = InstalledAppFlow.from_client_secrets_file(CLIENT_SECRETS, SCOPES)
+                flow  = InstalledAppFlow.from_client_secrets_file(self.client_secrets_file, SCOPES)
                 creds = flow.run_local_server(port=8088)
 
             with open(self.token_file, "wb") as f:
@@ -60,7 +81,7 @@ class YouTubeUploader:
         يرفع الفيديو على يوتيوب ويُعيد رابطه.
         """
         # منطق العناوين المخصصة لكل قناة
-        if "youtube_token2.pickle" in self.token_file:
+        if "youtube_token2" in self.token_file:
             final_title = "كود خصم نون mar110k"
         else:
             # القناة الأولى (أو أي قناة أخرى) تستخدم العنوان القادم من تليجرام
