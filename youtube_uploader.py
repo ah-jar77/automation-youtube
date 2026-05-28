@@ -24,11 +24,9 @@ class YouTubeUploader:
         self.client_secrets_file = client_secrets_file or CLIENT_SECRETS
         
         # استخراج لاحقة فريدة لكل ملف secrets لمنع تداخل التوكنات بين المشاريع
-        suffix = ""
-        for char in Path(self.client_secrets_file).name:
-            if char.isdigit():
-                suffix = f"_cs{char}"
-                break
+        import re
+        numbers = re.findall(r'\d+', Path(self.client_secrets_file).name)
+        suffix = f"_cs{numbers[0]}" if numbers else ""
         
         if suffix:
             path = Path(token_file)
