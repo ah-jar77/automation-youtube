@@ -9629,3 +9629,495 @@ RuntimeError: Event loop is closed
 2026-05-28 23:17:46,811 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAIplGoYliflj8mOKY-HUEVxG487oVBTAAIyHQAC7LjJULHJrIWX6cASOwQ.mp4
 2026-05-28 23:17:47,414 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
 2026-05-28 23:17:56,449 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-28 23:39:04,545 | INFO | 🤖 البوت يعمل الآن...
+2026-05-28 23:39:05,741 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getMe "HTTP/1.1 200 OK"
+2026-05-28 23:39:05,950 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/deleteWebhook "HTTP/1.1 200 OK"
+2026-05-28 23:39:05,959 | INFO | Application started
+2026-05-28 23:39:10,883 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-28 23:39:10,887 | ERROR | No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 753, in _network_loop_retry
+    if not await do_action():
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 747, in do_action
+    return action_cb_task.result()
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 377, in polling_action_cb
+    updates = await self.bot.get_updates(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_extbot.py", line 649, in get_updates
+    updates = await super().get_updates(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 4366, in get_updates
+    await self._post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 623, in _post
+    return await self._do_post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_extbot.py", line 355, in _do_post
+    return await super()._do_post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 652, in _do_post
+    result = await request.post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\request\_baserequest.py", line 201, in post
+    result = await self._request_wrapper(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\request\_baserequest.py", line 384, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-05-28 23:39:16,780 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-28 23:39:16,784 | ERROR | No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 753, in _network_loop_retry
+    if not await do_action():
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 747, in do_action
+    return action_cb_task.result()
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 377, in polling_action_cb
+    updates = await self.bot.get_updates(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_extbot.py", line 649, in get_updates
+    updates = await super().get_updates(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 4366, in get_updates
+    await self._post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 623, in _post
+    return await self._do_post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_extbot.py", line 355, in _do_post
+    return await super()._do_post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 652, in _do_post
+    result = await request.post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\request\_baserequest.py", line 201, in post
+    result = await self._request_wrapper(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\request\_baserequest.py", line 384, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-05-28 23:39:23,943 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-28 23:39:23,948 | ERROR | No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 753, in _network_loop_retry
+    if not await do_action():
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 747, in do_action
+    return action_cb_task.result()
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 377, in polling_action_cb
+    updates = await self.bot.get_updates(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_extbot.py", line 649, in get_updates
+    updates = await super().get_updates(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 4366, in get_updates
+    await self._post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 623, in _post
+    return await self._do_post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_extbot.py", line 355, in _do_post
+    return await super()._do_post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 652, in _do_post
+    result = await request.post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\request\_baserequest.py", line 201, in post
+    result = await self._request_wrapper(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\request\_baserequest.py", line 384, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-05-28 23:39:30,536 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 409 Conflict"
+2026-05-28 23:39:30,538 | ERROR | No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 753, in _network_loop_retry
+    if not await do_action():
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 747, in do_action
+    return action_cb_task.result()
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 377, in polling_action_cb
+    updates = await self.bot.get_updates(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_extbot.py", line 649, in get_updates
+    updates = await super().get_updates(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 4366, in get_updates
+    await self._post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 623, in _post
+    return await self._do_post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_extbot.py", line 355, in _do_post
+    return await super()._do_post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 652, in _do_post
+    result = await request.post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\request\_baserequest.py", line 201, in post
+    result = await self._request_wrapper(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\request\_baserequest.py", line 384, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-05-28 23:39:35,081 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-28 23:39:37,790 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-28 23:39:37,966 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-05-28 23:39:38,291 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-05-28 23:39:40,499 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-28 23:39:40,818 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-05-28 23:39:45,167 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-28 23:39:45,481 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-05-28 23:39:49,157 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-28 23:39:49,551 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-05-28 23:39:51,411 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-28 23:39:52,047 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/answerCallbackQuery "HTTP/1.1 200 OK"
+2026-05-28 23:39:52,365 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-05-28 23:40:01,753 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-28 23:40:04,145 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-28 23:40:06,368 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-05-28 23:40:06,666 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-05-28 23:40:07,664 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3135.mp4 "HTTP/1.1 200 OK"
+2026-05-28 23:40:14,399 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-28 23:40:17,324 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAIpkGoYlhSxrfV8eFSUalX9cE8uYf9SAAIgHQAC7LjJUHAybt5Pk7OTOwQ.mp4
+2026-05-28 23:40:17,743 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-05-28 23:40:18,064 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-05-28 23:40:19,138 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:40:19,234 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:40:20,689 | WARNING | ⚠️ انتهاء الكوتا للتوكن (youtube_token2.pickle) لـ client_secrets.json. جاري تبديل المجلد والمحاولة مجدداً...
+2026-05-28 23:40:20,691 | INFO | 🔄 تم تبديل مسار التوكنات: youtube_token2.pickle -> secret1/youtube_token2.pickle
+2026-05-28 23:40:21,526 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:40:21,562 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:40:23,448 | WARNING | ⚠️ انتهاء الكوتا لكلا مجلدي التوكن لـ client_secrets.json. جاري تبديل client_secrets...
+2026-05-28 23:40:23,449 | INFO | 🔄 تم تبديل ملف العميل (client_secrets) إلى: client_secrets2.json
+2026-05-28 23:40:25,507 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:40:25,539 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:40:26,255 | WARNING | ⚠️ انتهاء الكوتا للتوكن (secret1/youtube_token2.pickle) لـ client_secrets2.json. جاري تبديل المجلد والمحاولة مجدداً...
+2026-05-28 23:40:26,257 | INFO | 🔄 تم تبديل مسار التوكنات: secret1/youtube_token2.pickle -> youtube_token2.pickle
+2026-05-28 23:40:26,330 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:40:26,369 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:40:27,076 | WARNING | ⚠️ انتهاء الكوتا لكلا مجلدي التوكن لـ client_secrets2.json. جاري تبديل client_secrets...
+2026-05-28 23:40:27,076 | INFO | 🔄 تم تبديل ملف العميل (client_secrets) إلى: client_secrets3.json
+2026-05-28 23:40:27,966 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:40:27,999 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:40:28,925 | WARNING | ⚠️ انتهاء الكوتا للتوكن (secret1/youtube_token2.pickle) لـ client_secrets3.json. جاري تبديل المجلد والمحاولة مجدداً...
+2026-05-28 23:40:28,925 | INFO | 🔄 تم تبديل مسار التوكنات: youtube_token2.pickle -> secret1/youtube_token2.pickle
+2026-05-28 23:40:29,019 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:40:29,067 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:40:30,324 | WARNING | ⚠️ انتهاء الكوتا لكلا مجلدي التوكن لـ client_secrets3.json. جاري تبديل client_secrets...
+2026-05-28 23:40:30,324 | INFO | 🔄 تم تبديل ملف العميل (client_secrets) إلى: client_secrets4.json
+2026-05-28 23:40:31,083 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:40:31,119 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:40:31,663 | WARNING | ⚠️ انتهاء الكوتا للتوكن (secret1/youtube_token2.pickle) لـ client_secrets4.json. جاري تبديل المجلد والمحاولة مجدداً...
+2026-05-28 23:40:31,664 | INFO | 🔄 تم تبديل مسار التوكنات: secret1/youtube_token2.pickle -> youtube_token2.pickle
+2026-05-28 23:40:31,743 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:40:31,769 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:40:35,546 | WARNING | ⚠️ انتهاء الكوتا لكلا مجلدي التوكن لـ client_secrets4.json. جاري تبديل client_secrets...
+2026-05-28 23:40:35,547 | INFO | 🔄 تم تبديل ملف العميل (client_secrets) إلى: client_secret_5.json
+2026-05-28 23:40:35,627 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:40:35,655 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:40:36,242 | WARNING | ⚠️ انتهاء الكوتا للتوكن (secret1/youtube_token2.pickle) لـ client_secret_5.json. جاري تبديل المجلد والمحاولة مجدداً...
+2026-05-28 23:40:36,242 | INFO | 🔄 تم تبديل مسار التوكنات: youtube_token2.pickle -> secret1/youtube_token2.pickle
+2026-05-28 23:40:36,248 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:40:36,383 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:40:38,756 | WARNING | ⚠️ انتهاء الكوتا لكلا مجلدي التوكن لـ client_secret_5.json. جاري تبديل client_secrets...
+2026-05-28 23:40:38,756 | INFO | 🔄 تم تبديل ملف العميل (client_secrets) إلى: client_secret_6.json
+2026-05-28 23:40:38,783 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:40:38,821 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:40:39,385 | WARNING | ⚠️ انتهاء الكوتا للتوكن (secret1/youtube_token2.pickle) لـ client_secret_6.json. جاري تبديل المجلد والمحاولة مجدداً...
+2026-05-28 23:40:39,385 | INFO | 🔄 تم تبديل مسار التوكنات: secret1/youtube_token2.pickle -> youtube_token2.pickle
+2026-05-28 23:40:39,391 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:40:39,430 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:40:40,052 | WARNING | ⚠️ انتهاء الكوتا لكلا مجلدي التوكن لـ client_secret_6.json. جاري تبديل client_secrets...
+2026-05-28 23:40:40,053 | INFO | 🔄 تم تبديل ملف العميل (client_secrets) إلى: client_secret_7.json
+2026-05-28 23:40:40,141 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:40:40,174 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:40:41,736 | WARNING | ⚠️ انتهاء الكوتا للتوكن (secret1/youtube_token2.pickle) لـ client_secret_7.json. جاري تبديل المجلد والمحاولة مجدداً...
+2026-05-28 23:40:41,736 | INFO | 🔄 تم تبديل مسار التوكنات: youtube_token2.pickle -> secret1/youtube_token2.pickle
+2026-05-28 23:40:41,753 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:40:41,790 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:40:42,516 | WARNING | ⚠️ انتهاء الكوتا لكلا مجلدي التوكن لـ client_secret_7.json. جاري تبديل client_secrets...
+2026-05-28 23:40:42,517 | INFO | 🔄 تم تبديل ملف العميل (client_secrets) إلى: client_secret_8.json
+2026-05-28 23:40:42,599 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:40:42,636 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:40:43,606 | WARNING | ⚠️ انتهاء الكوتا للتوكن (secret1/youtube_token2.pickle) لـ client_secret_8.json. جاري تبديل المجلد والمحاولة مجدداً...
+2026-05-28 23:40:43,606 | INFO | 🔄 تم تبديل مسار التوكنات: secret1/youtube_token2.pickle -> youtube_token2.pickle
+2026-05-28 23:40:43,614 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:40:43,657 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:40:44,352 | WARNING | ⚠️ انتهاء الكوتا لكلا مجلدي التوكن لـ client_secret_8.json. جاري تبديل client_secrets...
+2026-05-28 23:40:44,354 | INFO | 🔄 تم تبديل ملف العميل (client_secrets) إلى: client_secret_9.json
+2026-05-28 23:40:44,437 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:40:44,471 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:40:45,061 | WARNING | ⚠️ انتهاء الكوتا للتوكن (secret1/youtube_token2.pickle) لـ client_secret_9.json. جاري تبديل المجلد والمحاولة مجدداً...
+2026-05-28 23:40:45,062 | INFO | 🔄 تم تبديل مسار التوكنات: youtube_token2.pickle -> secret1/youtube_token2.pickle
+2026-05-28 23:40:45,069 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:40:45,104 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:40:46,195 | WARNING | ⚠️ انتهاء الكوتا لكلا مجلدي التوكن لـ client_secret_9.json. جاري تبديل client_secrets...
+2026-05-28 23:40:46,195 | INFO | 🔄 تم تبديل ملف العميل (client_secrets) إلى: client_secret_10.json
+2026-05-28 23:40:46,280 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:40:46,321 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:40:46,935 | WARNING | ⚠️ انتهاء الكوتا للتوكن (secret1/youtube_token2.pickle) لـ client_secret_10.json. جاري تبديل المجلد والمحاولة مجدداً...
+2026-05-28 23:40:46,936 | INFO | 🔄 تم تبديل مسار التوكنات: secret1/youtube_token2.pickle -> youtube_token2.pickle
+2026-05-28 23:40:46,942 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:40:46,972 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:40:47,550 | WARNING | ⚠️ انتهاء الكوتا لكلا مجلدي التوكن لـ client_secret_10.json. جاري تبديل client_secrets...
+2026-05-28 23:40:47,551 | INFO | 🔄 تم تبديل ملف العميل (client_secrets) إلى: client_secret_11.json
+2026-05-28 23:40:47,619 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:40:47,650 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:40:48,654 | WARNING | ⚠️ انتهاء الكوتا للتوكن (secret1/youtube_token2.pickle) لـ client_secret_11.json. جاري تبديل المجلد والمحاولة مجدداً...
+2026-05-28 23:40:48,654 | INFO | 🔄 تم تبديل مسار التوكنات: youtube_token2.pickle -> secret1/youtube_token2.pickle
+2026-05-28 23:40:48,659 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:40:48,702 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:40:49,352 | WARNING | ⚠️ انتهاء الكوتا لكلا مجلدي التوكن لـ client_secret_11.json. جاري تبديل client_secrets...
+2026-05-28 23:40:49,353 | INFO | 🔄 تم تبديل ملف العميل (client_secrets) إلى: client_secret_12.json
+2026-05-28 23:40:49,438 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:40:49,471 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:40:51,390 | WARNING | ⚠️ انتهاء الكوتا للتوكن (secret1/youtube_token2.pickle) لـ client_secret_12.json. جاري تبديل المجلد والمحاولة مجدداً...
+2026-05-28 23:40:51,391 | INFO | 🔄 تم تبديل مسار التوكنات: secret1/youtube_token2.pickle -> youtube_token2.pickle
+2026-05-28 23:40:51,398 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:40:51,441 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:40:52,742 | WARNING | ⚠️ انتهاء الكوتا لكلا مجلدي التوكن لـ client_secret_12.json. جاري تبديل client_secrets...
+2026-05-28 23:40:52,742 | INFO | 🔄 تم تبديل ملف العميل (client_secrets) إلى: client_secret_13.json
+2026-05-28 23:40:52,817 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:40:52,853 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:40:53,546 | WARNING | ⚠️ انتهاء الكوتا للتوكن (secret1/youtube_token2.pickle) لـ client_secret_13.json. جاري تبديل المجلد والمحاولة مجدداً...
+2026-05-28 23:40:53,548 | INFO | 🔄 تم تبديل مسار التوكنات: youtube_token2.pickle -> secret1/youtube_token2.pickle
+2026-05-28 23:40:53,553 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:40:53,587 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:40:54,288 | WARNING | ⚠️ انتهاء الكوتا لكلا مجلدي التوكن لـ client_secret_13.json. جاري تبديل client_secrets...
+2026-05-28 23:40:54,290 | INFO | 🔄 تم تبديل ملف العميل (client_secrets) إلى: client_secret_14.json
+2026-05-28 23:40:54,294 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:40:54,339 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:40:55,625 | WARNING | ⚠️ انتهاء الكوتا للتوكن (secret1/youtube_token2.pickle) لـ client_secret_14.json. جاري تبديل المجلد والمحاولة مجدداً...
+2026-05-28 23:40:55,625 | INFO | 🔄 تم تبديل مسار التوكنات: secret1/youtube_token2.pickle -> youtube_token2.pickle
+2026-05-28 23:40:55,632 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:40:55,666 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:40:56,539 | WARNING | ⚠️ انتهاء الكوتا لكلا مجلدي التوكن لـ client_secret_14.json. جاري تبديل client_secrets...
+2026-05-28 23:40:56,540 | INFO | 🔄 تم تبديل ملف العميل (client_secrets) إلى: client_secrets.json
+2026-05-28 23:40:56,541 | ERROR | يوتيوب ❌ فشل نهائي للتوكن youtube_token2.pickle: <HttpError 400 when requesting None returned "The user has exceeded the number of videos they may upload.". Details: "[{'message': 'The user has exceeded the number of videos they may upload.', 'domain': 'youtube.video', 'reason': 'uploadLimitExceeded'}]">
+2026-05-28 23:40:56,551 | ERROR | فشل حذف الفيديو: [WinError 32] The process cannot access the file because it is being used by another process: 'downloads\\BAACAgQAAxkBAAIpkGoYlhSxrfV8eFSUalX9cE8uYf9SAAIgHQAC7LjJUHAybt5Pk7OTOwQ.mp4'
+2026-05-28 23:40:56,562 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-28 23:40:58,187 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-05-28 23:40:58,891 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-05-28 23:40:59,151 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-05-28 23:40:59,826 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3136.mp4 "HTTP/1.1 200 OK"
+2026-05-28 23:41:04,319 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAIpk2oYliV2noWrVx615KyuPOnpfMZlAAIxHQAC7LjJUHGVfB9zQ1m4OwQ.mp4
+2026-05-28 23:41:05,757 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-05-28 23:41:06,094 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-05-28 23:41:06,176 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:06,232 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:07,086 | WARNING | ⚠️ انتهاء الكوتا للتوكن (youtube_token2.pickle) لـ client_secrets.json. جاري تبديل المجلد والمحاولة مجدداً...
+2026-05-28 23:41:07,087 | INFO | 🔄 تم تبديل مسار التوكنات: youtube_token2.pickle -> secret1/youtube_token2.pickle
+2026-05-28 23:41:07,152 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:07,188 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:07,763 | WARNING | ⚠️ انتهاء الكوتا لكلا مجلدي التوكن لـ client_secrets.json. جاري تبديل client_secrets...
+2026-05-28 23:41:07,764 | INFO | 🔄 تم تبديل ملف العميل (client_secrets) إلى: client_secrets2.json
+2026-05-28 23:41:07,768 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:07,785 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:08,316 | WARNING | ⚠️ انتهاء الكوتا للتوكن (secret1/youtube_token2.pickle) لـ client_secrets2.json. جاري تبديل المجلد والمحاولة مجدداً...
+2026-05-28 23:41:08,317 | INFO | 🔄 تم تبديل مسار التوكنات: secret1/youtube_token2.pickle -> youtube_token2.pickle
+2026-05-28 23:41:08,322 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:08,338 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:09,055 | WARNING | ⚠️ انتهاء الكوتا لكلا مجلدي التوكن لـ client_secrets2.json. جاري تبديل client_secrets...
+2026-05-28 23:41:09,057 | INFO | 🔄 تم تبديل ملف العميل (client_secrets) إلى: client_secrets3.json
+2026-05-28 23:41:09,063 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:09,105 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:10,789 | WARNING | ⚠️ انتهاء الكوتا للتوكن (secret1/youtube_token2.pickle) لـ client_secrets3.json. جاري تبديل المجلد والمحاولة مجدداً...
+2026-05-28 23:41:10,790 | INFO | 🔄 تم تبديل مسار التوكنات: youtube_token2.pickle -> secret1/youtube_token2.pickle
+2026-05-28 23:41:10,793 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:10,803 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:11,316 | WARNING | ⚠️ انتهاء الكوتا لكلا مجلدي التوكن لـ client_secrets3.json. جاري تبديل client_secrets...
+2026-05-28 23:41:11,318 | INFO | 🔄 تم تبديل ملف العميل (client_secrets) إلى: client_secrets4.json
+2026-05-28 23:41:11,324 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:11,360 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:12,104 | WARNING | ⚠️ انتهاء الكوتا للتوكن (secret1/youtube_token2.pickle) لـ client_secrets4.json. جاري تبديل المجلد والمحاولة مجدداً...
+2026-05-28 23:41:12,104 | INFO | 🔄 تم تبديل مسار التوكنات: secret1/youtube_token2.pickle -> youtube_token2.pickle
+2026-05-28 23:41:12,110 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:12,140 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:13,280 | WARNING | ⚠️ انتهاء الكوتا لكلا مجلدي التوكن لـ client_secrets4.json. جاري تبديل client_secrets...
+2026-05-28 23:41:13,282 | INFO | 🔄 تم تبديل ملف العميل (client_secrets) إلى: client_secret_5.json
+2026-05-28 23:41:13,288 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:13,321 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:13,969 | WARNING | ⚠️ انتهاء الكوتا للتوكن (secret1/youtube_token2.pickle) لـ client_secret_5.json. جاري تبديل المجلد والمحاولة مجدداً...
+2026-05-28 23:41:13,969 | INFO | 🔄 تم تبديل مسار التوكنات: youtube_token2.pickle -> secret1/youtube_token2.pickle
+2026-05-28 23:41:13,975 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:14,012 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:14,622 | WARNING | ⚠️ انتهاء الكوتا لكلا مجلدي التوكن لـ client_secret_5.json. جاري تبديل client_secrets...
+2026-05-28 23:41:14,623 | INFO | 🔄 تم تبديل ملف العميل (client_secrets) إلى: client_secret_6.json
+2026-05-28 23:41:14,628 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:14,659 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:15,278 | WARNING | ⚠️ انتهاء الكوتا للتوكن (secret1/youtube_token2.pickle) لـ client_secret_6.json. جاري تبديل المجلد والمحاولة مجدداً...
+2026-05-28 23:41:15,279 | INFO | 🔄 تم تبديل مسار التوكنات: secret1/youtube_token2.pickle -> youtube_token2.pickle
+2026-05-28 23:41:15,285 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:15,320 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:17,735 | WARNING | ⚠️ انتهاء الكوتا لكلا مجلدي التوكن لـ client_secret_6.json. جاري تبديل client_secrets...
+2026-05-28 23:41:17,737 | INFO | 🔄 تم تبديل ملف العميل (client_secrets) إلى: client_secret_7.json
+2026-05-28 23:41:17,743 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:17,883 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:18,747 | WARNING | ⚠️ انتهاء الكوتا للتوكن (secret1/youtube_token2.pickle) لـ client_secret_7.json. جاري تبديل المجلد والمحاولة مجدداً...
+2026-05-28 23:41:18,749 | INFO | 🔄 تم تبديل مسار التوكنات: youtube_token2.pickle -> secret1/youtube_token2.pickle
+2026-05-28 23:41:18,754 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:18,786 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:19,445 | WARNING | ⚠️ انتهاء الكوتا لكلا مجلدي التوكن لـ client_secret_7.json. جاري تبديل client_secrets...
+2026-05-28 23:41:19,447 | INFO | 🔄 تم تبديل ملف العميل (client_secrets) إلى: client_secret_8.json
+2026-05-28 23:41:19,453 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:19,483 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:20,148 | WARNING | ⚠️ انتهاء الكوتا للتوكن (secret1/youtube_token2.pickle) لـ client_secret_8.json. جاري تبديل المجلد والمحاولة مجدداً...
+2026-05-28 23:41:20,149 | INFO | 🔄 تم تبديل مسار التوكنات: secret1/youtube_token2.pickle -> youtube_token2.pickle
+2026-05-28 23:41:20,155 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:20,197 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:21,050 | WARNING | ⚠️ انتهاء الكوتا لكلا مجلدي التوكن لـ client_secret_8.json. جاري تبديل client_secrets...
+2026-05-28 23:41:21,051 | INFO | 🔄 تم تبديل ملف العميل (client_secrets) إلى: client_secret_9.json
+2026-05-28 23:41:21,057 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:21,088 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:21,730 | WARNING | ⚠️ انتهاء الكوتا للتوكن (secret1/youtube_token2.pickle) لـ client_secret_9.json. جاري تبديل المجلد والمحاولة مجدداً...
+2026-05-28 23:41:21,731 | INFO | 🔄 تم تبديل مسار التوكنات: youtube_token2.pickle -> secret1/youtube_token2.pickle
+2026-05-28 23:41:21,738 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:21,767 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:22,344 | WARNING | ⚠️ انتهاء الكوتا لكلا مجلدي التوكن لـ client_secret_9.json. جاري تبديل client_secrets...
+2026-05-28 23:41:22,345 | INFO | 🔄 تم تبديل ملف العميل (client_secrets) إلى: client_secret_10.json
+2026-05-28 23:41:22,351 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:22,393 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:23,054 | WARNING | ⚠️ انتهاء الكوتا للتوكن (secret1/youtube_token2.pickle) لـ client_secret_10.json. جاري تبديل المجلد والمحاولة مجدداً...
+2026-05-28 23:41:23,055 | INFO | 🔄 تم تبديل مسار التوكنات: secret1/youtube_token2.pickle -> youtube_token2.pickle
+2026-05-28 23:41:23,061 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:23,092 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:24,055 | WARNING | ⚠️ انتهاء الكوتا لكلا مجلدي التوكن لـ client_secret_10.json. جاري تبديل client_secrets...
+2026-05-28 23:41:24,057 | INFO | 🔄 تم تبديل ملف العميل (client_secrets) إلى: client_secret_11.json
+2026-05-28 23:41:24,063 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:24,093 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:24,790 | WARNING | ⚠️ انتهاء الكوتا للتوكن (secret1/youtube_token2.pickle) لـ client_secret_11.json. جاري تبديل المجلد والمحاولة مجدداً...
+2026-05-28 23:41:24,791 | INFO | 🔄 تم تبديل مسار التوكنات: youtube_token2.pickle -> secret1/youtube_token2.pickle
+2026-05-28 23:41:24,795 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:24,822 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:25,415 | WARNING | ⚠️ انتهاء الكوتا لكلا مجلدي التوكن لـ client_secret_11.json. جاري تبديل client_secrets...
+2026-05-28 23:41:25,417 | INFO | 🔄 تم تبديل ملف العميل (client_secrets) إلى: client_secret_12.json
+2026-05-28 23:41:25,423 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:25,454 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:26,748 | WARNING | ⚠️ انتهاء الكوتا للتوكن (secret1/youtube_token2.pickle) لـ client_secret_12.json. جاري تبديل المجلد والمحاولة مجدداً...
+2026-05-28 23:41:26,752 | INFO | 🔄 تم تبديل مسار التوكنات: secret1/youtube_token2.pickle -> youtube_token2.pickle
+2026-05-28 23:41:26,756 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:26,789 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:28,795 | WARNING | ⚠️ انتهاء الكوتا لكلا مجلدي التوكن لـ client_secret_12.json. جاري تبديل client_secrets...
+2026-05-28 23:41:28,795 | INFO | 🔄 تم تبديل ملف العميل (client_secrets) إلى: client_secret_13.json
+2026-05-28 23:41:28,816 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:28,851 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:29,524 | WARNING | ⚠️ انتهاء الكوتا للتوكن (secret1/youtube_token2.pickle) لـ client_secret_13.json. جاري تبديل المجلد والمحاولة مجدداً...
+2026-05-28 23:41:29,524 | INFO | 🔄 تم تبديل مسار التوكنات: youtube_token2.pickle -> secret1/youtube_token2.pickle
+2026-05-28 23:41:29,530 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:29,560 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:30,228 | WARNING | ⚠️ انتهاء الكوتا لكلا مجلدي التوكن لـ client_secret_13.json. جاري تبديل client_secrets...
+2026-05-28 23:41:30,229 | INFO | 🔄 تم تبديل ملف العميل (client_secrets) إلى: client_secret_14.json
+2026-05-28 23:41:30,235 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:30,274 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:31,551 | WARNING | ⚠️ انتهاء الكوتا للتوكن (secret1/youtube_token2.pickle) لـ client_secret_14.json. جاري تبديل المجلد والمحاولة مجدداً...
+2026-05-28 23:41:31,552 | INFO | 🔄 تم تبديل مسار التوكنات: secret1/youtube_token2.pickle -> youtube_token2.pickle
+2026-05-28 23:41:31,557 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:31,603 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:32,979 | WARNING | ⚠️ انتهاء الكوتا لكلا مجلدي التوكن لـ client_secret_14.json. جاري تبديل client_secrets...
+2026-05-28 23:41:32,979 | INFO | 🔄 تم تبديل ملف العميل (client_secrets) إلى: client_secrets.json
+2026-05-28 23:41:32,981 | ERROR | يوتيوب ❌ فشل نهائي للتوكن youtube_token2.pickle: <HttpError 400 when requesting None returned "The user has exceeded the number of videos they may upload.". Details: "[{'message': 'The user has exceeded the number of videos they may upload.', 'domain': 'youtube.video', 'reason': 'uploadLimitExceeded'}]">
+2026-05-28 23:41:32,983 | ERROR | فشل حذف الفيديو: [WinError 32] The process cannot access the file because it is being used by another process: 'downloads\\BAACAgQAAxkBAAIpk2oYliV2noWrVx615KyuPOnpfMZlAAIxHQAC7LjJUHGVfB9zQ1m4OwQ.mp4'
+2026-05-28 23:41:32,991 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-28 23:41:33,813 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-05-28 23:41:34,192 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-05-28 23:41:34,427 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-05-28 23:41:34,739 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3137.mp4 "HTTP/1.1 200 OK"
+2026-05-28 23:41:37,618 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAIplGoYliflj8mOKY-HUEVxG487oVBTAAIyHQAC7LjJULHJrIWX6cASOwQ.mp4
+2026-05-28 23:41:37,915 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-05-28 23:41:38,221 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-05-28 23:41:38,232 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:38,301 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:38,913 | WARNING | ⚠️ انتهاء الكوتا للتوكن (youtube_token2.pickle) لـ client_secrets.json. جاري تبديل المجلد والمحاولة مجدداً...
+2026-05-28 23:41:38,914 | INFO | 🔄 تم تبديل مسار التوكنات: youtube_token2.pickle -> secret1/youtube_token2.pickle
+2026-05-28 23:41:38,927 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:38,954 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:39,520 | WARNING | ⚠️ انتهاء الكوتا لكلا مجلدي التوكن لـ client_secrets.json. جاري تبديل client_secrets...
+2026-05-28 23:41:39,522 | INFO | 🔄 تم تبديل ملف العميل (client_secrets) إلى: client_secrets2.json
+2026-05-28 23:41:39,527 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:39,559 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:40,264 | WARNING | ⚠️ انتهاء الكوتا للتوكن (secret1/youtube_token2.pickle) لـ client_secrets2.json. جاري تبديل المجلد والمحاولة مجدداً...
+2026-05-28 23:41:40,265 | INFO | 🔄 تم تبديل مسار التوكنات: secret1/youtube_token2.pickle -> youtube_token2.pickle
+2026-05-28 23:41:40,272 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:40,304 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:40,974 | WARNING | ⚠️ انتهاء الكوتا لكلا مجلدي التوكن لـ client_secrets2.json. جاري تبديل client_secrets...
+2026-05-28 23:41:40,981 | INFO | 🔄 تم تبديل ملف العميل (client_secrets) إلى: client_secrets3.json
+2026-05-28 23:41:40,988 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:41,025 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:41,599 | WARNING | ⚠️ انتهاء الكوتا للتوكن (secret1/youtube_token2.pickle) لـ client_secrets3.json. جاري تبديل المجلد والمحاولة مجدداً...
+2026-05-28 23:41:41,599 | INFO | 🔄 تم تبديل مسار التوكنات: youtube_token2.pickle -> secret1/youtube_token2.pickle
+2026-05-28 23:41:41,606 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:41,638 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:42,315 | WARNING | ⚠️ انتهاء الكوتا لكلا مجلدي التوكن لـ client_secrets3.json. جاري تبديل client_secrets...
+2026-05-28 23:41:42,316 | INFO | 🔄 تم تبديل ملف العميل (client_secrets) إلى: client_secrets4.json
+2026-05-28 23:41:42,322 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:42,352 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:43,028 | WARNING | ⚠️ انتهاء الكوتا للتوكن (secret1/youtube_token2.pickle) لـ client_secrets4.json. جاري تبديل المجلد والمحاولة مجدداً...
+2026-05-28 23:41:43,029 | INFO | 🔄 تم تبديل مسار التوكنات: secret1/youtube_token2.pickle -> youtube_token2.pickle
+2026-05-28 23:41:43,035 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:43,076 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:43,716 | WARNING | ⚠️ انتهاء الكوتا لكلا مجلدي التوكن لـ client_secrets4.json. جاري تبديل client_secrets...
+2026-05-28 23:41:43,716 | INFO | 🔄 تم تبديل ملف العميل (client_secrets) إلى: client_secret_5.json
+2026-05-28 23:41:43,723 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:43,756 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:44,463 | WARNING | ⚠️ انتهاء الكوتا للتوكن (secret1/youtube_token2.pickle) لـ client_secret_5.json. جاري تبديل المجلد والمحاولة مجدداً...
+2026-05-28 23:41:44,463 | INFO | 🔄 تم تبديل مسار التوكنات: youtube_token2.pickle -> secret1/youtube_token2.pickle
+2026-05-28 23:41:44,471 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:44,508 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:45,390 | WARNING | ⚠️ انتهاء الكوتا لكلا مجلدي التوكن لـ client_secret_5.json. جاري تبديل client_secrets...
+2026-05-28 23:41:45,397 | INFO | 🔄 تم تبديل ملف العميل (client_secrets) إلى: client_secret_6.json
+2026-05-28 23:41:45,403 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:45,437 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:46,064 | WARNING | ⚠️ انتهاء الكوتا للتوكن (secret1/youtube_token2.pickle) لـ client_secret_6.json. جاري تبديل المجلد والمحاولة مجدداً...
+2026-05-28 23:41:46,064 | INFO | 🔄 تم تبديل مسار التوكنات: secret1/youtube_token2.pickle -> youtube_token2.pickle
+2026-05-28 23:41:46,071 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:46,102 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:46,703 | WARNING | ⚠️ انتهاء الكوتا لكلا مجلدي التوكن لـ client_secret_6.json. جاري تبديل client_secrets...
+2026-05-28 23:41:46,703 | INFO | 🔄 تم تبديل ملف العميل (client_secrets) إلى: client_secret_7.json
+2026-05-28 23:41:46,708 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:46,745 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:47,308 | WARNING | ⚠️ انتهاء الكوتا للتوكن (secret1/youtube_token2.pickle) لـ client_secret_7.json. جاري تبديل المجلد والمحاولة مجدداً...
+2026-05-28 23:41:47,309 | INFO | 🔄 تم تبديل مسار التوكنات: youtube_token2.pickle -> secret1/youtube_token2.pickle
+2026-05-28 23:41:47,316 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:47,352 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:49,055 | WARNING | ⚠️ انتهاء الكوتا لكلا مجلدي التوكن لـ client_secret_7.json. جاري تبديل client_secrets...
+2026-05-28 23:41:49,057 | INFO | 🔄 تم تبديل ملف العميل (client_secrets) إلى: client_secret_8.json
+2026-05-28 23:41:49,063 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:49,097 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:49,755 | WARNING | ⚠️ انتهاء الكوتا للتوكن (secret1/youtube_token2.pickle) لـ client_secret_8.json. جاري تبديل المجلد والمحاولة مجدداً...
+2026-05-28 23:41:49,756 | INFO | 🔄 تم تبديل مسار التوكنات: secret1/youtube_token2.pickle -> youtube_token2.pickle
+2026-05-28 23:41:49,760 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:49,902 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:50,424 | WARNING | ⚠️ انتهاء الكوتا لكلا مجلدي التوكن لـ client_secret_8.json. جاري تبديل client_secrets...
+2026-05-28 23:41:50,426 | INFO | 🔄 تم تبديل ملف العميل (client_secrets) إلى: client_secret_9.json
+2026-05-28 23:41:50,431 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:50,466 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:51,032 | WARNING | ⚠️ انتهاء الكوتا للتوكن (secret1/youtube_token2.pickle) لـ client_secret_9.json. جاري تبديل المجلد والمحاولة مجدداً...
+2026-05-28 23:41:51,033 | INFO | 🔄 تم تبديل مسار التوكنات: youtube_token2.pickle -> secret1/youtube_token2.pickle
+2026-05-28 23:41:51,040 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:51,073 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:51,999 | WARNING | ⚠️ انتهاء الكوتا لكلا مجلدي التوكن لـ client_secret_9.json. جاري تبديل client_secrets...
+2026-05-28 23:41:52,000 | INFO | 🔄 تم تبديل ملف العميل (client_secrets) إلى: client_secret_10.json
+2026-05-28 23:41:52,003 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:52,021 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:52,889 | WARNING | ⚠️ انتهاء الكوتا للتوكن (secret1/youtube_token2.pickle) لـ client_secret_10.json. جاري تبديل المجلد والمحاولة مجدداً...
+2026-05-28 23:41:52,890 | INFO | 🔄 تم تبديل مسار التوكنات: secret1/youtube_token2.pickle -> youtube_token2.pickle
+2026-05-28 23:41:52,896 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:52,932 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:53,859 | WARNING | ⚠️ انتهاء الكوتا لكلا مجلدي التوكن لـ client_secret_10.json. جاري تبديل client_secrets...
+2026-05-28 23:41:53,860 | INFO | 🔄 تم تبديل ملف العميل (client_secrets) إلى: client_secret_11.json
+2026-05-28 23:41:53,865 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:53,890 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:54,498 | WARNING | ⚠️ انتهاء الكوتا للتوكن (secret1/youtube_token2.pickle) لـ client_secret_11.json. جاري تبديل المجلد والمحاولة مجدداً...
+2026-05-28 23:41:54,499 | INFO | 🔄 تم تبديل مسار التوكنات: youtube_token2.pickle -> secret1/youtube_token2.pickle
+2026-05-28 23:41:54,506 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:54,548 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:55,133 | WARNING | ⚠️ انتهاء الكوتا لكلا مجلدي التوكن لـ client_secret_11.json. جاري تبديل client_secrets...
+2026-05-28 23:41:55,134 | INFO | 🔄 تم تبديل ملف العميل (client_secrets) إلى: client_secret_12.json
+2026-05-28 23:41:55,141 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:55,172 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:55,829 | WARNING | ⚠️ انتهاء الكوتا للتوكن (secret1/youtube_token2.pickle) لـ client_secret_12.json. جاري تبديل المجلد والمحاولة مجدداً...
+2026-05-28 23:41:55,829 | INFO | 🔄 تم تبديل مسار التوكنات: secret1/youtube_token2.pickle -> youtube_token2.pickle
+2026-05-28 23:41:55,837 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:55,876 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:56,529 | WARNING | ⚠️ انتهاء الكوتا لكلا مجلدي التوكن لـ client_secret_12.json. جاري تبديل client_secrets...
+2026-05-28 23:41:56,529 | INFO | 🔄 تم تبديل ملف العميل (client_secrets) إلى: client_secret_13.json
+2026-05-28 23:41:56,537 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:56,575 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:57,576 | WARNING | ⚠️ انتهاء الكوتا للتوكن (secret1/youtube_token2.pickle) لـ client_secret_13.json. جاري تبديل المجلد والمحاولة مجدداً...
+2026-05-28 23:41:57,577 | INFO | 🔄 تم تبديل مسار التوكنات: youtube_token2.pickle -> secret1/youtube_token2.pickle
+2026-05-28 23:41:57,579 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:57,602 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:58,695 | WARNING | ⚠️ انتهاء الكوتا لكلا مجلدي التوكن لـ client_secret_13.json. جاري تبديل client_secrets...
+2026-05-28 23:41:58,695 | INFO | 🔄 تم تبديل ملف العميل (client_secrets) إلى: client_secret_14.json
+2026-05-28 23:41:58,703 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:58,727 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:41:59,926 | WARNING | ⚠️ انتهاء الكوتا للتوكن (secret1/youtube_token2.pickle) لـ client_secret_14.json. جاري تبديل المجلد والمحاولة مجدداً...
+2026-05-28 23:41:59,927 | INFO | 🔄 تم تبديل مسار التوكنات: secret1/youtube_token2.pickle -> youtube_token2.pickle
+2026-05-28 23:41:59,933 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-05-28 23:41:59,974 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-05-28 23:42:00,847 | WARNING | ⚠️ انتهاء الكوتا لكلا مجلدي التوكن لـ client_secret_14.json. جاري تبديل client_secrets...
+2026-05-28 23:42:00,848 | INFO | 🔄 تم تبديل ملف العميل (client_secrets) إلى: client_secrets.json
+2026-05-28 23:42:00,849 | ERROR | يوتيوب ❌ فشل نهائي للتوكن youtube_token2.pickle: <HttpError 429 when requesting None returned "Quota exceeded for quota metric 'Video Uploads' and limit 'Video Uploads per day' of service 'youtube.googleapis.com' for consumer 'project_number:56290946119'.". Details: "[{'message': "Quota exceeded for quota metric 'Video Uploads' and limit 'Video Uploads per day' of service 'youtube.googleapis.com' for consumer 'project_number:56290946119'.", 'domain': 'global', 'reason': 'rateLimitExceeded'}]">
+2026-05-28 23:42:00,851 | ERROR | فشل حذف الفيديو: [WinError 32] The process cannot access the file because it is being used by another process: 'downloads\\BAACAgQAAxkBAAIplGoYliflj8mOKY-HUEVxG487oVBTAAIyHQAC7LjJULHJrIWX6cASOwQ.mp4'
+2026-05-28 23:42:00,859 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-28 23:42:02,897 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-05-28 23:42:11,160 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-28 23:42:21,387 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-28 23:42:31,616 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-28 23:42:41,846 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-28 23:42:52,155 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-28 23:43:02,390 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-28 23:43:12,612 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-28 23:43:22,842 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-28 23:43:33,062 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-05-28 23:43:43,352 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
