@@ -53,20 +53,7 @@ YOUTUBE_UPLOAD_DELAY   = int(os.getenv("YOUTUBE_UPLOAD_DELAY", "180"))
 # قائمة بجميع ملفات العميل (client_secrets) المتاحة لـ YouTube
 CLIENT_SECRETS_LIST = [
     "client_secrets.json", 
-    "client_secrets2.json", 
-    "client_secrets3.json", 
-    "client_secrets4.json",
-    "client_secret_5.json",
-    "client_secret_6.json",
-    "client_secret_7.json",
-    "client_secret_8.json",
-    "client_secret_9.json",
-    "client_secret_10.json",
-    "client_secret_11.json",
-    "client_secret_12.json",
-    "client_secret_13.json",
-    "client_secret_14.json"
-   
+    "client_secrets1.json"
     ]
 CURRENT_CLIENT_SECRETS = CLIENT_SECRETS_LIST[0]
 

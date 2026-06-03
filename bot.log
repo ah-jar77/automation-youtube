@@ -10121,3 +10121,1388 @@ telegram.error.Conflict: Conflict: terminated by other getUpdates request; make 
 2026-05-28 23:43:22,842 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
 2026-05-28 23:43:33,062 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
 2026-05-28 23:43:43,352 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:30:02,015 | INFO | 🤖 البوت يعمل الآن...
+2026-06-04 00:30:02,960 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getMe "HTTP/1.1 200 OK"
+2026-06-04 00:30:03,179 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/deleteWebhook "HTTP/1.1 200 OK"
+2026-06-04 00:30:03,197 | INFO | Application started
+2026-06-04 00:30:08,039 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 409 Conflict"
+2026-06-04 00:30:08,040 | ERROR | No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 753, in _network_loop_retry
+    if not await do_action():
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 747, in do_action
+    return action_cb_task.result()
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 377, in polling_action_cb
+    updates = await self.bot.get_updates(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_extbot.py", line 649, in get_updates
+    updates = await super().get_updates(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 4366, in get_updates
+    await self._post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 623, in _post
+    return await self._do_post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_extbot.py", line 355, in _do_post
+    return await super()._do_post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 652, in _do_post
+    result = await request.post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\request\_baserequest.py", line 201, in post
+    result = await self._request_wrapper(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\request\_baserequest.py", line 384, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-06-04 00:30:13,940 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 409 Conflict"
+2026-06-04 00:30:13,940 | ERROR | No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 753, in _network_loop_retry
+    if not await do_action():
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 747, in do_action
+    return action_cb_task.result()
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 377, in polling_action_cb
+    updates = await self.bot.get_updates(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_extbot.py", line 649, in get_updates
+    updates = await super().get_updates(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 4366, in get_updates
+    await self._post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 623, in _post
+    return await self._do_post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_extbot.py", line 355, in _do_post
+    return await super()._do_post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 652, in _do_post
+    result = await request.post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\request\_baserequest.py", line 201, in post
+    result = await self._request_wrapper(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\request\_baserequest.py", line 384, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-06-04 00:30:21,092 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 409 Conflict"
+2026-06-04 00:30:21,092 | ERROR | No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 753, in _network_loop_retry
+    if not await do_action():
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 747, in do_action
+    return action_cb_task.result()
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 377, in polling_action_cb
+    updates = await self.bot.get_updates(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_extbot.py", line 649, in get_updates
+    updates = await super().get_updates(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 4366, in get_updates
+    await self._post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 623, in _post
+    return await self._do_post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_extbot.py", line 355, in _do_post
+    return await super()._do_post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 652, in _do_post
+    result = await request.post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\request\_baserequest.py", line 201, in post
+    result = await self._request_wrapper(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\request\_baserequest.py", line 384, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-06-04 00:30:27,147 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 409 Conflict"
+2026-06-04 00:30:27,147 | ERROR | No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 753, in _network_loop_retry
+    if not await do_action():
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 747, in do_action
+    return action_cb_task.result()
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 377, in polling_action_cb
+    updates = await self.bot.get_updates(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_extbot.py", line 649, in get_updates
+    updates = await super().get_updates(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 4366, in get_updates
+    await self._post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 623, in _post
+    return await self._do_post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_extbot.py", line 355, in _do_post
+    return await super()._do_post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 652, in _do_post
+    result = await request.post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\request\_baserequest.py", line 201, in post
+    result = await self._request_wrapper(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\request\_baserequest.py", line 384, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-06-04 00:30:36,353 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 409 Conflict"
+2026-06-04 00:30:36,353 | ERROR | No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 753, in _network_loop_retry
+    if not await do_action():
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 747, in do_action
+    return action_cb_task.result()
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 377, in polling_action_cb
+    updates = await self.bot.get_updates(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_extbot.py", line 649, in get_updates
+    updates = await super().get_updates(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 4366, in get_updates
+    await self._post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 623, in _post
+    return await self._do_post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_extbot.py", line 355, in _do_post
+    return await super()._do_post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 652, in _do_post
+    result = await request.post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\request\_baserequest.py", line 201, in post
+    result = await self._request_wrapper(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\request\_baserequest.py", line 384, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-06-04 00:30:50,152 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 409 Conflict"
+2026-06-04 00:30:50,160 | ERROR | No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 753, in _network_loop_retry
+    if not await do_action():
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 747, in do_action
+    return action_cb_task.result()
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 377, in polling_action_cb
+    updates = await self.bot.get_updates(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_extbot.py", line 649, in get_updates
+    updates = await super().get_updates(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 4366, in get_updates
+    await self._post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 623, in _post
+    return await self._do_post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_extbot.py", line 355, in _do_post
+    return await super()._do_post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 652, in _do_post
+    result = await request.post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\request\_baserequest.py", line 201, in post
+    result = await self._request_wrapper(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\request\_baserequest.py", line 384, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-06-04 00:31:08,358 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:31:10,257 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 409 Conflict"
+2026-06-04 00:31:10,257 | ERROR | No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 753, in _network_loop_retry
+    if not await do_action():
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 747, in do_action
+    return action_cb_task.result()
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 377, in polling_action_cb
+    updates = await self.bot.get_updates(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_extbot.py", line 649, in get_updates
+    updates = await super().get_updates(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 4366, in get_updates
+    await self._post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 623, in _post
+    return await self._do_post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_extbot.py", line 355, in _do_post
+    return await super()._do_post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 652, in _do_post
+    result = await request.post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\request\_baserequest.py", line 201, in post
+    result = await self._request_wrapper(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\request\_baserequest.py", line 384, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-06-04 00:31:21,469 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:31:31,676 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:31:32,408 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 409 Conflict"
+2026-06-04 00:31:32,408 | ERROR | No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 753, in _network_loop_retry
+    if not await do_action():
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 747, in do_action
+    return action_cb_task.result()
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 377, in polling_action_cb
+    updates = await self.bot.get_updates(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_extbot.py", line 649, in get_updates
+    updates = await super().get_updates(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 4366, in get_updates
+    await self._post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 623, in _post
+    return await self._do_post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_extbot.py", line 355, in _do_post
+    return await super()._do_post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 652, in _do_post
+    result = await request.post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\request\_baserequest.py", line 201, in post
+    result = await self._request_wrapper(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\request\_baserequest.py", line 384, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-06-04 00:31:43,597 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:31:53,832 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:32:02,726 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 409 Conflict"
+2026-06-04 00:32:02,726 | ERROR | No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 753, in _network_loop_retry
+    if not await do_action():
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 747, in do_action
+    return action_cb_task.result()
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 377, in polling_action_cb
+    updates = await self.bot.get_updates(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_extbot.py", line 649, in get_updates
+    updates = await super().get_updates(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 4366, in get_updates
+    await self._post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 623, in _post
+    return await self._do_post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_extbot.py", line 355, in _do_post
+    return await super()._do_post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 652, in _do_post
+    result = await request.post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\request\_baserequest.py", line 201, in post
+    result = await self._request_wrapper(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\request\_baserequest.py", line 384, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-06-04 00:32:13,975 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:32:24,171 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:32:34,363 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:32:37,491 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 409 Conflict"
+2026-06-04 00:32:37,491 | ERROR | No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 753, in _network_loop_retry
+    if not await do_action():
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 747, in do_action
+    return action_cb_task.result()
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 377, in polling_action_cb
+    updates = await self.bot.get_updates(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_extbot.py", line 649, in get_updates
+    updates = await super().get_updates(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 4366, in get_updates
+    await self._post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 623, in _post
+    return await self._do_post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_extbot.py", line 355, in _do_post
+    return await super()._do_post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 652, in _do_post
+    result = await request.post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\request\_baserequest.py", line 201, in post
+    result = await self._request_wrapper(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\request\_baserequest.py", line 384, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-06-04 00:32:48,748 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:32:58,928 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:33:09,131 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:33:12,229 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 409 Conflict"
+2026-06-04 00:33:12,229 | ERROR | No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 753, in _network_loop_retry
+    if not await do_action():
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 747, in do_action
+    return action_cb_task.result()
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 377, in polling_action_cb
+    updates = await self.bot.get_updates(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_extbot.py", line 649, in get_updates
+    updates = await super().get_updates(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 4366, in get_updates
+    await self._post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 623, in _post
+    return await self._do_post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_extbot.py", line 355, in _do_post
+    return await super()._do_post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 652, in _do_post
+    result = await request.post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\request\_baserequest.py", line 201, in post
+    result = await self._request_wrapper(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\request\_baserequest.py", line 384, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-06-04 00:33:23,415 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:33:33,656 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:33:43,851 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:33:46,926 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 409 Conflict"
+2026-06-04 00:33:46,926 | ERROR | No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 753, in _network_loop_retry
+    if not await do_action():
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 747, in do_action
+    return action_cb_task.result()
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 377, in polling_action_cb
+    updates = await self.bot.get_updates(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_extbot.py", line 649, in get_updates
+    updates = await super().get_updates(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 4366, in get_updates
+    await self._post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 623, in _post
+    return await self._do_post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_extbot.py", line 355, in _do_post
+    return await super()._do_post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 652, in _do_post
+    result = await request.post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\request\_baserequest.py", line 201, in post
+    result = await self._request_wrapper(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\request\_baserequest.py", line 384, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-06-04 00:33:58,125 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:34:08,313 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:34:18,536 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:34:21,648 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 409 Conflict"
+2026-06-04 00:34:21,648 | ERROR | No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 753, in _network_loop_retry
+    if not await do_action():
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 747, in do_action
+    return action_cb_task.result()
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_updater.py", line 377, in polling_action_cb
+    updates = await self.bot.get_updates(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_extbot.py", line 649, in get_updates
+    updates = await super().get_updates(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 4366, in get_updates
+    await self._post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 623, in _post
+    return await self._do_post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\ext\_extbot.py", line 355, in _do_post
+    return await super()._do_post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\_bot.py", line 652, in _do_post
+    result = await request.post(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\request\_baserequest.py", line 201, in post
+    result = await self._request_wrapper(
+  File "C:\Users\MC\AppData\Local\Programs\Python\Python39\lib\site-packages\telegram\request\_baserequest.py", line 384, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-06-04 00:34:32,846 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:34:43,070 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:34:53,299 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:35:03,511 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:35:09,096 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:35:09,838 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 00:35:11,072 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:35:11,359 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 00:35:13,877 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:35:14,129 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 00:35:24,101 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:35:34,294 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:35:44,524 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:35:54,735 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:36:04,947 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:36:15,160 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:36:25,373 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:36:35,650 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:36:45,767 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:36:46,462 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 00:36:49,727 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:36:49,999 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 00:36:51,824 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:36:52,047 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/answerCallbackQuery "HTTP/1.1 200 OK"
+2026-06-04 00:36:52,245 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:36:54,806 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:36:55,062 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 00:37:05,047 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:37:15,259 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:37:25,486 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:37:35,679 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:37:45,894 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:37:56,112 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:38:06,309 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:38:16,529 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:38:26,736 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:38:36,953 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:38:47,154 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:38:57,353 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:39:07,588 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:39:18,252 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:39:28,448 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:39:38,640 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:39:48,885 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:39:59,123 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:40:09,343 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:40:19,556 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:40:29,740 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:40:40,024 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:40:50,228 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:41:00,434 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:41:10,643 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:41:20,851 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:41:31,033 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:41:41,231 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:41:51,491 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:42:01,723 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:42:11,926 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:42:22,136 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:42:32,372 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:42:40,890 | INFO | 🤖 البوت يعمل الآن...
+2026-06-04 00:42:41,565 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getMe "HTTP/1.1 200 OK"
+2026-06-04 00:42:41,782 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/deleteWebhook "HTTP/1.1 200 OK"
+2026-06-04 00:42:41,792 | INFO | Application started
+2026-06-04 00:42:50,888 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:42:51,707 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 00:42:53,266 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:42:53,546 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 00:42:56,205 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:42:56,474 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 00:43:03,913 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:43:04,639 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 00:43:07,774 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:43:08,051 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 00:43:10,215 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:43:10,471 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/answerCallbackQuery "HTTP/1.1 200 OK"
+2026-06-04 00:43:10,799 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:43:15,507 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:43:15,764 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 00:43:25,747 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:43:35,968 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:43:46,193 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:43:56,417 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:44:06,629 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:44:16,871 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:44:21,137 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:44:22,102 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 00:44:22,346 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 00:44:22,634 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3385.mp4 "HTTP/1.1 200 OK"
+2026-06-04 00:44:31,704 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:44:38,346 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAIs_2ogbFUj2aMSAAFY0Wt47CTxRweMrwAC1QsAAl8Y_FCfdEc8ZSDd8zsE.mp4
+2026-06-04 00:44:38,584 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:44:38,807 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:45:35,225 | INFO | 🤖 البوت يعمل الآن...
+2026-06-04 00:45:35,863 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getMe "HTTP/1.1 200 OK"
+2026-06-04 00:45:36,069 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/deleteWebhook "HTTP/1.1 200 OK"
+2026-06-04 00:45:36,072 | INFO | Application started
+2026-06-04 00:45:41,752 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:45:42,438 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 00:45:43,974 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:45:44,238 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 00:45:46,001 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:45:46,251 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 00:45:48,860 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:45:49,136 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 00:45:52,404 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:45:53,425 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 00:45:54,081 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:45:54,318 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/answerCallbackQuery "HTTP/1.1 200 OK"
+2026-06-04 00:45:54,567 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:46:04,351 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:46:14,604 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:46:24,831 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:46:36,213 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:46:43,420 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:46:44,343 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 00:46:44,563 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 00:46:44,863 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3385.mp4 "HTTP/1.1 200 OK"
+2026-06-04 00:46:53,856 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:47:00,372 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAIs_2ogbFUj2aMSAAFY0Wt47CTxRweMrwAC1QsAAl8Y_FCfdEc8ZSDd8zsE.mp4
+2026-06-04 00:47:00,651 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:47:00,971 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:48:10,089 | INFO | "GET /?state=glhazSl8duQKIGrhYRSK8VkeP68S4i&iss=https://accounts.google.com&code=4/0AeoWuM89OpT65TtosEJi97dGKypFB88e6puoGI-V4zeHxy_j0UNX_4YAN-PHlXIDyf82Mg&scope=https://www.googleapis.com/auth/youtube.upload HTTP/1.1" 200 65
+2026-06-04 00:48:10,778 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 00:48:10,811 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 00:48:45,277 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=cVOojxzfumA
+2026-06-04 00:48:45,277 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=cVOojxzfumA
+2026-06-04 00:48:45,278 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAIs_2ogbFUj2aMSAAFY0Wt47CTxRweMrwAC1QsAAl8Y_FCfdEc8ZSDd8zsE.mp4
+2026-06-04 00:48:45,281 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:48:46,023 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:48:46,369 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 00:48:46,603 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 00:48:47,164 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3386.mp4 "HTTP/1.1 200 OK"
+2026-06-04 00:48:52,247 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAItAAFqIGxVk730Ms6uXEr5pkzncQRi5wACowsAAnEyBVGjJmby9YJUoDsE.mp4
+2026-06-04 00:48:52,501 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:48:52,743 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:48:52,753 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 00:48:52,773 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 00:49:00,877 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=NpThJd5MhoY
+2026-06-04 00:49:00,878 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=NpThJd5MhoY
+2026-06-04 00:49:00,880 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAItAAFqIGxVk730Ms6uXEr5pkzncQRi5wACowsAAnEyBVGjJmby9YJUoDsE.mp4
+2026-06-04 00:49:00,885 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:49:01,561 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:49:01,827 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 00:49:02,072 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 00:49:02,618 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3387.mp4 "HTTP/1.1 200 OK"
+2026-06-04 00:49:04,002 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAItAWogbFUoBWbAAiXd5OTiz4-LF7_rAAIiCwAC0IANUY7wh60CeCh1OwQ.mp4
+2026-06-04 00:49:04,241 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:49:04,555 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:49:04,561 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 00:49:04,583 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 00:49:08,215 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=EbfBqhHuMgE
+2026-06-04 00:49:08,216 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=EbfBqhHuMgE
+2026-06-04 00:49:08,218 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAItAWogbFUoBWbAAiXd5OTiz4-LF7_rAAIiCwAC0IANUY7wh60CeCh1OwQ.mp4
+2026-06-04 00:49:08,523 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:49:08,785 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 00:49:08,987 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 00:49:09,478 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3388.mp4 "HTTP/1.1 200 OK"
+2026-06-04 00:49:11,140 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:49:12,730 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAItAmogbFXqWPdjNlKMWAsHGMDd6N8fAALQCwACC9X8UFrp4t7MXVnVOwQ.mp4
+2026-06-04 00:49:13,047 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:49:13,288 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:49:13,298 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 00:49:13,322 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 00:49:20,242 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=VE8GPojZZlg
+2026-06-04 00:49:20,243 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=VE8GPojZZlg
+2026-06-04 00:49:20,246 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAItAmogbFXqWPdjNlKMWAsHGMDd6N8fAALQCwACC9X8UFrp4t7MXVnVOwQ.mp4
+2026-06-04 00:49:20,884 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:49:21,147 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 00:49:21,347 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 00:49:21,358 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:49:21,772 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3389.mp4 "HTTP/1.1 200 OK"
+2026-06-04 00:49:23,197 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAItA2ogbFU31QYfyEgNeKLsMR6InfvqAAJUCwACdqL8UO5hodGwQT5UOwQ.mp4
+2026-06-04 00:49:23,523 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:49:23,877 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:49:23,880 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 00:49:23,896 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 00:49:28,052 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=XFZE-0mvf9Y
+2026-06-04 00:49:28,053 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=XFZE-0mvf9Y
+2026-06-04 00:49:28,055 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAItA2ogbFU31QYfyEgNeKLsMR6InfvqAAJUCwACdqL8UO5hodGwQT5UOwQ.mp4
+2026-06-04 00:49:28,325 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:49:28,582 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 00:49:28,816 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 00:49:29,277 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3390.mp4 "HTTP/1.1 200 OK"
+2026-06-04 00:49:31,583 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:49:33,883 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAItBGogbFV3994sHhO51WX65rqcFPJ3AAJkCwAC2swFUY14hHYR9a84OwQ.mp4
+2026-06-04 00:49:34,138 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:49:34,393 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:49:34,400 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 00:49:34,415 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 00:49:44,006 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=2ILMaXCAv40
+2026-06-04 00:49:44,008 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=2ILMaXCAv40
+2026-06-04 00:49:44,010 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAItBGogbFV3994sHhO51WX65rqcFPJ3AAJkCwAC2swFUY14hHYR9a84OwQ.mp4
+2026-06-04 00:49:44,016 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:49:44,690 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:49:44,985 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 00:49:45,191 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 00:49:45,510 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3391.mp4 "HTTP/1.1 200 OK"
+2026-06-04 00:49:50,502 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAItBWogbFWxkh0YaJzUH36bOIXTTDTLAALpCgACj4ENUUOMTU-2Lw1COwQ.mp4
+2026-06-04 00:49:51,120 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:49:51,442 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:49:51,450 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 00:49:51,468 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 00:50:01,568 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=fWHSzH3MrEo
+2026-06-04 00:50:01,569 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=fWHSzH3MrEo
+2026-06-04 00:50:01,572 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAItBWogbFWxkh0YaJzUH36bOIXTTDTLAALpCgACj4ENUUOMTU-2Lw1COwQ.mp4
+2026-06-04 00:50:01,578 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:50:02,312 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:50:02,582 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 00:50:02,796 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 00:50:03,276 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3392.mp4 "HTTP/1.1 200 OK"
+2026-06-04 00:50:11,030 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAItBmogbFUREb4VGlr4fzz1jDp_jKXHAAJnCwACjeANUSoHwBFGGv7DOwQ.mp4
+2026-06-04 00:50:11,287 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:50:11,534 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:50:11,545 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 00:50:11,564 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 00:50:28,486 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=v32_82U6IOE
+2026-06-04 00:50:28,487 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=v32_82U6IOE
+2026-06-04 00:50:28,490 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAItBmogbFUREb4VGlr4fzz1jDp_jKXHAAJnCwACjeANUSoHwBFGGv7DOwQ.mp4
+2026-06-04 00:50:28,499 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:50:29,241 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:50:29,539 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 00:50:29,772 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 00:50:30,490 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3393.mp4 "HTTP/1.1 200 OK"
+2026-06-04 00:50:38,657 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAItB2ogbFURcqKTC7CBTRsLvgWN82GeAAKzCwACvtkMUWN-FkB1cA8yOwQ.mp4
+2026-06-04 00:50:38,703 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:50:38,894 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:50:39,148 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:50:39,151 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 00:50:39,192 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 00:50:52,020 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=QDKZgFYFhRw
+2026-06-04 00:50:52,021 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=QDKZgFYFhRw
+2026-06-04 00:50:52,024 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAItB2ogbFURcqKTC7CBTRsLvgWN82GeAAKzCwACvtkMUWN-FkB1cA8yOwQ.mp4
+2026-06-04 00:50:52,033 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:50:52,690 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:50:52,936 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 00:50:53,133 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 00:50:53,445 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3394.mp4 "HTTP/1.1 200 OK"
+2026-06-04 00:51:00,521 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAItCGogbFUo902Eoe6jdLk0H_74Q0FGAAKiCwACpPsFUYNTnBsbi7ImOwQ.mp4
+2026-06-04 00:51:00,767 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:51:01,092 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:51:01,100 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 00:51:01,114 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 00:51:11,202 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=u70atcQS_JY
+2026-06-04 00:51:11,203 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=u70atcQS_JY
+2026-06-04 00:51:11,205 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAItCGogbFUo902Eoe6jdLk0H_74Q0FGAAKiCwACpPsFUYNTnBsbi7ImOwQ.mp4
+2026-06-04 00:51:11,213 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:51:11,868 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:51:12,132 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 00:51:12,338 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 00:51:12,784 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3395.mp4 "HTTP/1.1 200 OK"
+2026-06-04 00:51:18,607 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAItCWogbFWbB0IK0-al8lSdgkPlHjjGAAK9CwACidAEUSXWIyS84iwkOwQ.mp4
+2026-06-04 00:51:18,870 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:51:19,117 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:51:19,120 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 00:51:19,136 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 00:51:41,506 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=ZGmKHsyPloM
+2026-06-04 00:51:41,507 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=ZGmKHsyPloM
+2026-06-04 00:51:41,510 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAItCWogbFWbB0IK0-al8lSdgkPlHjjGAAK9CwACidAEUSXWIyS84iwkOwQ.mp4
+2026-06-04 00:51:41,518 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:51:42,180 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:51:42,460 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 00:51:42,662 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 00:51:42,956 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3396.mp4 "HTTP/1.1 200 OK"
+2026-06-04 00:51:45,400 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAItCmogbFXsJIA0dYeiBrRP-gjlgZ3EAAJhCwACSmYMUTM54PDCLwT4OwQ.mp4
+2026-06-04 00:51:45,647 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:51:45,888 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:51:45,890 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 00:51:45,909 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 00:52:01,357 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=2t2Mfph8snU
+2026-06-04 00:52:01,358 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=2t2Mfph8snU
+2026-06-04 00:52:01,360 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAItCmogbFXsJIA0dYeiBrRP-gjlgZ3EAAJhCwACSmYMUTM54PDCLwT4OwQ.mp4
+2026-06-04 00:52:01,365 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:52:02,138 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:52:02,550 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 00:52:02,757 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 00:52:03,068 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3397.mp4 "HTTP/1.1 200 OK"
+2026-06-04 00:52:10,265 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAItC2ogbFXz7iykH4alNXFzb5Cfp2P3AAKUCwAChycEUegYM_SRpIAhOwQ.mp4
+2026-06-04 00:52:10,531 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:52:10,766 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:52:10,774 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 00:52:10,790 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 00:52:25,670 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=0XHRQFVIp6w
+2026-06-04 00:52:25,671 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=0XHRQFVIp6w
+2026-06-04 00:52:25,673 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAItC2ogbFXz7iykH4alNXFzb5Cfp2P3AAKUCwAChycEUegYM_SRpIAhOwQ.mp4
+2026-06-04 00:52:25,676 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:52:26,286 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:52:26,549 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 00:52:26,790 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 00:52:27,134 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3398.mp4 "HTTP/1.1 200 OK"
+2026-06-04 00:52:29,296 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAItDGogbFVioTb3GBoYjMkrX8VDZU7HAAKUCgACEPQEUYOfKdLDAXNjOwQ.mp4
+2026-06-04 00:52:29,609 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:52:29,892 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:52:29,895 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 00:52:29,912 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 00:52:34,130 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=pV422xGqExc
+2026-06-04 00:52:34,131 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=pV422xGqExc
+2026-06-04 00:52:34,131 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAItDGogbFVioTb3GBoYjMkrX8VDZU7HAAKUCgACEPQEUYOfKdLDAXNjOwQ.mp4
+2026-06-04 00:52:34,353 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:52:34,592 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 00:52:34,781 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 00:52:35,057 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3399.mp4 "HTTP/1.1 200 OK"
+2026-06-04 00:52:35,878 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:52:36,228 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAItDWogbFUx2W1xRb0pStLqNirMTVGbAAJsCwACJTwEUSfVt0awejfQOwQ.mp4
+2026-06-04 00:52:35,372 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:52:35,622 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:52:35,625 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 00:52:35,640 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 00:52:39,315 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=85BBdC-dcJ8
+2026-06-04 00:52:39,315 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=85BBdC-dcJ8
+2026-06-04 00:52:39,316 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAItDWogbFUx2W1xRb0pStLqNirMTVGbAAJsCwACJTwEUSfVt0awejfQOwQ.mp4
+2026-06-04 00:52:39,676 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:52:39,980 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 00:52:40,186 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 00:52:40,494 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3400.mp4 "HTTP/1.1 200 OK"
+2026-06-04 00:52:44,961 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:52:46,900 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAItDmogbFUFK9b1OIncSoHfZMGwF1R_AALfCgACct0FUckUwcEu8ecKOwQ.mp4
+2026-06-04 00:52:47,348 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:52:47,773 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:52:47,776 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 00:52:47,793 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 00:52:57,782 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=wT_E3zZ7cfc
+2026-06-04 00:52:57,783 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=wT_E3zZ7cfc
+2026-06-04 00:52:57,784 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAItDmogbFUFK9b1OIncSoHfZMGwF1R_AALfCgACct0FUckUwcEu8ecKOwQ.mp4
+2026-06-04 00:52:57,786 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:52:58,819 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:52:59,077 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 00:52:59,300 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 00:52:59,934 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3401.mp4 "HTTP/1.1 200 OK"
+2026-06-04 00:53:08,065 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:53:17,841 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAItD2ogbFW4HTDid752hXgGR7LdW9Z-AAJ8CwACXRwMUbwWbC1yRQwOOwQ.mp4
+2026-06-04 00:53:18,109 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:53:18,280 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:53:18,383 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:53:18,386 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 00:53:18,408 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 00:53:42,717 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=k8Jf-_AQimI
+2026-06-04 00:53:42,717 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=k8Jf-_AQimI
+2026-06-04 00:53:42,718 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAItD2ogbFW4HTDid752hXgGR7LdW9Z-AAJ8CwACXRwMUbwWbC1yRQwOOwQ.mp4
+2026-06-04 00:53:42,721 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:53:43,373 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:53:43,628 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 00:53:43,827 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 00:53:44,268 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3402.mp4 "HTTP/1.1 200 OK"
+2026-06-04 00:53:45,998 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAItEGogbFX5aWvLGeC-ObMkMAU2kfzWAAIrCwACgEgEUVUOURm_bHwbOwQ.mp4
+2026-06-04 00:53:46,281 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:53:46,545 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:53:46,549 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 00:53:46,563 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 00:53:51,349 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=eN90j2H9aFs
+2026-06-04 00:53:51,349 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=eN90j2H9aFs
+2026-06-04 00:53:51,350 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAItEGogbFX5aWvLGeC-ObMkMAU2kfzWAAIrCwACgEgEUVUOURm_bHwbOwQ.mp4
+2026-06-04 00:53:51,624 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:53:51,907 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 00:53:52,127 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 00:53:52,624 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3403.mp4 "HTTP/1.1 200 OK"
+2026-06-04 00:53:52,946 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:53:54,702 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAItEWogbFXEkLbjhexaU6AAAd7RVeLJ7wACbQsAArG8BFH_Zj7ybNn6AjsE.mp4
+2026-06-04 00:53:54,949 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:53:55,192 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:53:55,194 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 00:53:55,208 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 00:53:59,215 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=kwAZf1wjyuc
+2026-06-04 00:53:59,216 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=kwAZf1wjyuc
+2026-06-04 00:53:59,217 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAItEWogbFXEkLbjhexaU6AAAd7RVeLJ7wACbQsAArG8BFH_Zj7ybNn6AjsE.mp4
+2026-06-04 00:53:59,524 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:53:59,804 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 00:54:00,001 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 00:54:00,563 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3404.mp4 "HTTP/1.1 200 OK"
+2026-06-04 00:54:03,060 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAItEmogbFVquYDPqfo0MsZ9Vw3EWANkAAJGCwACJEkMUc6d6wr7_pYbOwQ.mp4
+2026-06-04 00:54:03,156 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:54:03,301 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:54:03,546 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:54:03,550 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 00:54:03,570 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 00:54:10,802 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=wmRrnWhZU-I
+2026-06-04 00:54:10,803 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=wmRrnWhZU-I
+2026-06-04 00:54:10,805 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAItEmogbFVquYDPqfo0MsZ9Vw3EWANkAAJGCwACJEkMUc6d6wr7_pYbOwQ.mp4
+2026-06-04 00:54:11,454 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:54:11,721 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 00:54:11,917 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 00:54:12,187 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3405.mp4 "HTTP/1.1 200 OK"
+2026-06-04 00:54:13,379 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:54:14,958 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAItE2ogbFWZDZES5rAgcZlQF3IVZ7SfAAKeCwACL-EMUQVL3Ay9mHdJOwQ.mp4
+2026-06-04 00:54:15,211 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:54:15,830 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:54:15,834 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 00:54:15,848 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 00:54:25,747 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=EjBNKA-ZGCU
+2026-06-04 00:54:25,747 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=EjBNKA-ZGCU
+2026-06-04 00:54:25,748 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAItE2ogbFWZDZES5rAgcZlQF3IVZ7SfAAKeCwACL-EMUQVL3Ay9mHdJOwQ.mp4
+2026-06-04 00:54:25,753 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:54:26,446 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:54:26,717 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 00:54:26,922 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 00:54:27,370 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3406.mp4 "HTTP/1.1 200 OK"
+2026-06-04 00:54:34,709 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAItFGogbFWHG0KpGZFrBzEPxw9b43f2AAKgCwACJM4FUaalTOV_SWtROwQ.mp4
+2026-06-04 00:54:34,998 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:54:35,343 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:54:35,347 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 00:54:35,365 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 00:54:45,396 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=NTYZ1wRY6DU
+2026-06-04 00:54:45,397 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=NTYZ1wRY6DU
+2026-06-04 00:54:45,399 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAItFGogbFWHG0KpGZFrBzEPxw9b43f2AAKgCwACJM4FUaalTOV_SWtROwQ.mp4
+2026-06-04 00:54:45,407 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:54:46,119 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:54:46,422 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 00:54:46,747 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 00:54:47,072 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3407.mp4 "HTTP/1.1 200 OK"
+2026-06-04 00:54:54,638 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAItFWogbFU1sVsaSaNcphIIaIxuppHTAAL3CgACoKwMUdbEtC5-Ju2hOwQ.mp4
+2026-06-04 00:54:54,909 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:54:55,164 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:54:55,171 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 00:54:55,206 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 00:55:06,831 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=B_hZx4FHdqQ
+2026-06-04 00:55:06,832 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=B_hZx4FHdqQ
+2026-06-04 00:55:06,834 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAItFWogbFU1sVsaSaNcphIIaIxuppHTAAL3CgACoKwMUdbEtC5-Ju2hOwQ.mp4
+2026-06-04 00:55:06,843 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:55:07,471 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:55:15,905 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:55:16,562 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 00:55:16,772 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 00:55:17,081 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3409.mp4 "HTTP/1.1 200 OK"
+2026-06-04 00:55:19,186 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:55:19,314 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAItGGogbGG32-sZy_7mpr4FGj-l4la-AAKjJAACeyoBUaI8FULNWi8kOwQ.mp4
+2026-06-04 00:55:19,604 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:55:19,858 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:55:19,867 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 00:55:19,895 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 00:55:25,285 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=dwbJMcwS-hs
+2026-06-04 00:55:25,286 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=dwbJMcwS-hs
+2026-06-04 00:55:25,287 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAItGGogbGG32-sZy_7mpr4FGj-l4la-AAKjJAACeyoBUaI8FULNWi8kOwQ.mp4
+2026-06-04 00:55:25,949 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:55:26,208 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 00:55:26,406 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 00:55:26,707 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3408.mp4 "HTTP/1.1 200 OK"
+2026-06-04 00:55:28,357 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAItF2ogbFwn0jk-dp0KHSA3b1H1U_R1AAKiJAACeyoBUXdS0y526LB-OwQ.mp4
+2026-06-04 00:55:28,631 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:55:28,895 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:55:28,905 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 00:55:28,927 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 00:55:34,358 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=pHAXzPif1_g
+2026-06-04 00:55:34,360 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=pHAXzPif1_g
+2026-06-04 00:55:34,362 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAItF2ogbFwn0jk-dp0KHSA3b1H1U_R1AAKiJAACeyoBUXdS0y526LB-OwQ.mp4
+2026-06-04 00:55:34,370 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:55:35,032 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 00:55:44,584 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:55:54,816 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:56:05,018 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:56:15,231 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:56:25,461 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:56:35,703 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:56:45,920 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:56:56,125 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:57:06,366 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:57:16,575 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:57:26,793 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:57:37,015 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:57:47,228 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:57:57,426 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:58:07,650 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:58:17,875 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:58:28,096 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:58:38,328 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:58:48,548 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:58:58,778 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:59:08,998 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:59:19,214 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:59:29,439 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:59:39,658 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 00:59:49,900 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:00:00,101 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:00:10,351 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:00:20,633 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:00:30,885 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:00:41,092 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:00:51,317 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:01:01,515 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:01:11,723 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:01:21,932 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:01:32,141 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:01:42,355 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:01:52,550 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:02:02,752 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:02:12,959 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:02:23,151 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:02:33,349 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:02:43,569 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:02:53,769 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:03:03,966 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:03:14,186 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:03:24,396 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:03:34,607 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:03:44,833 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:03:55,044 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:04:05,243 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:04:15,439 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:04:25,649 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:04:35,851 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:04:46,052 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:04:56,247 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:05:06,477 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:05:16,682 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:05:26,900 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:05:37,105 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:05:47,326 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:05:57,520 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:06:07,725 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:06:17,937 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:06:28,170 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:06:38,372 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:06:48,582 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:06:58,801 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:07:09,006 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:07:19,238 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:07:29,513 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:07:39,741 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:07:49,965 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:08:00,191 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:08:10,444 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:08:20,657 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:08:30,869 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:08:41,083 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:08:51,300 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:09:01,501 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:09:11,727 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:09:21,928 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:09:32,120 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:09:42,312 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:09:52,514 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:10:02,711 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:10:12,935 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:10:23,133 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:10:33,328 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:10:43,539 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:10:53,738 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:11:03,940 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:11:14,135 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:11:24,336 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:11:34,577 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:11:44,786 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:11:55,006 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:12:05,222 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:12:15,430 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:12:25,626 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:12:35,822 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:12:46,025 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:12:56,272 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:13:06,484 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:13:16,685 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:13:26,896 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:13:37,097 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:13:47,295 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:13:57,492 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:14:07,708 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:14:17,919 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:14:28,155 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:14:38,373 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:14:42,510 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:14:43,400 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 01:14:44,076 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 01:14:44,355 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3410.mp4 "HTTP/1.1 200 OK"
+2026-06-04 01:14:48,211 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:14:51,017 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:14:54,598 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:14:58,746 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:14:58,756 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAIt1mogp1G8mR_Lc2UsfCcBKSLgmxYmAAL2CgACF8EMUTTio_pQO69qOwQ.mp4
+2026-06-04 01:14:58,973 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:14:59,196 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:14:59,204 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 01:14:59,218 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 01:15:14,984 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=ydvg8drdlU0
+2026-06-04 01:15:14,985 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=ydvg8drdlU0
+2026-06-04 01:15:14,988 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAIt1mogp1G8mR_Lc2UsfCcBKSLgmxYmAAL2CgACF8EMUTTio_pQO69qOwQ.mp4
+2026-06-04 01:15:14,993 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:15:15,598 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:15:15,846 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 01:15:16,265 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 01:15:16,691 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3411.mp4 "HTTP/1.1 200 OK"
+2026-06-04 01:15:18,646 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAIt12ogp1FhkX-sAUlailkrZJDoOd1EAAL9CgACPTEMUW_B9mYhoyt0OwQ.mp4
+2026-06-04 01:15:18,874 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:15:19,185 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:15:19,191 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 01:15:19,205 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 01:15:23,543 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=fyrbe8SShJA
+2026-06-04 01:15:23,544 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=fyrbe8SShJA
+2026-06-04 01:15:23,544 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAIt12ogp1FhkX-sAUlailkrZJDoOd1EAAL9CgACPTEMUW_B9mYhoyt0OwQ.mp4
+2026-06-04 01:15:23,789 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:15:24,021 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 01:15:24,452 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 01:15:24,879 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3412.mp4 "HTTP/1.1 200 OK"
+2026-06-04 01:15:25,195 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:15:26,443 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAIt2Gogp1Fc0vjf--4GoYlI0PMiYHyOAAJMCwACo1ANUakHWDq5fBICOwQ.mp4
+2026-06-04 01:15:26,663 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:15:26,901 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:15:26,904 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 01:15:26,929 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 01:15:31,028 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=TJUhaGTavvk
+2026-06-04 01:15:31,028 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=TJUhaGTavvk
+2026-06-04 01:15:31,029 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAIt2Gogp1Fc0vjf--4GoYlI0PMiYHyOAAJMCwACo1ANUakHWDq5fBICOwQ.mp4
+2026-06-04 01:15:31,267 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:15:31,516 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 01:15:32,033 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 01:15:32,454 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3413.mp4 "HTTP/1.1 200 OK"
+2026-06-04 01:15:35,399 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:15:35,910 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAIt2Wogp1HJqsNzVVokPOL4aNAJW5anAAJvCwACE18FUW5dXIqDZnaSOwQ.mp4
+2026-06-04 01:15:36,141 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:15:36,380 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:15:36,387 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 01:15:36,401 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 01:15:42,871 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=wT4pGnYfhT8
+2026-06-04 01:15:42,872 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=wT4pGnYfhT8
+2026-06-04 01:15:42,874 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAIt2Wogp1HJqsNzVVokPOL4aNAJW5anAAJvCwACE18FUW5dXIqDZnaSOwQ.mp4
+2026-06-04 01:15:43,601 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:15:43,844 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 01:15:44,322 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 01:15:44,594 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3414.mp4 "HTTP/1.1 200 OK"
+2026-06-04 01:15:45,617 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:15:48,366 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAIt2mogp1HClSXjTDteOeFJ-6GfxwUDAAJJCwACwKgFUYAbS_mbfd5vOwQ.mp4
+2026-06-04 01:15:48,641 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:15:48,908 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:15:48,915 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 01:15:48,930 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 01:15:55,391 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=u_bMfl5_414
+2026-06-04 01:15:55,392 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=u_bMfl5_414
+2026-06-04 01:15:55,392 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAIt2mogp1HClSXjTDteOeFJ-6GfxwUDAAJJCwACwKgFUYAbS_mbfd5vOwQ.mp4
+2026-06-04 01:15:55,820 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:15:56,007 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:15:56,272 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 01:15:56,828 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 01:15:57,283 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3415.mp4 "HTTP/1.1 200 OK"
+2026-06-04 01:16:06,032 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:16:09,513 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAIt22ogp1GQBx6cirPs5xM4OOymOp4qAAIKDAACmdf9UC0cYyaPR1lpOwQ.mp4
+2026-06-04 01:16:09,805 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:16:10,122 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:16:10,130 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 01:16:10,151 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 01:16:24,181 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=eRSarvUNv_k
+2026-06-04 01:16:24,181 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=eRSarvUNv_k
+2026-06-04 01:16:24,181 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAIt22ogp1GQBx6cirPs5xM4OOymOp4qAAIKDAACmdf9UC0cYyaPR1lpOwQ.mp4
+2026-06-04 01:16:24,197 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:16:24,824 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:16:25,103 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 01:16:25,493 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 01:16:26,407 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3416.mp4 "HTTP/1.1 200 OK"
+2026-06-04 01:16:28,022 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAIt3Gogp1GZAxEh-jXFvH4hZubg3xnlAAJ4CwACGCgEUSHem1NPsmc1OwQ.mp4
+2026-06-04 01:16:28,262 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:16:28,530 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:16:28,545 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 01:16:28,564 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 01:16:33,498 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=D7xWKtmcRn4
+2026-06-04 01:16:33,498 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=D7xWKtmcRn4
+2026-06-04 01:16:33,498 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAIt3Gogp1GZAxEh-jXFvH4hZubg3xnlAAJ4CwACGCgEUSHem1NPsmc1OwQ.mp4
+2026-06-04 01:16:33,738 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:16:33,977 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 01:16:34,411 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:16:34,468 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 01:16:34,912 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3417.mp4 "HTTP/1.1 200 OK"
+2026-06-04 01:16:38,110 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAIt3Wogp1EAAUV92470w5ha_xsAAZ1B1bAAAuAKAAKEgAxRHvUR2CLPMhQ7BA.mp4
+2026-06-04 01:16:38,360 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:16:38,616 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:16:38,616 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 01:16:38,640 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 01:16:43,657 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=aW2pIx19V9I
+2026-06-04 01:16:43,657 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=aW2pIx19V9I
+2026-06-04 01:16:43,657 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAIt3Wogp1EAAUV92470w5ha_xsAAZ1B1bAAAuAKAAKEgAxRHvUR2CLPMhQ7BA.mp4
+2026-06-04 01:16:44,273 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:16:44,544 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 01:16:44,618 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:16:45,011 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 01:16:45,431 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3418.mp4 "HTTP/1.1 200 OK"
+2026-06-04 01:16:47,674 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAIt3mogp1GWjCLCGX_Hsql-hqjfDGfNAAJGCwAC9vkNUXLbG7hcAzTGOwQ.mp4
+2026-06-04 01:16:47,886 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:16:48,171 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:16:48,186 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 01:16:48,202 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 01:16:53,937 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=5PGjKvZaw3U
+2026-06-04 01:16:53,937 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=5PGjKvZaw3U
+2026-06-04 01:16:53,937 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAIt3mogp1GWjCLCGX_Hsql-hqjfDGfNAAJGCwAC9vkNUXLbG7hcAzTGOwQ.mp4
+2026-06-04 01:16:54,741 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:16:54,825 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:16:55,036 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 01:16:55,460 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 01:16:55,916 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3419.mp4 "HTTP/1.1 200 OK"
+2026-06-04 01:16:58,114 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAIt32ogp1GTsu8uGa33E5BXSPtCPFBmAAIiCwAChIsEUaJuQcCsfpyMOwQ.mp4
+2026-06-04 01:16:58,370 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:16:58,652 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:16:58,652 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 01:16:58,657 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 01:17:04,326 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=YfrIh4a4EsU
+2026-06-04 01:17:04,326 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=YfrIh4a4EsU
+2026-06-04 01:17:04,326 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAIt32ogp1GTsu8uGa33E5BXSPtCPFBmAAIiCwAChIsEUaJuQcCsfpyMOwQ.mp4
+2026-06-04 01:17:04,960 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:17:05,034 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:17:05,256 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 01:17:05,764 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 01:17:06,020 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3420.mp4 "HTTP/1.1 200 OK"
+2026-06-04 01:17:14,056 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAIt4Gogp1EhYqv2HiIiVVRVBXorAX6_AAKnCwACfDQFUStZt3bShqBDOwQ.mp4
+2026-06-04 01:17:14,357 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:17:14,581 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:17:14,581 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 01:17:14,610 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 01:17:25,243 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=4ZG6MhnslTU
+2026-06-04 01:17:25,243 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=4ZG6MhnslTU
+2026-06-04 01:17:25,258 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAIt4Gogp1EhYqv2HiIiVVRVBXorAX6_AAKnCwACfDQFUStZt3bShqBDOwQ.mp4
+2026-06-04 01:17:25,258 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:17:25,896 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:17:26,198 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 01:17:26,817 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 01:17:27,281 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3421.mp4 "HTTP/1.1 200 OK"
+2026-06-04 01:17:35,465 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:17:43,629 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAIt4Wogp1Fuft8fPy3NS-cQ-MX2ODUCAAJ5CwACzh4EUV-LxJHHFPZAOwQ.mp4
+2026-06-04 01:17:43,878 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:17:44,100 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:17:44,100 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 01:17:44,122 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 01:18:02,831 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=tig4wzMNdfo
+2026-06-04 01:18:02,831 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=tig4wzMNdfo
+2026-06-04 01:18:02,831 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAIt4Wogp1Fuft8fPy3NS-cQ-MX2ODUCAAJ5CwACzh4EUV-LxJHHFPZAOwQ.mp4
+2026-06-04 01:18:02,846 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:18:03,548 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:18:03,899 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 01:18:04,377 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 01:18:04,642 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3422.mp4 "HTTP/1.1 200 OK"
+2026-06-04 01:18:10,657 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAIt4mogp1GCStiaYZSKE1z-hfiVmFPiAAJ4CwAC3VX8UHejz6qvat-ROwQ.mp4
+2026-06-04 01:18:10,877 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:18:11,084 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:18:11,099 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 01:18:11,109 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 01:18:20,277 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=2wN6fWLwm4Y
+2026-06-04 01:18:20,277 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=2wN6fWLwm4Y
+2026-06-04 01:18:20,277 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAIt4mogp1GCStiaYZSKE1z-hfiVmFPiAAJ4CwAC3VX8UHejz6qvat-ROwQ.mp4
+2026-06-04 01:18:20,292 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:18:21,249 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:18:21,480 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 01:18:21,936 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 01:18:22,837 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3423.mp4 "HTTP/1.1 200 OK"
+2026-06-04 01:18:26,025 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAIt42ogp1ELTHbSdb6OID7xa8g0J2GtAALtCgACbM78UOL2HvpnrXFlOwQ.mp4
+2026-06-04 01:18:26,257 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:18:26,569 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:18:26,569 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 01:18:26,591 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 01:18:33,215 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=z0CZRyc84Y4
+2026-06-04 01:18:33,215 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=z0CZRyc84Y4
+2026-06-04 01:18:33,215 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAIt42ogp1ELTHbSdb6OID7xa8g0J2GtAALtCgACbM78UOL2HvpnrXFlOwQ.mp4
+2026-06-04 01:18:33,234 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:18:33,833 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:18:34,102 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 01:18:34,674 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 01:18:34,963 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3424.mp4 "HTTP/1.1 200 OK"
+2026-06-04 01:18:40,595 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAIt5Gogp1Ha0zFuDuoDMlrzLNKrQWkRAAL3CgACZpMEUXNTG7Vf-FM4OwQ.mp4
+2026-06-04 01:18:40,858 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:18:41,099 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:18:41,114 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 01:18:41,131 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 01:18:49,323 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=ahykXY7tH1Q
+2026-06-04 01:18:49,323 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=ahykXY7tH1Q
+2026-06-04 01:18:49,323 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAIt5Gogp1Ha0zFuDuoDMlrzLNKrQWkRAAL3CgACZpMEUXNTG7Vf-FM4OwQ.mp4
+2026-06-04 01:18:49,323 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:18:50,023 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:18:50,397 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 01:18:50,895 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 01:18:51,328 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3425.mp4 "HTTP/1.1 200 OK"
+2026-06-04 01:18:52,432 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAIt5Wogp1F_w_Koqo17SeG54QOqwcmdAAL3CwACSTD9UNwX-exBzYCKOwQ.mp4
+2026-06-04 01:18:52,665 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:18:52,950 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:18:52,950 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 01:18:53,003 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 01:18:56,674 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=zkbCpjdLbMg
+2026-06-04 01:18:56,674 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=zkbCpjdLbMg
+2026-06-04 01:18:56,674 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAIt5Wogp1F_w_Koqo17SeG54QOqwcmdAAL3CwACSTD9UNwX-exBzYCKOwQ.mp4
+2026-06-04 01:18:56,914 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:18:57,197 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 01:18:57,689 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 01:18:58,140 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3426.mp4 "HTTP/1.1 200 OK"
+2026-06-04 01:18:59,544 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:19:02,840 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAIt5mogp1Gy4TrhHJwEgHfj2CdEECYNAAK8CgAC_zIFUdYuK4cS_r8yOwQ.mp4
+2026-06-04 01:19:03,119 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:19:03,379 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:19:03,394 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 01:19:03,426 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 01:19:11,055 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=BVporNCjYI4
+2026-06-04 01:19:11,070 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=BVporNCjYI4
+2026-06-04 01:19:11,070 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAIt5mogp1Gy4TrhHJwEgHfj2CdEECYNAAK8CgAC_zIFUdYuK4cS_r8yOwQ.mp4
+2026-06-04 01:19:11,070 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:19:11,689 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:19:11,947 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 01:19:12,445 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 01:19:12,878 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3427.mp4 "HTTP/1.1 200 OK"
+2026-06-04 01:19:15,917 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAIt52ogp1HPW_UEdvKUhUbfZkuO1S6XAAKGCwACtGsMUXj7oIOIixmdOwQ.mp4
+2026-06-04 01:19:16,156 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:19:16,403 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:19:16,403 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 01:19:16,418 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 01:19:22,267 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=KHs_G4UDltE
+2026-06-04 01:19:22,267 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=KHs_G4UDltE
+2026-06-04 01:19:22,267 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAIt52ogp1HPW_UEdvKUhUbfZkuO1S6XAAKGCwACtGsMUXj7oIOIixmdOwQ.mp4
+2026-06-04 01:19:22,282 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:19:22,901 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:19:23,148 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 01:19:23,560 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 01:19:23,821 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3428.mp4 "HTTP/1.1 200 OK"
+2026-06-04 01:19:25,398 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAIt6Gogp1HqGOJTPbSgnuIlhTnzC2AEAALTCwACi9ANUd_2odlldXLKOwQ.mp4
+2026-06-04 01:19:25,627 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:19:25,844 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:19:25,859 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 01:19:25,877 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 01:19:30,749 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=i1EX_tMASIQ
+2026-06-04 01:19:30,749 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=i1EX_tMASIQ
+2026-06-04 01:19:30,749 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAIt6Gogp1HqGOJTPbSgnuIlhTnzC2AEAALTCwACi9ANUd_2odlldXLKOwQ.mp4
+2026-06-04 01:19:30,989 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:19:31,208 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 01:19:31,637 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 01:19:31,907 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3429.mp4 "HTTP/1.1 200 OK"
+2026-06-04 01:19:32,498 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:19:35,541 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAIt6Wogp1HNdXbQqb4Gbk949QABSFvCFAACXgsAAqtpDFE4HKRk7CxMrzsE.mp4
+2026-06-04 01:19:35,766 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:19:35,997 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:19:36,013 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 01:19:36,033 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 01:19:42,157 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=2uxkzp3IvCg
+2026-06-04 01:19:42,157 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=2uxkzp3IvCg
+2026-06-04 01:19:42,157 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAIt6Wogp1HNdXbQqb4Gbk949QABSFvCFAACXgsAAqtpDFE4HKRk7CxMrzsE.mp4
+2026-06-04 01:19:42,690 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:19:42,845 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:19:43,209 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 01:19:43,632 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 01:19:43,898 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3430.mp4 "HTTP/1.1 200 OK"
+2026-06-04 01:19:48,231 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAIt6mogp1FAlCBDMxCSpurSpKBX0nPOAAIuDAACnAAB9FDV9DtEhhoJSzsE.mp4
+2026-06-04 01:19:48,491 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:19:48,784 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:19:48,784 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 01:19:48,810 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 01:19:54,524 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=mkn-gPlikB4
+2026-06-04 01:19:54,524 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=mkn-gPlikB4
+2026-06-04 01:19:54,524 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAIt6mogp1FAlCBDMxCSpurSpKBX0nPOAAIuDAACnAAB9FDV9DtEhhoJSzsE.mp4
+2026-06-04 01:19:54,524 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:19:55,196 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:19:55,560 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 01:19:56,006 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 01:19:56,271 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3431.mp4 "HTTP/1.1 200 OK"
+2026-06-04 01:19:59,633 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAIt62ogp1EW6i2Ucfai2NRl08A8UKThAAIrCwACYV0FUVSO05DiDcyoOwQ.mp4
+2026-06-04 01:19:59,860 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:20:00,138 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:20:00,138 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 01:20:00,179 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 01:20:07,248 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=QUAr9RIucW0
+2026-06-04 01:20:07,248 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=QUAr9RIucW0
+2026-06-04 01:20:07,248 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAIt62ogp1EW6i2Ucfai2NRl08A8UKThAAIrCwACYV0FUVSO05DiDcyoOwQ.mp4
+2026-06-04 01:20:07,263 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:20:08,267 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:20:08,610 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 01:20:09,086 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 01:20:09,548 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3432.mp4 "HTTP/1.1 200 OK"
+2026-06-04 01:20:14,577 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAIt7Gogp1EeSCSBmA-Q7sRaY1JCZQfOAAJPCwACH9kFUf0uJ_BuUlNUOwQ.mp4
+2026-06-04 01:20:14,827 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:20:15,039 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:20:15,060 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 01:20:15,069 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 01:20:22,814 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=heuF6o7bzsA
+2026-06-04 01:20:22,814 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=heuF6o7bzsA
+2026-06-04 01:20:22,830 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAIt7Gogp1EeSCSBmA-Q7sRaY1JCZQfOAAJPCwACH9kFUf0uJ_BuUlNUOwQ.mp4
+2026-06-04 01:20:22,830 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:20:23,526 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:20:23,801 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 01:20:24,287 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 01:20:24,605 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3433.mp4 "HTTP/1.1 200 OK"
+2026-06-04 01:20:29,469 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAIt7Wogp1Enp8WOF1vbah7AzZxggMyNAALICgACZoQFUZZOncXnqDJnOwQ.mp4
+2026-06-04 01:20:29,756 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:20:30,011 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:20:30,011 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 01:20:30,030 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 01:20:36,658 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=BFF90J5SCsU
+2026-06-04 01:20:36,658 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=BFF90J5SCsU
+2026-06-04 01:20:36,674 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAIt7Wogp1Enp8WOF1vbah7AzZxggMyNAALICgACZoQFUZZOncXnqDJnOwQ.mp4
+2026-06-04 01:20:36,674 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:20:37,435 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:20:37,711 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 01:20:38,182 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 01:20:38,483 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3434.mp4 "HTTP/1.1 200 OK"
+2026-06-04 01:20:42,225 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAIt7mogp1E-vLxA5LnVBKj9IIJWlgETAAKSCwACJ4IMUQ-2aQuuSeu1OwQ.mp4
+2026-06-04 01:20:42,483 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:20:42,801 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:20:42,801 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 01:20:42,824 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 01:20:48,629 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=Xy7uDp7XAAk
+2026-06-04 01:20:48,629 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=Xy7uDp7XAAk
+2026-06-04 01:20:48,644 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAIt7mogp1E-vLxA5LnVBKj9IIJWlgETAAKSCwACJ4IMUQ-2aQuuSeu1OwQ.mp4
+2026-06-04 01:20:48,644 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:20:50,055 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:20:50,381 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 01:20:50,858 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 01:20:52,011 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3435.mp4 "HTTP/1.1 200 OK"
+2026-06-04 01:20:56,076 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAIt72ogp1FcSsN1SopSG250NMqseH-xAAJ_CgAC0D4FUYy6xihVDTc5OwQ.mp4
+2026-06-04 01:20:56,391 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:20:56,688 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:20:56,696 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 01:20:56,711 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 01:21:04,425 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=pxEgi0xgVGo
+2026-06-04 01:21:04,425 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=pxEgi0xgVGo
+2026-06-04 01:21:04,425 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAIt72ogp1FcSsN1SopSG250NMqseH-xAAJ_CgAC0D4FUYy6xihVDTc5OwQ.mp4
+2026-06-04 01:21:04,425 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:21:05,115 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:21:05,400 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 01:21:06,717 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 01:21:07,191 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3436.mp4 "HTTP/1.1 200 OK"
+2026-06-04 01:21:13,018 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAIt8Gogp1E29EHtR0LojTCag0Axn2T8AAJZDAACNAwEUVUuZgABLN9UrTsE.mp4
+2026-06-04 01:21:13,307 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:21:13,553 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:21:13,569 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 01:21:13,587 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 01:21:25,727 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=7L92rKvaYXg
+2026-06-04 01:21:25,727 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=7L92rKvaYXg
+2026-06-04 01:21:25,727 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAIt8Gogp1E29EHtR0LojTCag0Axn2T8AAJZDAACNAwEUVUuZgABLN9UrTsE.mp4
+2026-06-04 01:21:25,742 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:21:26,377 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:21:26,646 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 01:21:27,037 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 01:21:27,500 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3437.mp4 "HTTP/1.1 200 OK"
+2026-06-04 01:21:28,754 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAIt8Wogp1HBvRMb20BA78fWj8QRM7giAAJwCwACLukNUR3rt62tnkbwOwQ.mp4
+2026-06-04 01:21:28,971 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:21:29,208 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:21:29,208 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 01:21:29,235 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 01:21:33,124 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=nIcsWs6-VRw
+2026-06-04 01:21:33,124 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=nIcsWs6-VRw
+2026-06-04 01:21:33,124 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAIt8Wogp1HBvRMb20BA78fWj8QRM7giAAJwCwACLukNUR3rt62tnkbwOwQ.mp4
+2026-06-04 01:21:33,361 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:21:33,609 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 01:21:34,112 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 01:21:34,612 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3438.mp4 "HTTP/1.1 200 OK"
+2026-06-04 01:21:35,953 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:21:40,032 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAIt8mogp1HzIiuknDhF4zmr8GetQFscAAJCCwACoXYEUVkUMU6X0M6gOwQ.mp4
+2026-06-04 01:21:40,271 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:21:40,504 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:21:40,519 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 01:21:40,536 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 01:21:49,293 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=9vrrG16IoLE
+2026-06-04 01:21:49,293 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=9vrrG16IoLE
+2026-06-04 01:21:49,299 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAIt8mogp1HzIiuknDhF4zmr8GetQFscAAJCCwACoXYEUVkUMU6X0M6gOwQ.mp4
+2026-06-04 01:21:49,302 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:21:49,965 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:21:50,233 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 01:21:50,710 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 01:21:50,975 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3439.mp4 "HTTP/1.1 200 OK"
+2026-06-04 01:21:56,492 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAIt82ogp1HJEDln90a6N0a_3T-S3edyAAJxCwAC6SoMUezANaniHnq5OwQ.mp4
+2026-06-04 01:21:56,743 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:21:56,977 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:21:56,992 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 01:21:57,010 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 01:22:06,145 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=_dkUmhrJYdQ
+2026-06-04 01:22:06,145 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=_dkUmhrJYdQ
+2026-06-04 01:22:06,145 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAIt82ogp1HJEDln90a6N0a_3T-S3edyAAJxCwAC6SoMUezANaniHnq5OwQ.mp4
+2026-06-04 01:22:06,145 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:22:07,107 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:22:07,377 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 01:22:08,614 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 01:22:09,084 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3440.mp4 "HTTP/1.1 200 OK"
+2026-06-04 01:22:16,011 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAIt9Gogp1E3JnC5eYDwsBH_rc4jNaofAAK6CwACg_wFUUtWIfKtJcQMOwQ.mp4
+2026-06-04 01:22:16,307 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:22:16,372 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:22:16,610 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:22:16,617 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 01:22:16,631 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 01:22:28,484 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=lUncESHesU0
+2026-06-04 01:22:28,484 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=lUncESHesU0
+2026-06-04 01:22:28,484 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAIt9Gogp1E3JnC5eYDwsBH_rc4jNaofAAK6CwACg_wFUUtWIfKtJcQMOwQ.mp4
+2026-06-04 01:22:28,484 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:22:29,112 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:22:29,345 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 01:22:29,828 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 01:22:30,082 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3441.mp4 "HTTP/1.1 200 OK"
+2026-06-04 01:22:35,473 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAIt9Wogp1G6SMoGmPYIBUO16oxM3AABowACcQsAAq3UDFE2R49ldTvNezsE.mp4
+2026-06-04 01:22:35,706 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:22:35,962 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:22:35,968 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 01:22:35,990 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 01:22:46,037 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=xSraWh1R4fQ
+2026-06-04 01:22:46,038 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=xSraWh1R4fQ
+2026-06-04 01:22:46,039 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAIt9Wogp1G6SMoGmPYIBUO16oxM3AABowACcQsAAq3UDFE2R49ldTvNezsE.mp4
+2026-06-04 01:22:46,041 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:22:47,921 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:22:48,307 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 01:22:48,734 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 01:22:49,210 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3442.mp4 "HTTP/1.1 200 OK"
+2026-06-04 01:22:54,445 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAIt92ogp1c304gmUqKoJucaaPFfHVwhAAKcHgACeyoJUVXf28VPFtkZOwQ.mp4
+2026-06-04 01:22:54,673 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:22:54,924 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:22:54,938 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 01:22:54,959 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 01:23:02,172 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=z5yuCBye5fk
+2026-06-04 01:23:02,172 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=z5yuCBye5fk
+2026-06-04 01:23:02,172 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAIt92ogp1c304gmUqKoJucaaPFfHVwhAAKcHgACeyoJUVXf28VPFtkZOwQ.mp4
+2026-06-04 01:23:02,187 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:23:03,293 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:23:03,518 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 01:23:04,107 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 01:23:05,037 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3443.mp4 "HTTP/1.1 200 OK"
+2026-06-04 01:23:09,273 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAIt-Gogp1qhg0vCxgunoJVpoDGbUkOmAAKdHgACeyoJUaNzSVtQ_187OwQ.mp4
+2026-06-04 01:23:10,708 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:23:11,208 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:23:11,214 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 01:23:11,233 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 01:23:17,050 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=Ev2sTPZKh4A
+2026-06-04 01:23:17,050 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=Ev2sTPZKh4A
+2026-06-04 01:23:17,050 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAIt-Gogp1qhg0vCxgunoJVpoDGbUkOmAAKdHgACeyoJUaNzSVtQ_187OwQ.mp4
+2026-06-04 01:23:17,070 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:23:17,925 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:23:18,171 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 01:23:18,584 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 01:23:19,143 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3444.mp4 "HTTP/1.1 200 OK"
+2026-06-04 01:23:21,622 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAIt-Wogp157gc1GhknQ8sqR6xcEyXAtAAKhHgACeyoJUaTdZQJMb0TSOwQ.mp4
+2026-06-04 01:23:21,973 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:23:22,252 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:23:22,259 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 01:23:22,276 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 01:23:27,418 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=Ul24XSnOya4
+2026-06-04 01:23:27,418 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=Ul24XSnOya4
+2026-06-04 01:23:27,431 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAIt-Wogp157gc1GhknQ8sqR6xcEyXAtAAKhHgACeyoJUaTdZQJMb0TSOwQ.mp4
+2026-06-04 01:23:28,242 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:23:28,535 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:23:28,860 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-06-04 01:23:29,273 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-06-04 01:23:29,641 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3445.mp4 "HTTP/1.1 200 OK"
+2026-06-04 01:23:31,527 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAIt-mogp2KoaOQTzMi75WUYteYd2rPXAAKiHgACeyoJUThCMI53MMQ0OwQ.mp4
+2026-06-04 01:23:31,809 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:23:32,144 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:23:32,147 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-06-04 01:23:32,160 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-06-04 01:23:36,490 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=D3Ek-NRj4Ds
+2026-06-04 01:23:36,490 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=D3Ek-NRj4Ds
+2026-06-04 01:23:36,490 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAIt-mogp2KoaOQTzMi75WUYteYd2rPXAAKiHgACeyoJUThCMI53MMQ0OwQ.mp4
+2026-06-04 01:23:36,771 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-06-04 01:23:38,500 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:23:48,721 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:23:58,924 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:24:09,177 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:24:19,675 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:24:29,920 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:24:40,560 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:24:50,779 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:25:01,027 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:25:11,273 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:25:21,628 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:25:32,325 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:25:42,552 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:25:52,789 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:26:03,005 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:26:13,208 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:26:23,418 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:26:33,631 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-06-04 01:26:43,844 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
