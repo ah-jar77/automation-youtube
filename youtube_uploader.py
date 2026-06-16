@@ -20,7 +20,7 @@ logger = logging.getLogger(__name__)
 SCOPES          = ["https://www.googleapis.com/auth/youtube.upload"]
 CLIENT_SECRETS  = os.getenv("YOUTUBE_CLIENT_SECRETS", "client_secrets.json")
 class YouTubeUploader:
-    def __init__(self, token_file: str = "youtube_token.pickle", client_secrets_file: Optional[str] = None):
+    def __init__(self, token_file: str = "youtube_token2.pickle", client_secrets_file: Optional[str] = None):
         self.client_secrets_file = client_secrets_file or CLIENT_SECRETS
         
         # استخراج لاحقة فريدة لكل ملف secrets لمنع تداخل التوكنات بين المشاريع

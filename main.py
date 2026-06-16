@@ -27,6 +27,7 @@ import yt_dlp
 load_dotenv()
 
 from insta.instagram import post_reel
+from snapchat import upload_and_post_to_spotlight, test_connection as test_snap_connection
 
 # ── إعداد اللوق ──────────────────────────────────────────────
 logging.basicConfig(
@@ -47,7 +48,8 @@ INSTAGRAM_CAPTION = os.getenv("INSTAGRAM_CAPTION", "💛كود خصم نون ا�
 # جعل المنصات متغيرة ديناميكياً
 ENABLE_YOUTUBE   = os.getenv("ENABLE_YOUTUBE", "true").lower() == "true"
 ENABLE_INSTAGRAM = os.getenv("ENABLE_INSTAGRAM", "true").lower() == "true"
-ENABLE_TIKTOK_DOWNLOAD = os.getenv("ENABLE_TIKTOK_DOWNLOAD", "false").lower() == "true"
+ENABLE_SNAPCHAT  = os.getenv("ENABLE_SNAPCHAT", "false").lower() == "true"
+ENABLE_TIKTOK_DOWNLOAD = os.getenv("ENABLE_TIKTOK_DOWNLOAD", "true").lower() == "true"
 YOUTUBE_UPLOAD_DELAY   = int(os.getenv("YOUTUBE_UPLOAD_DELAY", "180"))
 
 # قائمة بجميع ملفات العميل (client_secrets) المتاحة لـ YouTube
@@ -86,7 +88,7 @@ HTTPS_PROXY = os.getenv("HTTPS_PROXY") or os.getenv("https_proxy")
 # ── مصادقة كلمة المرور ────────────────────────────────────────
 auth_sessions: dict[int, float] = {}  # user_id -> last auth timestamp
 AUTH_TIMEOUT_HOURS = 24
-ACTIVE_YOUTUBE_TOKENS = ["youtube_token.pickle"]
+ACTIVE_YOUTUBE_TOKENS = ["youtube_token2.pickle"]
 pending_change_auth: set[int] = set() # users waiting to auth for /change
 
 def get_active_channel_name() -> str:
@@ -185,6 +187,8 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         platforms.append("▶️ يوتيوب")
     if ENABLE_INSTAGRAM:
         platforms.append("📸 انستاغرام")
+    if ENABLE_SNAPCHAT:
+        platforms.append("👻 سناب شات Spotlight")
     
     platforms_text = "\n".join(platforms) if platforms else "❌ لا توجد منصات مفعلة"
     
@@ -242,6 +246,15 @@ async def status(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
     if ENABLE_INSTAGRAM:
         lines.append("✅ انستاغرام (مفعل)")
+
+    if ENABLE_SNAPCHAT:
+        try:
+            snap_ok = test_snap_connection()
+            status_text = "متصل" if snap_ok else "غير متصل"
+            lines.append(f"{'✅' if snap_ok else '❌'} سناب شات ({status_text})")
+        except Exception as e:
+            logger.error(f"Snapchat status check failed: {e}")
+            lines.append("❌ سناب شات")
 
     if not lines:
         lines.append("⚠️ لا توجد منصات مفعلة")
@@ -538,6 +551,29 @@ async def process_and_upload_video(message, file_path: Path, title: str, desc: s
             ig_err = _format_error_text(e)
             logger.error(f"انستاغرام ❌: {e}")
 
+    # ── رفع على سناب شات Spotlight ──
+    snap_result = None
+    snap_err = None
+    if ENABLE_SNAPCHAT:
+        try:
+            status_msg = await _update_status_reply(
+                message, status_msg,
+                "\n".join([
+                    "⏳ هذا الفيديو قيد المعالجة",
+                    f"العنوان: {title}",
+                    "المرحلة: جاري الرفع إلى سناب شات Spotlight...",
+                ])
+            )
+            
+            success = upload_and_post_to_spotlight(file_path, title)
+            if success:
+                snap_result = "تم النشر بنجاح ✅"
+            else:
+                snap_err = "فشل النشر عبر Snapchat API"
+        except Exception as e:
+            snap_err = _format_error_text(e)
+            logger.error(f"سناب شات ❌: {e}")
+
     # ── حذف الملف محلياً (سواءً نجح الرفع أو فشل) ──
     video_deleted = False
     delete_error = None
@@ -575,9 +611,15 @@ async def process_and_upload_video(message, file_path: Path, title: str, desc: s
         else:
             result_lines.append(f"📸 انستاغرام: ❌ {ig_err or 'فشل'}")
 
+    if ENABLE_SNAPCHAT:
+        if snap_result:
+            result_lines.append(f"👻 سناب شات: {snap_result}")
+        else:
+            result_lines.append(f"👻 سناب شات: ❌ {snap_err or 'فشل'}")
+
     result_text = "\n".join(result_lines) if result_lines else "⚠️ لم يتم تفعيل أي منصة"
 
-    uploaded_any = any(res[0] for res in yt_results) or (ig_url is not None)
+    uploaded_any = any(res[0] for res in yt_results) or (ig_url is not None) or (snap_result is not None)
     final = (
         f"{'✅ نجح الفيديو' if uploaded_any else '❌ فشل الفيديو'} ({get_active_channel_name()})\n"
         f"العنوان: {title}\n"
@@ -637,6 +679,7 @@ async def platform_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -
     keyboard = [
         [InlineKeyboardButton(f"YouTube: {'✅' if ENABLE_YOUTUBE else '❌'}", callback_data="toggle_yt")],
         [InlineKeyboardButton(f"Instagram: {'✅' if ENABLE_INSTAGRAM else '❌'}", callback_data="toggle_ig")],
+        [InlineKeyboardButton(f"Snapchat: {'✅' if ENABLE_SNAPCHAT else '❌'}", callback_data="toggle_snap")],
         [InlineKeyboardButton(f"TikTok Download: {'✅' if ENABLE_TIKTOK_DOWNLOAD else '❌'}", callback_data="toggle_tk")]
     ]
     await update.message.reply_text("⚙️ اختر المنصات النشطة لنشر الفيديوهات:", reply_markup=InlineKeyboardMarkup(keyboard))
@@ -646,19 +689,22 @@ async def handle_toggle_platform(update: Update, context: ContextTypes.DEFAULT_T
     query = update.callback_query
     await query.answer()
     
-    global ENABLE_YOUTUBE, ENABLE_INSTAGRAM, ENABLE_TIKTOK_DOWNLOAD
+    global ENABLE_YOUTUBE, ENABLE_INSTAGRAM, ENABLE_SNAPCHAT, ENABLE_TIKTOK_DOWNLOAD
     data = query.data
     
     if data == "toggle_yt":
         ENABLE_YOUTUBE = not ENABLE_YOUTUBE
     elif data == "toggle_ig":
         ENABLE_INSTAGRAM = not ENABLE_INSTAGRAM
+    elif data == "toggle_snap":
+        ENABLE_SNAPCHAT = not ENABLE_SNAPCHAT
     elif data == "toggle_tk":
         ENABLE_TIKTOK_DOWNLOAD = not ENABLE_TIKTOK_DOWNLOAD
 
     keyboard = [
         [InlineKeyboardButton(f"YouTube: {'✅' if ENABLE_YOUTUBE else '❌'}", callback_data="toggle_yt")],
         [InlineKeyboardButton(f"Instagram: {'✅' if ENABLE_INSTAGRAM else '❌'}", callback_data="toggle_ig")],
+        [InlineKeyboardButton(f"Snapchat: {'✅' if ENABLE_SNAPCHAT else '❌'}", callback_data="toggle_snap")],
         [InlineKeyboardButton(f"TikTok Download: {'✅' if ENABLE_TIKTOK_DOWNLOAD else '❌'}", callback_data="toggle_tk")]
     ]
     try:
