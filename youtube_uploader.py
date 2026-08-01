@@ -22,19 +22,7 @@ CLIENT_SECRETS  = os.getenv("YOUTUBE_CLIENT_SECRETS", "client_secrets.json")
 class YouTubeUploader:
     def __init__(self, token_file: str = "youtube_token2.pickle", client_secrets_file: Optional[str] = None):
         self.client_secrets_file = client_secrets_file or CLIENT_SECRETS
-        
-        # استخراج لاحقة فريدة لكل ملف secrets لمنع تداخل التوكنات بين المشاريع
-        import re
-        numbers = re.findall(r'\d+', Path(self.client_secrets_file).name)
-        suffix = f"_cs{numbers[0]}" if numbers else ""
-        
-        if suffix:
-            path = Path(token_file)
-            name_without_ext = path.stem
-            self.token_file = str(path.with_name(f"{name_without_ext}{suffix}.pickle"))
-        else:
-            self.token_file = token_file
-            
+        self.token_file = token_file
         self.service = self._get_service()
 
     # ── المصادقة ────────────────────────────────────────────────
@@ -52,9 +40,8 @@ class YouTubeUploader:
                 try:
                     creds.refresh(Request())
                 except Exception as e:
-                    logger.warning(f"⚠️ فشل تجديد التوكن، جاري إعادة المصادقة باستخدام {self.client_secrets_file}: {e}")
-                    flow  = InstalledAppFlow.from_client_secrets_file(self.client_secrets_file, SCOPES)
-                    creds = flow.run_local_server(port=8088)
+                    logger.warning(f"⚠️ فشل تجديد التوكن لـ {self.token_file}: {e}")
+                    raise RuntimeError(f"Token refresh failed for {self.token_file}: {e}")
             else:
                 flow  = InstalledAppFlow.from_client_secrets_file(self.client_secrets_file, SCOPES)
                 creds = flow.run_local_server(port=8088)

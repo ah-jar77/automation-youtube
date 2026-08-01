@@ -91,6 +91,30 @@ AUTH_TIMEOUT_HOURS = 24
 ACTIVE_YOUTUBE_TOKENS = ["youtube_token2.pickle"]
 pending_change_auth: set[int] = set() # users waiting to auth for /change
 
+def get_client_secrets_for_token(token_path: str) -> str:
+    """إرجاع ملف secrets المناسب لمسار التوكن"""
+    if "secret1/" in token_path or token_path.startswith("secret1"):
+        if Path("secret1/client_secrets.json").exists():
+            return "secret1/client_secrets.json"
+        elif Path("secret1/client_secrets1.json").exists():
+            return "secret1/client_secrets1.json"
+        elif Path("client_secrets1.json").exists():
+            return "client_secrets1.json"
+        return "client_secrets.json"
+    else:
+        if Path("client_secrets.json").exists():
+            return "client_secrets.json"
+        elif Path("client_secrets1.json").exists():
+            return "client_secrets1.json"
+        return "client_secrets.json"
+
+def get_alternate_token_path(token_path: str) -> str:
+    """التبديل فقط بين المسار الرئيسي ومجلد secret1 لنفس التوكن"""
+    if token_path.startswith("secret1/") or "\\secret1\\" in token_path:
+        return token_path.replace("secret1/", "").replace("secret1\\", "")
+    else:
+        return f"secret1/{token_path}"
+
 def get_active_channel_name() -> str:
     """إرجاع الاسم المستعار للقناة/القنوات النشطة"""
     names = []
@@ -107,10 +131,7 @@ def toggle_token_path():
     global ACTIVE_YOUTUBE_TOKENS
     new_tokens = []
     for token in ACTIVE_YOUTUBE_TOKENS:
-        if token.startswith("secret1/"):
-            new_tokens.append(token.replace("secret1/", ""))
-        else:
-            new_tokens.append(f"secret1/{token}")
+        new_tokens.append(get_alternate_token_path(token))
     
     old_names = ", ".join(ACTIVE_YOUTUBE_TOKENS)
     ACTIVE_YOUTUBE_TOKENS = new_tokens
@@ -146,11 +167,31 @@ async def handle_password(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
     user_id = update.effective_user.id
     password = update.message.text.strip()
     
-    # إذا لم يكن المستخدم يحاول تغيير القناة، وكان مسجلاً بالفعل، نتجاهل الرسالة أو نفحص إذا كان رابط تيك توك
+    import re
+    # إذا لم يكن المستخدم يحاول تغيير القناة، وكان مسجلاً بالفعل، نفحص الرسالة لاستخراج روابط الفيديو والروابط المتعددة
     if _is_authenticated(user_id) and user_id not in pending_change_auth:
         text = update.message.text.strip()
-        if ENABLE_TIKTOK_DOWNLOAD and ("tiktok.com" in text):
-            asyncio.create_task(handle_tiktok_link(update, context))
+        if ENABLE_TIKTOK_DOWNLOAD:
+            url_pattern = re.compile(r'(https?://\S+)')
+            urls = url_pattern.findall(text)
+            if urls:
+                # استخراج العنوان والوصف من الأسطر النصية التي لا تبدأ بـ http
+                lines = [l.strip() for l in text.splitlines() if l.strip()]
+                non_url_lines = [l for l in lines if not l.startswith("http://") and not l.startswith("https://")]
+                title = non_url_lines[0] if non_url_lines else "فيديو جديد"
+                desc = "\n".join(non_url_lines[1:]) if len(non_url_lines) > 1 else ""
+                hashtags = _extract_hashtags(desc)
+
+                for url in urls:
+                    item = {
+                        "type": "link",
+                        "url": url,
+                        "message": update.message,
+                        "title": title,
+                        "desc": desc,
+                        "hashtags": hashtags,
+                    }
+                    await enqueue_video_job(item)
         return
     
     import time
@@ -218,7 +259,7 @@ async def change_channel(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
 
 
 async def status(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    """Check connection status for enabled platforms."""
+    """Check connection status for enabled platforms and tokens."""
     user_id = update.effective_user.id
     if not _is_authenticated(user_id):
         await update.message.reply_text("🔒 يرجى تسجيل الدخول بـ /login")
@@ -232,17 +273,28 @@ async def status(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     lines = []
 
     if ENABLE_YOUTUBE:
-        for token in ACTIVE_YOUTUBE_TOKENS:
+        tokens_to_check = []
+        for t in ACTIVE_YOUTUBE_TOKENS:
+            if t not in tokens_to_check:
+                tokens_to_check.append(t)
+            alt = get_alternate_token_path(t)
+            if alt not in tokens_to_check:
+                tokens_to_check.append(alt)
+                
+        for token in tokens_to_check:
             try:
-                uploader = YouTubeUploader(token_file=token, client_secrets_file=CURRENT_CLIENT_SECRETS)
+                secrets_file = get_client_secrets_for_token(token)
+                uploader = YouTubeUploader(token_file=token, client_secrets_file=secrets_file)
                 yt_ok = uploader.test_connection()
-                status_text = "متصل" if yt_ok else "غير متصل"
+                status_text = "متصل ✅" if yt_ok else "غير متصل ❌"
                 ch_name = "2 مار" if "youtube_token2.pickle" in token else "1 رو"
-                if "secret1/" in token: ch_name += " (S1)"
-                lines.append(f"{'✅' if yt_ok else '❌'} يوتيوب ({ch_name}: {status_text})")
+                loc = "secret1" if "secret1/" in token else "المجلد الرئيسي"
+                is_active = " (نشط)" if token in ACTIVE_YOUTUBE_TOKENS else " (احتياطي)"
+                lines.append(f"▶️ يوتيوب ({ch_name} | {loc}): {status_text}{is_active}")
             except Exception as e:
                 logger.error(f"YouTube status check failed for {token}: {e}")
-                lines.append(f"❌ يوتيوب ({token})")
+                loc = "secret1" if "secret1/" in token else "المجلد الرئيسي"
+                lines.append(f"❌ يوتيوب ({token} | {loc}): غير متصل")
 
     if ENABLE_INSTAGRAM:
         lines.append("✅ انستاغرام (مفعل)")
@@ -259,7 +311,7 @@ async def status(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     if not lines:
         lines.append("⚠️ لا توجد منصات مفعلة")
 
-    text = "📊 *حالة المنصات:*\n\n" + "\n".join(lines)
+    text = "📊 *حالة المنصات والتوكنات:*\n\n" + "\n".join(lines)
     await msg.edit_text(text, parse_mode="Markdown")
 
 
@@ -334,7 +386,7 @@ def _format_error_text(error: object, fallback: str = "خطأ غير معروف"
 # ── معالج الفيديو الرئيسي ─────────────────────────────────────
 
 async def handle_video(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    """يستقبل الفيديو ويبدأ النشر"""
+    """يستقبل الفيديو ويضيفه إلى طابور النشر"""
     user_id = update.effective_user.id
     if not _is_authenticated(user_id):
         await update.message.reply_text("🔒 يرجى تسجيل الدخول بـ /login")
@@ -351,23 +403,12 @@ async def handle_video(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
         await message.reply_text("❌ يرجى إرسال ملف فيديو.")
         return
 
-    # ── استخراج العنوان والوصف من الكابشن ──
     caption  = message.caption or ""
     lines    = caption.strip().splitlines()
     title    = lines[0].strip() if lines else "فيديو جديد"
     desc     = "\n".join(lines[1:]).strip() if len(lines) > 1 else ""
     hashtags = _extract_hashtags(desc)
 
-    status_msg = await _send_status_reply(
-        message,
-        "\n".join([
-            f"⏳ معالجة الفيديو ({get_active_channel_name()})",
-            f"العنوان: {title}",
-            "المرحلة: جاري التحميل من تيليجرام",
-        ]),
-    )
-
-    # ── تحميل الفيديو من تلجرام ──
     file_path = DOWNLOADS_DIR / f"{video.file_id}.mp4"
     try:
         tg_file = await context.bot.get_file(video.file_id)
@@ -375,30 +416,25 @@ async def handle_video(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
         logger.info(f"تم تحميل الفيديو: {file_path}")
     except Exception as e:
         logger.error(f"فشل تحميل الفيديو: {e}")
-        status_msg = await _update_status_reply(
+        await _send_status_reply(
             message,
-            status_msg,
             "\n".join([
-                f"❌ فشل الفيديو ({get_active_channel_name()})",
+                f"❌ فشل تحميل الملف من تيليجرام ({get_active_channel_name()})",
                 f"العنوان: {title}",
-                "المرحلة: تحميل الملف من تيليجرام",
                 f"السبب: {_format_error_text(e)}",
             ]),
         )
         return
 
-    status_msg = await _update_status_reply(
-        message,
-        status_msg,
-        "\n".join([
-            "⏳ هذا الفيديو قيد المعالجة",
-            f"العنوان: {title}",
-            "المرحلة: تم التحميل من تيليجرام",
-            "الخطوة التالية: جاري الرفع إلى المنصات",
-        ]),
-    )
-
-    await process_and_upload_video(message, file_path, title, desc, hashtags, status_msg)
+    item = {
+        "type": "file",
+        "file_path": file_path,
+        "message": message,
+        "title": title,
+        "desc": desc,
+        "hashtags": hashtags,
+    }
+    await enqueue_video_job(item)
 
 async def handle_tiktok_link(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     message = update.message
@@ -487,9 +523,18 @@ async def process_and_upload_video(message, file_path: Path, title: str, desc: s
                 uploaded_url = None
                 last_error = None
                 
-                max_attempts = len(CLIENT_SECRETS_LIST) * 2
-                for combo_attempt in range(max_attempts):
-                    secrets_file = CURRENT_CLIENT_SECRETS
+                # التبديل التلقائي فقط بين التوكن الرئيسي وتوكن secret1
+                for attempt in range(2):
+                    secrets_file = get_client_secrets_for_token(try_token)
+                    status_msg = await _update_status_reply(
+                        message,
+                        status_msg,
+                        "\n".join([
+                            "⏳ هذا الفيديو قيد المعالجة",
+                            f"العنوان: {title}",
+                            f"المرحلة: جاري الرفع إلى يوتيوب ({try_token}) [محاولة {attempt + 1}/2]...",
+                        ])
+                    )
                     try:
                         uploader = YouTubeUploader(token_file=try_token, client_secrets_file=secrets_file)
                         url = uploader.upload(
@@ -500,20 +545,23 @@ async def process_and_upload_video(message, file_path: Path, title: str, desc: s
                         )
                         uploaded_url = url
                         logger.info(f"يوتيوب ✅ (ملف: {secrets_file} | توكن: {try_token}): {url}")
+                        
+                        # تحديث التوكن النشط رسمياً في حال التبديل للتوكن الآخر
+                        if try_token != current_token:
+                            for idx, t in enumerate(ACTIVE_YOUTUBE_TOKENS):
+                                if t == current_token:
+                                    ACTIVE_YOUTUBE_TOKENS[idx] = try_token
+                            logger.info(f"🔄 تم تحديث التوكن النشط ليكون: {try_token}")
                         break
                     except Exception as e:
                         last_error = e
-                        error_str = str(e).lower()
-                        if "quota" in error_str or "limit" in error_str or "exceeded" in error_str:
-                            if combo_attempt % 2 == 0:
-                                logger.warning(f"⚠️ انتهاء الكوتا للتوكن ({try_token}) لـ {secrets_file}. جاري تبديل المجلد والمحاولة مجدداً...")
-                                toggle_token_path()
-                                try_token = f"secret1/{current_token}" if not current_token.startswith("secret1/") else current_token.replace("secret1/", "")
-                            else:
-                                logger.warning(f"⚠️ انتهاء الكوتا لكلا مجلدي التوكن لـ {secrets_file}. جاري تبديل client_secrets...")
-                                rotate_client_secrets()
+                        logger.warning(f"⚠️ فشل الرفع باستخدام التوكن ({try_token}): {e}")
+                        if attempt == 0:
+                            alt_token = get_alternate_token_path(try_token)
+                            logger.info(f"🔄 جاري التبديل للمحاولة مع التوكن الآخر: {alt_token}")
+                            try_token = alt_token
                         else:
-                            break
+                            logger.error(f"❌ فشل الرفع على كلا التوكنين (الرئيسي و secret1).")
                             
                 if uploaded_url:
                     yt_results.append((uploaded_url, None))
@@ -712,6 +760,125 @@ async def handle_toggle_platform(update: Update, context: ContextTypes.DEFAULT_T
     except Exception:
         pass
 
+# ── طابور الفيديوهات والتحكم في التدفق ─────────────────────────
+video_queue: Optional[asyncio.Queue] = None
+
+async def enqueue_video_job(item: dict) -> None:
+    """إضافة مهمة إلى طابور المعالجة"""
+    global video_queue
+    if video_queue is not None:
+        await video_queue.put(item)
+        qsize = video_queue.qsize()
+        message = item["message"]
+        title = item.get("title", "فيديو")
+        if qsize == 1:
+            await _send_status_reply(message, f"📥 تم استلام ({title}) وإضافته للطابور.\n⏳ جاري بدء المعالجة الآن...")
+        else:
+            await _send_status_reply(message, f"📥 تم استلام ({title}) وإضافته للطابور.\n📌 الترتيب في الطابور: #{qsize}\n⏳ سيتم النشر بالتسلسل تفادياً للحظر.")
+
+async def queue_worker(application: Application) -> None:
+    """عامل الخلفية لمعالجة الفيديوهات في الطابور بالتسلسل وبفاصل زمني"""
+    logger.info("🎬 تم تشغيل عامل طابور الفيديوهات (Queue Worker) بنجاح.")
+    while True:
+        try:
+            item = await video_queue.get()
+            message = item["message"]
+            item_type = item.get("type")
+            
+            if item_type == "file":
+                file_path = item["file_path"]
+                title = item["title"]
+                desc = item["desc"]
+                hashtags = item["hashtags"]
+                status_msg = await _send_status_reply(
+                    message,
+                    "\n".join([
+                        f"⏳ معالجة الفيديو ({get_active_channel_name()})",
+                        f"العنوان: {title}",
+                        "المرحلة: بدء المعالجة والرفع إلى المنصات...",
+                    ])
+                )
+                await process_and_upload_video(message, file_path, title, desc, hashtags, status_msg)
+
+            elif item_type == "link":
+                url = item["url"]
+                title = item["title"]
+                desc = item["desc"]
+                hashtags = item["hashtags"]
+                
+                status_msg = await _send_status_reply(
+                    message,
+                    "\n".join([
+                        f"⏳ معالجة الرابط ({get_active_channel_name()})",
+                        f"الرابط: {url}",
+                        f"العنوان: {title}",
+                        "المرحلة: جاري التحميل من الرابط...",
+                    ]),
+                )
+                
+                import time
+                file_id = f"video_{int(time.time())}"
+                file_path = DOWNLOADS_DIR / f"{file_id}.mp4"
+                
+                ydl_opts = {
+                    'outtmpl': str(file_path),
+                    'format': 'best',
+                    'quiet': True,
+                    'no_warnings': True,
+                }
+                
+                def download_video():
+                    with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+                        ydl.download([url])
+                        
+                try:
+                    await asyncio.to_thread(download_video)
+                    logger.info(f"تم تحميل الفيديو من الرابط: {file_path}")
+                except Exception as e:
+                    logger.error(f"فشل تحميل الرابط ({url}): {e}")
+                    await _update_status_reply(
+                        message,
+                        status_msg,
+                        f"❌ فشل تحميل الفيديو من الرابط\nالسبب: {_format_error_text(e)}"
+                    )
+                    video_queue.task_done()
+                    continue
+
+                status_msg = await _update_status_reply(
+                    message,
+                    status_msg,
+                    "\n".join([
+                        "⏳ هذا الفيديو قيد المعالجة",
+                        f"العنوان: {title}",
+                        "المرحلة: تم التحميل بنجاح",
+                        "الخطوة التالية: جاري الرفع إلى المنصات",
+                    ]),
+                )
+
+                await process_and_upload_video(message, file_path, title, desc, hashtags, status_msg)
+
+            video_queue.task_done()
+            
+            # فاصل زمني بين كل فيديو والآخر في الطابور
+            if not video_queue.empty():
+                delay_sec = int(os.getenv("QUEUE_DELAY_SECONDS", "15"))
+                logger.info(f"⏳ الانتظار {delay_sec} ثوانٍ قبل معالجة الفيديو التالي في الطابور...")
+                await asyncio.sleep(delay_sec)
+
+        except asyncio.CancelledError:
+            logger.info("🛑 تم إيقاف عامل طابور الفيديوهات.")
+            break
+        except Exception as e:
+            logger.error(f"❌ خطأ غير متوقع في طابور الفيديوهات: {e}")
+            await asyncio.sleep(5)
+
+async def on_startup(application: Application) -> None:
+    """يتم استدعاؤها عند بدء البوت لتهيئة طابور الفيديوهات وتفعيل العامل"""
+    global video_queue
+    video_queue = asyncio.Queue()
+    asyncio.create_task(queue_worker(application))
+    logger.info("⚡ تم إعداد طابور الفيديوهات وبدء معالجة المهام.")
+
 # ── تشغيل البوت ───────────────────────────────────────────────
 
 from telegram.request import HTTPXRequest
@@ -733,6 +900,7 @@ def main() -> None:
     app = (
         Application.builder()
         .token(BOT_TOKEN)
+        .post_init(on_startup)
         .build()
     )
     
