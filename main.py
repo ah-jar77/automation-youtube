@@ -887,25 +887,25 @@ def main() -> None:
     if not BOT_TOKEN:
         raise ValueError("❌ TELEGRAM_BOT_TOKEN غير موجود في ملف .env")
 
-    # إعداد الطلب مع دعم البروكسي
-    request = None
-    if HTTP_PROXY or HTTPS_PROXY:
-        proxy_url = HTTPS_PROXY or HTTP_PROXY
-        try:
-            request = HTTPXRequest(proxy_url=proxy_url)
+    # إعداد الطلب مع دعم البروكسي وتمديد مهلة الاتصال
+    proxy_url = HTTPS_PROXY or HTTP_PROXY
+    try:
+        if proxy_url:
+            request = HTTPXRequest(proxy_url=proxy_url, connect_timeout=30.0, read_timeout=30.0)
             logger.info(f"🔌 يستخدم البروكسي: {proxy_url}")
-        except Exception as e:
-            logger.warning(f"فشل إعداد البروكسي: {e}")
+        else:
+            request = HTTPXRequest(connect_timeout=30.0, read_timeout=30.0)
+    except Exception as e:
+        logger.warning(f"فشل إعداد الطلب/البروكسي، سيتم استخدام الافتراضي: {e}")
+        request = HTTPXRequest(connect_timeout=30.0, read_timeout=30.0)
 
     app = (
         Application.builder()
         .token(BOT_TOKEN)
+        .request(request)
         .post_init(on_startup)
         .build()
     )
-    
-    if request:
-        app.bot._request = request
 
     app.add_handler(CommandHandler("login", login))
     app.add_handler(CommandHandler("ahmed",  start))
