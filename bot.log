@@ -13638,3 +13638,341 @@ telegram.error.Conflict: Conflict: terminated by other getUpdates request; make 
 2026-08-01 13:12:44,780 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
 2026-08-01 13:12:55,018 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
 2026-08-01 13:13:05,227 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-08-01 13:13:17,709 | INFO | 🤖 البوت يعمل الآن...
+2026-08-01 13:13:18,490 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getMe "HTTP/1.1 200 OK"
+2026-08-01 13:13:18,492 | INFO | ⚡ تم إعداد طابور الفيديوهات وبدء معالجة المهام.
+2026-08-01 13:13:18,493 | INFO | 🎬 تم تشغيل عامل طابور الفيديوهات (Queue Worker) بنجاح.
+2026-08-01 13:13:18,687 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/deleteWebhook "HTTP/1.1 200 OK"
+2026-08-01 13:13:18,696 | INFO | Application started
+2026-08-01 13:13:29,304 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-08-01 13:13:32,779 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-08-01 13:13:33,524 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:13:43,150 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-08-01 13:13:53,390 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-08-01 13:14:03,635 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-08-01 13:14:13,870 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-08-01 13:14:21,819 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-08-01 13:14:23,057 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-08-01 13:14:23,696 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3781.mp4 "HTTP/1.1 200 OK"
+2026-08-01 13:14:29,004 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAJKD2ptxvyWPYavsprrvgSP5HJDm2vNAALQCgAC-IZ0U9g74mLEvJaePQQ.mp4
+2026-08-01 13:14:29,252 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:14:29,703 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-08-01 13:14:29,710 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:14:29,982 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3782.mp4 "HTTP/1.1 200 OK"
+2026-08-01 13:14:29,986 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:14:30,268 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:14:30,284 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-08-01 13:14:30,445 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-08-01 13:14:37,219 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=6j21B0xTc64
+2026-08-01 13:14:37,220 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=6j21B0xTc64
+2026-08-01 13:14:37,221 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAJKD2ptxvyWPYavsprrvgSP5HJDm2vNAALQCgAC-IZ0U9g74mLEvJaePQQ.mp4
+2026-08-01 13:14:37,230 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-08-01 13:14:37,986 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:14:39,598 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAJKEGptxvyGa97UW9EhAxetrZaG45ScAAK-CgACYex1U9CT_TIH4WR9PQQ.mp4
+2026-08-01 13:14:39,885 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:14:39,933 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:14:40,235 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:14:40,347 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-08-01 13:14:40,520 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:14:40,524 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-08-01 13:14:40,603 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-08-01 13:14:45,875 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=Sfqb36_iwNI
+2026-08-01 13:14:45,877 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=Sfqb36_iwNI
+2026-08-01 13:14:45,878 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAJKEGptxvyGa97UW9EhAxetrZaG45ScAAK-CgACYex1U9CT_TIH4WR9PQQ.mp4
+2026-08-01 13:14:45,888 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3783.mp4 "HTTP/1.1 200 OK"
+2026-08-01 13:14:46,642 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:14:46,998 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAJKEWptxvwFhSmUUYM8FSJDkKiyn7kuAALUCgACYYl1UwPEeltGOZ9TPQQ.mp4
+2026-08-01 13:14:47,349 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:14:47,403 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:14:47,428 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-08-01 13:14:47,636 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:14:47,921 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:14:47,933 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-08-01 13:14:47,998 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-08-01 13:14:52,066 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=_pt9XMpZbIE
+2026-08-01 13:14:52,067 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=_pt9XMpZbIE
+2026-08-01 13:14:52,069 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAJKEWptxvwFhSmUUYM8FSJDkKiyn7kuAALUCgACYYl1UwPEeltGOZ9TPQQ.mp4
+2026-08-01 13:14:52,073 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-08-01 13:14:52,375 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:14:52,634 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3784.mp4 "HTTP/1.1 200 OK"
+2026-08-01 13:14:57,648 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-08-01 13:15:00,870 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAJKEmptxvwF5ee9M3Hl91q3ROJ8avJeAALMCgACM-B1UxE8WW9HqV76PQQ.mp4
+2026-08-01 13:15:01,282 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:15:01,556 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:15:01,854 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:15:02,376 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:15:02,391 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-08-01 13:15:02,509 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-08-01 13:15:12,487 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=5SOiuJi0OMk
+2026-08-01 13:15:12,487 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=5SOiuJi0OMk
+2026-08-01 13:15:12,489 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAJKEmptxvwF5ee9M3Hl91q3ROJ8avJeAALMCgACM-B1UxE8WW9HqV76PQQ.mp4
+2026-08-01 13:15:12,494 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-08-01 13:15:12,500 | ERROR | فشل تحميل الفيديو: Timed out
+2026-08-01 13:15:13,229 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:15:13,237 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:15:15,826 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-08-01 13:15:16,371 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3786.mp4 "HTTP/1.1 200 OK"
+2026-08-01 13:15:18,155 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAJKFGptxvwdAprsB4Oa7Q9MQZgqdar_AAJACwAC2eZsU-Zq9ZPXaeS3PQQ.mp4
+2026-08-01 13:15:18,440 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:15:18,483 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:15:18,698 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:15:18,998 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:15:19,008 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-08-01 13:15:19,073 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-08-01 13:15:22,890 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=_xr3MOOCASY
+2026-08-01 13:15:22,891 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=_xr3MOOCASY
+2026-08-01 13:15:22,893 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAJKFGptxvwdAprsB4Oa7Q9MQZgqdar_AAJACwAC2eZsU-Zq9ZPXaeS3PQQ.mp4
+2026-08-01 13:15:22,901 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-08-01 13:15:22,907 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-08-01 13:15:23,188 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:15:23,373 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3787.mp4 "HTTP/1.1 200 OK"
+2026-08-01 13:15:28,585 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAJKFWptxvwhzKtu84t28afM-yAvS-QTAAI8CwAC_dptU9KwhMcRV5ECPQQ.mp4
+2026-08-01 13:15:28,931 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:15:29,241 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:15:29,366 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-08-01 13:15:29,479 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:15:29,726 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:15:29,739 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-08-01 13:15:29,780 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-08-01 13:15:37,963 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=jYuqZnq1l5E
+2026-08-01 13:15:37,964 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=jYuqZnq1l5E
+2026-08-01 13:15:37,966 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAJKFWptxvwhzKtu84t28afM-yAvS-QTAAI8CwAC_dptU9KwhMcRV5ECPQQ.mp4
+2026-08-01 13:15:37,978 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3788.mp4 "HTTP/1.1 200 OK"
+2026-08-01 13:15:37,980 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-08-01 13:15:38,834 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:15:40,551 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAJKFmptxvxuaBFkpvShwaNV5dTR_DLtAALCCgACI6p0U2urAZBpOZNtPQQ.mp4
+2026-08-01 13:15:40,795 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:15:40,856 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:15:41,192 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:15:41,484 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:15:41,495 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-08-01 13:15:41,573 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-08-01 13:15:46,236 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=Yi6NaXHExS4
+2026-08-01 13:15:46,238 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=Yi6NaXHExS4
+2026-08-01 13:15:46,240 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAJKFmptxvxuaBFkpvShwaNV5dTR_DLtAALCCgACI6p0U2urAZBpOZNtPQQ.mp4
+2026-08-01 13:15:46,247 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-08-01 13:15:46,590 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:15:46,815 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3789.mp4 "HTTP/1.1 200 OK"
+2026-08-01 13:15:48,178 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-08-01 13:15:52,670 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAJKF2ptxvy6wDYiE4ev53N9CSWlZ-R7AAK3CgACqzB1UyAnpsyBhEduPQQ.mp4
+2026-08-01 13:15:52,965 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:15:53,473 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-08-01 13:15:53,478 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:15:53,776 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:15:53,878 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3790.mp4 "HTTP/1.1 200 OK"
+2026-08-01 13:15:54,098 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:15:54,110 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-08-01 13:15:54,189 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-08-01 13:16:01,276 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=L1HgKMQ0Pt4
+2026-08-01 13:16:01,277 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=L1HgKMQ0Pt4
+2026-08-01 13:16:01,279 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAJKF2ptxvy6wDYiE4ev53N9CSWlZ-R7AAK3CgACqzB1UyAnpsyBhEduPQQ.mp4
+2026-08-01 13:16:01,291 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-08-01 13:16:02,039 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:16:09,694 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAJKGGptxvxUvzAu0bFGv3DRoXOLHOaPAALyCgACkgttU7KZMyguuKKwPQQ.mp4
+2026-08-01 13:16:09,995 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:16:10,512 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:16:11,026 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:16:11,330 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:16:11,342 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-08-01 13:16:11,430 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-08-01 13:16:21,215 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=fZgvx6_XEtc
+2026-08-01 13:16:21,216 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=fZgvx6_XEtc
+2026-08-01 13:16:21,219 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAJKGGptxvxUvzAu0bFGv3DRoXOLHOaPAALyCgACkgttU7KZMyguuKKwPQQ.mp4
+2026-08-01 13:16:21,234 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-08-01 13:16:21,240 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-08-01 13:16:21,966 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3791.mp4 "HTTP/1.1 200 OK"
+2026-08-01 13:16:22,102 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:16:31,485 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-08-01 13:16:36,304 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAJKGWptxvx0gS8Q3ut85-YW8a-Lj2zKAAK0CgAC_-51U_aAqqo_fljbPQQ.mp4
+2026-08-01 13:16:36,667 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:16:36,961 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:16:37,218 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:16:37,566 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:16:37,581 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-08-01 13:16:37,666 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-08-01 13:16:43,570 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=8YjGvZ0IDWg
+2026-08-01 13:16:43,571 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=8YjGvZ0IDWg
+2026-08-01 13:16:43,574 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAJKGWptxvx0gS8Q3ut85-YW8a-Lj2zKAAK0CgAC_-51U_aAqqo_fljbPQQ.mp4
+2026-08-01 13:16:43,583 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-08-01 13:16:43,587 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-08-01 13:16:44,160 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3792.mp4 "HTTP/1.1 200 OK"
+2026-08-01 13:16:44,319 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:16:53,804 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-08-01 13:17:04,010 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-08-01 13:17:12,181 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAJKGmptxvxPyivwK7Z9tRrjEjAoPespAAKVCgAC3rttUz2_3e61SJZdPQQ.mp4
+2026-08-01 13:17:12,452 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:17:13,075 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:17:13,354 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:17:13,637 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:17:13,649 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-08-01 13:17:13,718 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-08-01 13:17:37,440 | INFO |    يوتيوب: 92%
+2026-08-01 13:17:40,151 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=ybuoajeiAdo
+2026-08-01 13:17:40,152 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=ybuoajeiAdo
+2026-08-01 13:17:40,155 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAJKGmptxvxPyivwK7Z9tRrjEjAoPespAAKVCgAC3rttUz2_3e61SJZdPQQ.mp4
+2026-08-01 13:17:40,166 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-08-01 13:17:40,171 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-08-01 13:17:40,707 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3793.mp4 "HTTP/1.1 200 OK"
+2026-08-01 13:17:40,937 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:17:42,609 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-08-01 13:17:43,706 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAJKG2ptxvycVfwu1fUQq9t4aGHbvNivAALtCgACDYN0U_5jREMpDzg5PQQ.mp4
+2026-08-01 13:17:43,993 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:17:44,005 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:17:44,266 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:17:44,520 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:17:44,535 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-08-01 13:17:44,620 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-08-01 13:17:49,530 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=im0Nb_g_W9I
+2026-08-01 13:17:49,530 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=im0Nb_g_W9I
+2026-08-01 13:17:49,533 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAJKG2ptxvycVfwu1fUQq9t4aGHbvNivAALtCgACDYN0U_5jREMpDzg5PQQ.mp4
+2026-08-01 13:17:49,544 | ERROR | فشل تحميل الفيديو: Timed out
+2026-08-01 13:17:50,247 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:17:50,266 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:17:52,874 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-08-01 13:17:55,287 | ERROR | فشل تحميل الفيديو: Timed out
+2026-08-01 13:17:55,928 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:17:56,391 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-08-01 13:17:56,480 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-08-01 13:17:56,652 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3796.mp4 "HTTP/1.1 200 OK"
+2026-08-01 13:17:59,572 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAJKHmptxvwXGYj0Wc_-ROvr2hvDvXOWAALUCgAC1dF1UwU7-ee0l8jOPQQ.mp4
+2026-08-01 13:17:59,882 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:18:00,387 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:18:00,450 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-08-01 13:18:00,701 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:18:00,719 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3797.mp4 "HTTP/1.1 200 OK"
+2026-08-01 13:18:00,945 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:18:00,954 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-08-01 13:18:00,997 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-08-01 13:18:06,632 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=n8HP00Q4G0w
+2026-08-01 13:18:06,632 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=n8HP00Q4G0w
+2026-08-01 13:18:06,635 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAJKHmptxvwXGYj0Wc_-ROvr2hvDvXOWAALUCgAC1dF1UwU7-ee0l8jOPQQ.mp4
+2026-08-01 13:18:06,649 | ERROR | فشل تحميل الفيديو: Timed out
+2026-08-01 13:18:06,675 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-08-01 13:18:07,377 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:18:07,422 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:18:07,962 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-08-01 13:18:08,427 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3798.mp4 "HTTP/1.1 200 OK"
+2026-08-01 13:18:13,782 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAJKIGptxvw9oqgTfw8kZZeqsHZ03Wr0AAIcCwACODNsUyYZBTTfXnEXPQQ.mp4
+2026-08-01 13:18:14,054 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:18:14,462 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:18:14,722 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:18:15,029 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:18:15,038 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-08-01 13:18:15,092 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-08-01 13:18:22,810 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=lJNQM1Uv2z4
+2026-08-01 13:18:22,812 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=lJNQM1Uv2z4
+2026-08-01 13:18:22,814 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAJKIGptxvw9oqgTfw8kZZeqsHZ03Wr0AAIcCwACODNsUyYZBTTfXnEXPQQ.mp4
+2026-08-01 13:18:22,823 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-08-01 13:18:22,830 | ERROR | فشل تحميل الفيديو: Timed out
+2026-08-01 13:18:23,046 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-08-01 13:18:23,473 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:18:23,544 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:18:25,356 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-08-01 13:18:25,621 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3800.mp4 "HTTP/1.1 200 OK"
+2026-08-01 13:18:27,085 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-08-01 13:18:35,896 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-08-01 13:18:38,878 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAJKImptxvy-XhKFgghA8WyvHQGw3heQAALkCwAC_3hsU4A9PHA8pWH3PQQ.mp4
+2026-08-01 13:18:39,147 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:18:39,813 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:18:39,905 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-08-01 13:18:40,089 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:18:40,164 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3801.mp4 "HTTP/1.1 200 OK"
+2026-08-01 13:18:40,391 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:18:40,407 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-08-01 13:18:40,482 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-08-01 13:18:55,397 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=VnCW65rAIbs
+2026-08-01 13:18:55,398 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=VnCW65rAIbs
+2026-08-01 13:18:55,400 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAJKImptxvy-XhKFgghA8WyvHQGw3heQAALkCwAC_3hsU4A9PHA8pWH3PQQ.mp4
+2026-08-01 13:18:55,413 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-08-01 13:18:55,419 | ERROR | فشل تحميل الفيديو: Timed out
+2026-08-01 13:18:56,308 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:18:56,348 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:18:56,603 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-08-01 13:18:56,942 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3785.mp4 "HTTP/1.1 200 OK"
+2026-08-01 13:18:57,871 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAJKE2ptxvyeJFNaNBwSx0gPDPMZQ9YHAALlCgACWXN0U_gtvLvCE4KrPQQ.mp4
+2026-08-01 13:18:58,142 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:18:58,190 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:18:58,338 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-08-01 13:18:58,527 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:18:58,594 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3795.mp4 "HTTP/1.1 200 OK"
+2026-08-01 13:18:58,808 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:18:58,818 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-08-01 13:18:58,885 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-08-01 13:19:02,129 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=4HLFVfR9RkI
+2026-08-01 13:19:02,130 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=4HLFVfR9RkI
+2026-08-01 13:19:02,131 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAJKE2ptxvyeJFNaNBwSx0gPDPMZQ9YHAALlCgACWXN0U_gtvLvCE4KrPQQ.mp4
+2026-08-01 13:19:02,371 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-08-01 13:19:02,421 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:19:09,719 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAJKHGptxvxzp_MSZ1F7tnjit72iSB3tAAJhCwACr1RtU67_hBvkZbIZPQQ.mp4
+2026-08-01 13:19:09,980 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:19:10,171 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-08-01 13:19:10,368 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:19:10,441 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3794.mp4 "HTTP/1.1 200 OK"
+2026-08-01 13:19:10,631 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:19:10,882 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:19:10,892 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-08-01 13:19:10,978 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-08-01 13:19:22,199 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=rUGzgUUbWrs
+2026-08-01 13:19:22,201 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=rUGzgUUbWrs
+2026-08-01 13:19:22,203 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAJKHGptxvxzp_MSZ1F7tnjit72iSB3tAAJhCwACr1RtU67_hBvkZbIZPQQ.mp4
+2026-08-01 13:19:22,212 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-08-01 13:19:22,220 | ERROR | فشل تحميل الفيديو: Timed out
+2026-08-01 13:19:22,872 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:19:22,882 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:19:23,082 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-08-01 13:19:23,570 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3797.mp4 "HTTP/1.1 200 OK"
+2026-08-01 13:19:25,187 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAJKH2ptxvxvXHUnBwgoPGZHsRfGmQblAAKdCwACr9xsU0_g0IR-5JbrPQQ.mp4
+2026-08-01 13:19:25,492 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:19:25,512 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:19:26,010 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:19:26,300 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:19:26,311 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-08-01 13:19:26,374 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-08-01 13:19:30,192 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=N7HYACJvs9o
+2026-08-01 13:19:30,193 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=N7HYACJvs9o
+2026-08-01 13:19:30,194 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAJKH2ptxvxvXHUnBwgoPGZHsRfGmQblAAKdCwACr9xsU0_g0IR-5JbrPQQ.mp4
+2026-08-01 13:19:30,199 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-08-01 13:19:30,711 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:19:30,717 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3799.mp4 "HTTP/1.1 200 OK"
+2026-08-01 13:19:32,436 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-08-01 13:19:36,711 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAJKIWptxvxU0Onu1f9JUVbegSpR1pGtAALYCwAC4h5sU5w0Dh6XYTmPPQQ.mp4
+2026-08-01 13:19:37,021 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:19:37,238 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-08-01 13:19:37,478 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:19:37,739 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:19:37,755 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3801.mp4 "HTTP/1.1 200 OK"
+2026-08-01 13:19:38,014 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:19:38,025 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-08-01 13:19:38,119 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-08-01 13:19:46,546 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=yaIjWVXrGc4
+2026-08-01 13:19:46,548 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=yaIjWVXrGc4
+2026-08-01 13:19:46,550 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAJKIWptxvxU0Onu1f9JUVbegSpR1pGtAALYCwAC4h5sU5w0Dh6XYTmPPQQ.mp4
+2026-08-01 13:19:46,566 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-08-01 13:19:47,282 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:19:50,793 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAJKI2ptxvyahrK31tALm9j63dA8lVGcAAJMCgACztR1U43aE0494e7pPQQ.mp4
+2026-08-01 13:19:51,098 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:19:51,192 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:19:51,394 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:19:51,697 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:19:51,708 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-08-01 13:19:51,776 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-08-01 13:19:58,558 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=vFLv_LMUixw
+2026-08-01 13:19:58,559 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=vFLv_LMUixw
+2026-08-01 13:19:58,562 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAJKI2ptxvyahrK31tALm9j63dA8lVGcAAJMCgACztR1U43aE0494e7pPQQ.mp4
+2026-08-01 13:19:58,571 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-08-01 13:19:58,840 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-08-01 13:19:59,309 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:19:59,446 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getFile "HTTP/1.1 200 OK"
+2026-08-01 13:20:00,097 | INFO | HTTP Request: GET https://api.telegram.org/file/bot8782666061%3AAAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/videos/file_3794.mp4 "HTTP/1.1 200 OK"
+2026-08-01 13:20:07,688 | INFO | تم تحميل الفيديو: downloads\BAACAgQAAxkBAAJKHWptxvxtryfAyApcO58AAbT1ulObzgACzwoAAkv8dVOUWb0WCeyM5D0E.mp4
+2026-08-01 13:20:08,182 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:20:08,595 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/sendMessage "HTTP/1.1 200 OK"
+2026-08-01 13:20:08,900 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:20:09,206 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/getUpdates "HTTP/1.1 200 OK"
+2026-08-01 13:20:09,216 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"
+2026-08-01 13:20:09,232 | INFO | file_cache is only supported with oauth2client<4.0.0
+2026-08-01 13:20:09,313 | INFO | ▶️ بدء الرفع على يوتيوب: كود خصم نون mar110k
+2026-08-01 13:20:20,061 | INFO | ✅ يوتيوب اكتمل: https://www.youtube.com/watch?v=F4H71GiTOF8
+2026-08-01 13:20:20,062 | INFO | يوتيوب ✅ (ملف: client_secrets.json | توكن: youtube_token2.pickle): https://www.youtube.com/watch?v=F4H71GiTOF8
+2026-08-01 13:20:20,064 | INFO | تم حذف الفيديو: downloads\BAACAgQAAxkBAAJKHWptxvxtryfAyApcO58AAbT1ulObzgACzwoAAkv8dVOUWb0WCeyM5D0E.mp4
+2026-08-01 13:20:20,850 | INFO | HTTP Request: POST https://api.telegram.org/bot8782666061:AAHh0Fo2Q3XPaJJK7ijuuQSECkoTlcmMbls/editMessageText "HTTP/1.1 200 OK"

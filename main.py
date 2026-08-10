@@ -411,8 +411,8 @@ async def handle_video(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
 
     file_path = DOWNLOADS_DIR / f"{video.file_id}.mp4"
     try:
-        tg_file = await context.bot.get_file(video.file_id)
-        await tg_file.download_to_drive(file_path)
+        tg_file = await context.bot.get_file(video.file_id, read_timeout=120, connect_timeout=120)
+        await tg_file.download_to_drive(file_path, read_timeout=300, connect_timeout=300)
         logger.info(f"تم تحميل الفيديو: {file_path}")
     except Exception as e:
         logger.error(f"فشل تحميل الفيديو: {e}")
@@ -891,13 +891,13 @@ def main() -> None:
     proxy_url = HTTPS_PROXY or HTTP_PROXY
     try:
         if proxy_url:
-            request = HTTPXRequest(proxy_url=proxy_url, connect_timeout=30.0, read_timeout=30.0)
+            request = HTTPXRequest(proxy_url=proxy_url, connect_timeout=60.0, read_timeout=60.0, write_timeout=60.0, pool_timeout=60.0)
             logger.info(f"🔌 يستخدم البروكسي: {proxy_url}")
         else:
-            request = HTTPXRequest(connect_timeout=30.0, read_timeout=30.0)
+            request = HTTPXRequest(connect_timeout=60.0, read_timeout=60.0, write_timeout=60.0, pool_timeout=60.0)
     except Exception as e:
         logger.warning(f"فشل إعداد الطلب/البروكسي، سيتم استخدام الافتراضي: {e}")
-        request = HTTPXRequest(connect_timeout=30.0, read_timeout=30.0)
+        request = HTTPXRequest(connect_timeout=60.0, read_timeout=60.0, write_timeout=60.0, pool_timeout=60.0)
 
     app = (
         Application.builder()
